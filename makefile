@@ -1,6 +1,6 @@
 # Define the compiler and the flags
 CXX = g++
-CXXFLAGS = -std=c++11 -g -Wall -Wextra -pedantic 
+CXXFLAGS = -std=c++11 -g -Wall -Wextra -pedantic
 
 # Define the targets for the different mains
 TARGET_DEMO = demo
@@ -31,11 +31,12 @@ run_demo: $(TARGET_DEMO)
 
 # Compile the source files into object files
 %.o: %.cpp
+	@echo "Compiling $<..."
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Clean up the build files
 clean:
-	rm -f $(DEMO_OBJS) $(TEST_OBJS) $(TARGET_DEMO) $(TARGET_TEST)
+	rm -f *.o $(TARGET_DEMO) $(TARGET_TEST)
 
 # Phony targets
 .PHONY: all run run_demo clean
