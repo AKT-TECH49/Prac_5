@@ -81,6 +81,10 @@ void TestComponent1()
    std::cout<<doorL1->getStat()<<std::endl;
    std::cout<<thermo1->getStatus()<<std::endl;
    std::cout<<alarm1->getStatus() <<std::endl;
+   //connection
+   sec1->addRoom(livingRoom);
+   sec1->displayHomeSection();
+   std::cout<<sec1->getDeviceType()<<std::endl;
 
 
 }
