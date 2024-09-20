@@ -23,6 +23,10 @@
 #include "Activate.h"
 #include "UnLockedState.h"
 #include "LockedState.h"
+//
+#include "LegendThermo.h"
+#include "ThermoIntegrator.h"
+
 
 
 
@@ -32,10 +36,13 @@
 #include <string>
 
 void TestComponent1();
+void TestComponent2();
+
 
 int main()
 {
     TestComponent1();
+    TestComponent2();
 
     return 0;
 }
@@ -86,5 +93,20 @@ void TestComponent1()
    sec1->displayHomeSection();
    std::cout<<sec1->getDeviceType()<<std::endl;
 
+
+}
+
+
+void TestComponent2()
+{
+std::cout<<"~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~COMPONENT 2~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_ \n";
+    std::cout<<"\t ======Legacy Thermostat===== \n";
+    LegendThermo oldThermo;
+    SmartThermostatIntegrator ThermoI(&oldThermo , "ThermoStat");
+    std::cout<<"Current Temp: "<<ThermoI.getTemP()<<std::endl;
+    ThermoI.setTemp(25);
+    ThermoI.performAction();
+    std::cout<< ThermoI.getDeviceType() <<std::endl;
+    ThermoI.performAction();
 
 }

@@ -76,10 +76,10 @@ std::string HomeSection::getDeviceType()
    
 }
 
-// void HomeSection::performAction()
-// {
-//     for(Room* room : rooms) 
-//     {
-//         room->performAction();
-//     }
-// }
+void HomeSection::performAction()
+{
+    for(Room* room : rooms) 
+    {
+        room->performAction();
+    }
+}
