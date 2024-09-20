@@ -16,7 +16,7 @@ public:
     void removeDevice(SmartDevice* device);
     //
     std::string getDeviceType() override; 
-    // void performAction() override;
+    void performAction() override;
 
     std::string  displayRooms();
     std::string getRoomName() const;

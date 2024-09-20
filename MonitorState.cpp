@@ -6,6 +6,7 @@
 void MonitorState::read(Thermostat *thermostat)
 {
     int readTemp = thermostat->getTemperature();
+    
     if (readTemp < 18)
     {
         thermostat->setState(new ColdState());

@@ -20,7 +20,7 @@ class HomeSection : public SmartDevice
     std::string getSectionName();
     //
     std::string getDeviceType() override;
-    // void performAction() override;
+    void performAction() override;
     
 
 

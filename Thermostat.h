@@ -20,11 +20,14 @@ private:
     public:
     Thermostat(const std::string& thermoType ,  int readTemp ) ;
     ~Thermostat();
+
+    Thermostat();
     //
     std::string getStatus() const;
     void setState(ThermostatState* state) ;
-    //
-    void performAction();
+    // 
+    // void performAction();
+     void performAction() override;
     //
     std::string getDeviceType() override;
     //
