@@ -83,3 +83,12 @@ void HomeSection::performAction()
         room->performAction();
     }
 }
+
+
+void HomeSection::update()
+{
+    for(Room* room : rooms)
+    {
+        room->update();
+    }
+}

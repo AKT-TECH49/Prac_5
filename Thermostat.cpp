@@ -1,9 +1,10 @@
 #include "Thermostat.h"
+#include "MonitorState.h"
 
-Thermostat::Thermostat(const std::string &thermoType, int readTemp):SmartDevice(thermoType ,33 )
+Thermostat::Thermostat(const std::string &thermoType):SmartDevice(thermoType ,33 )
 {
     this->name = thermoType;
-    this->temperature = readTemp;
+    this->temperature =0;
     state = new IdleState();
 }
 
@@ -15,7 +16,7 @@ std::string Thermostat::getStatus() const
 
 Thermostat::~Thermostat()
 {
-    delete state;
+    delete this->state;
 }
 
 void Thermostat::setState(ThermostatState *state)
@@ -42,4 +43,24 @@ void Thermostat::setTemperature(int tempy)
 int Thermostat::getTemperature() const
 {
     return this->temperature;
+}
+
+void Thermostat::update()
+{
+    if(state->toString() == "Idle")
+    {
+        state->read(this);
+    }
+    else if(state->toString() == "Monitoring")
+    {
+        state->read(this);
+    }
+    else
+    {
+            // delete state;
+             MonitorState* newS = new MonitorState();
+             setState(newS);
+           newS->read(this);
+    }
+
 }

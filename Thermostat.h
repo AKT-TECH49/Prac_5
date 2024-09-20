@@ -18,7 +18,7 @@ private:
     ThermostatState* state;
 
     public:
-    Thermostat(const std::string& thermoType ,  int readTemp ) ;
+    Thermostat(const std::string& thermoType ) ;
     ~Thermostat();
 
     Thermostat();
@@ -33,6 +33,9 @@ private:
     //
     void setTemperature(int targetTemperature);
     int getTemperature() const;
+
+    //
+    void update() override;
 
 };
 #endif 

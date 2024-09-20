@@ -26,6 +26,8 @@ class SmartDevice
     std::string getName() const ;
     int getId() const ;
 
+    //
+    virtual void update() = 0;
  
 };
 

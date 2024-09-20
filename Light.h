@@ -26,6 +26,11 @@ private:
     //
     std::string getDeviceType() override;
 
+
+      //observer
+      void update() override;
+
+
 };
 
 #endif 

@@ -32,6 +32,18 @@ std::string Alarm::getStatus() const
 
 void Alarm::setStatus(AlarmState *status)
 {
-    delete state;
     this->state = status;
+}
+
+void Alarm::update()
+{
+    if(state->toString() == "Deactivated")
+    {
+        state->activateAlarm(this);
+        std::cout<<"Alarm is activated and alerted!!!"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"Alarm is already Active and is now ALERTED!!!"<<std::endl;
+    }
 }

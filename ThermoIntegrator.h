@@ -16,5 +16,8 @@ class  SmartThermostatIntegrator : public SmartDevice
     //
     void performAction() override;
     std::string getDeviceType() override;
+
+    //
+    void update() override;
 };
 #endif

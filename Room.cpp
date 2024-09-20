@@ -96,3 +96,11 @@ std::string Room::getRoomName() const
 {
     return roomName;
 }
+
+void Room::update()
+{
+    for (SmartDevice* device : devices)
+    {
+        device->update();
+    }
+}

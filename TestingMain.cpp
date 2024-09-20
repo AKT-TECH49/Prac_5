@@ -26,6 +26,12 @@
 //
 #include "LegendThermo.h"
 #include "ThermoIntegrator.h"
+//
+#include "Sensor.h"
+#include "Motion.h"
+#include "Temperature.h"
+#include "Control.h"
+
 
 
 
@@ -37,12 +43,14 @@
 
 void TestComponent1();
 void TestComponent2();
+void TestComponent4();
 
 
 int main()
 {
-    TestComponent1();
-    TestComponent2();
+    // TestComponent1();
+    // TestComponent2();
+    TestComponent4();
 
     return 0;
 }
@@ -57,7 +65,7 @@ void TestComponent1()
 
     Light* light1 = new Light("LedLight" , 75 , 10);
     DoorLock* doorL1 = new DoorLock("DoorLock" , 2 , "Grade2");
-    Thermostat* thermo1 = new Thermostat("ThermoStat" , 12);
+    Thermostat* thermo1 = new Thermostat("ThermoStat" );
     Alarm* alarm1 = new Alarm("Alarm1" , 90 , "grade1");
     std::cout<<"DeviceName is : "<< light1->getDeviceType()<<std::endl;
     std::cout<<"DeviceName is : "<< doorL1->getDeviceType()<<std::endl;
@@ -81,6 +89,7 @@ void TestComponent1()
    std::cout<<"\t ======actions===== \n";
    light1->performAction();
    doorL1->performAction();
+   thermo1->setTemperature(25);
    thermo1->performAction();
    alarm1->performAction();
    //updated
@@ -109,4 +118,63 @@ std::cout<<"~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~COMPONENT 2~_~_~_~_~_~_~_~_~_~_~_
     std::cout<< ThermoI.getDeviceType() <<std::endl;
     ThermoI.performAction();
 
+}
+
+
+void TestComponent4()
+{
+    std::cout<<"*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/COMPONENT 4 /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/  \n";
+   
+    MotionSensor* sensor1 = new MotionSensor("MotionSensor");
+    Temperature* sensor2 = new Temperature("TempSensor");
+
+    Light* light1 = new Light("Light1" ,80 ,10 );
+    DoorLock* lck1 = new DoorLock("Lock1" , 2 ,"grade 2");
+    Alarm* alarm1 = new Alarm("Alarm1" ,92,"grade 3");
+    Thermostat * stat1 = new Thermostat("Thermostat1" );
+
+    Control control;
+
+
+     std::cout<<"\n \t ++++++++++++Details Before: ++++++++++++\n";
+      std::cout<<"Light status: "<<light1->getStatus()<<std::endl;
+      std::cout<<"Doorlock status: "<<lck1->getStat()<<std::endl;
+      std::cout<<"Alarm status: "<<alarm1->getStatus()<<std::endl;
+      std::cout<<"Thermostat status: "<<stat1->getStatus()<<std::endl;
+
+
+
+     std::cout<<"\n \t ======WORKING WITH THE SENSORS:====== \n";
+     sensor1->addDevice(light1);
+     sensor1->addDevice(lck1);
+     sensor1->addDevice(alarm1);
+     sensor2->addDevice(stat1);
+
+     sensor1->detectMotion();
+      std::cout<<"\n \t ++++++++++++Details After: ++++++++++++\n";
+      std::cout<<"Light status: "<<light1->getStatus()<<std::endl;
+      std::cout<<"Doorlock status: "<<lck1->getStat()<<std::endl;
+      std::cout<<"Alarm status: "<<alarm1->getStatus()<<std::endl;
+      std::cout<<"\n";
+
+     stat1->setTemperature(25);
+     sensor2->detectTemp();
+     std::cout<<"\n Thermostat status: "<<stat1->getStatus()<<std::endl;
+
+    std::cout<<"\n \t ======WORKING WITH THE Controller:====== \n";
+    control.addDevice(light1);
+    control.addDevice(lck1);
+    control.addDevice(stat1);
+    control.addDevice(alarm1);
+
+
+    control.addSensor(sensor1);
+    control.addSensor(sensor2);
+
+    control.notifySpecificDevice(light1);
+    control.notifySpecificDevice(lck1);
+    stat1->setTemperature(25);
+    control.notifySpecificDevice(stat1);
+    control.notifySpecificDevice(alarm1);
+   
 }
