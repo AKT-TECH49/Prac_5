@@ -27,6 +27,8 @@ std::string getStatus() const ;
     void setStatus(AlarmState* status) ;
     
 
+    //
+    void update() override;
 
 };
 #endif

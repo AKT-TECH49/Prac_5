@@ -23,6 +23,8 @@ class HomeSection : public SmartDevice
     void performAction() override;
     
 
+    //
+    void update() override;
 
 
 };

@@ -20,6 +20,7 @@ class DoorLock : public SmartDevice
 
     public:
     DoorLock(std::string lockType , int grade ,  const std::string& secLevel);
+     ~DoorLock();
     //
     std::string getStat() const ;
     void setStat(DoorLockState* state) ;
@@ -29,7 +30,7 @@ class DoorLock : public SmartDevice
     //
     std::string getDeviceType() override;
     //
-
+    void update() override;
 
 };
 

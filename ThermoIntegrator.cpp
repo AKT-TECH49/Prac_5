@@ -48,3 +48,8 @@ std::string  SmartThermostatIntegrator::getDeviceType()
 {
     return "Thermostat Adpater";
 }
+
+void SmartThermostatIntegrator::update()
+{
+    // do nothing
+}
