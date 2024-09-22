@@ -8,7 +8,7 @@ Light::Light(const std::string &lightType, int initBrightness, int wattz):SmartD
     this->power = wattz;
     this->name = lightType;
     state = new OffState();
-}
+} 
 
 Light::~Light()
 {

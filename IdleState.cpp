@@ -12,9 +12,10 @@ void IdleState::read(Thermostat *thermo)
 
 std::string IdleState::toString() const
 {
-    return "Idle";
+    return "Idle"; // each thermostat starts 
 }
 
+// once someone sets a temp them the monitor will read the temperature
 bool IdleState::isCold() const
 {
     return false;
