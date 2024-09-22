@@ -68,13 +68,13 @@ std::string Room::getDeviceType()
     return deviceType; 
 }
 
-// void Room::performAction()
-// {
-//     for (SmartDevice* device : devices)
-//     {
-//         device->performAction();
-//     }
-// }
+void Room::performAction()
+{
+    for (SmartDevice* device : devices)
+    {
+        device->performAction();
+    }
+}
 
 std::string Room::displayRooms()
 {
@@ -95,4 +95,12 @@ std::string Room::displayRooms()
 std::string Room::getRoomName() const
 {
     return roomName;
+}
+
+void Room::update()
+{
+    for (SmartDevice* device : devices)
+    {
+        device->update();
+    }
 }

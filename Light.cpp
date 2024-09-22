@@ -36,3 +36,15 @@ std::string Light::getDeviceType()
 {
     return this->name;
 }
+
+void Light::update()
+{
+     if(state->toString() == "Off")
+     {
+        state->toggle(this);
+     }
+     else
+     {
+        std::cout<<"!Light is turned on already!"<<std::endl;
+     }
+}

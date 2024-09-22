@@ -20,15 +20,17 @@ class DoorLock : public SmartDevice
 
     public:
     DoorLock(std::string lockType , int grade ,  const std::string& secLevel);
+     ~DoorLock();
     //
     std::string getStat() const ;
     void setStat(DoorLockState* state) ;
     //
-    void performAction();
+    // void performAction();
+     void performAction() override;
     //
     std::string getDeviceType() override;
     //
-
+    void update() override;
 
 };
 

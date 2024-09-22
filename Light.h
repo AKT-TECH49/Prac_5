@@ -21,9 +21,15 @@ private:
     void setState(LightState * light);
 
     //will invoke the states
-    void performAction();
+   // void performAction();
+     void performAction() override;
     //
     std::string getDeviceType() override;
+
+
+      //observer
+      void update() override;
+
 
 };
 

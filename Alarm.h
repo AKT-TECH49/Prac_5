@@ -19,13 +19,16 @@ class Alarm : public SmartDevice
     public:
     Alarm(std::string typeAlarm, int decibels , const std::string& grade);
     ~Alarm();
-    void performAction() ;
+    //void performAction() ;
+    void performAction() override;
     std::string getDeviceType() override;
     //
 std::string getStatus() const ;
     void setStatus(AlarmState* status) ;
     
 
+    //
+    void update() override;
 
 };
 #endif

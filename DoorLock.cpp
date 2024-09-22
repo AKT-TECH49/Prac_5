@@ -9,6 +9,11 @@ DoorLock::DoorLock(std::string lockType, int grade, const std::string &secLevel)
     state = new UnlockedState();
 }
 
+DoorLock::~DoorLock()
+{
+    delete state;
+}
+
 std::string DoorLock::getStat() const
 {
      std::string state_name = state->toString();
@@ -17,7 +22,6 @@ std::string DoorLock::getStat() const
 
 void DoorLock::setStat(DoorLockState *state)
 {
-    delete state;
     this->state = state;
 }
 
@@ -40,4 +44,17 @@ void DoorLock::performAction()
 std::string DoorLock::getDeviceType()
 {
     return name;
+}
+
+void DoorLock::update()
+{
+    if(state->toString() == "Unlocked")
+    {
+        state->pressButton(this);
+        std::cout<<"DoorLock is now LOCKED"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"DOORLOCK IS ALREADY LOCKED \t - ~_~ 'HEWW'  "<< std::endl;
+    }
 }

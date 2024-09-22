@@ -18,18 +18,24 @@ private:
     ThermostatState* state;
 
     public:
-    Thermostat(const std::string& thermoType ,  int readTemp ) ;
+    Thermostat(const std::string& thermoType ) ;
     ~Thermostat();
+
+    Thermostat();
     //
     std::string getStatus() const;
     void setState(ThermostatState* state) ;
-    //
-    void performAction();
+    // 
+    // void performAction();
+     void performAction() override;
     //
     std::string getDeviceType() override;
     //
     void setTemperature(int targetTemperature);
     int getTemperature() const;
+
+    //
+    void update() override;
 
 };
 #endif 

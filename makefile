@@ -1,42 +1,50 @@
 # Define the compiler and the flags
 CXX = g++
-CXXFLAGS = -std=c++11 -g -Wall -Wextra -pedantic
+CXXFLAGS = -fprofile-arcs -ftest-coverage -std=c++11 -g -Wall -Wextra -pedantic 
 
-# Define the targets for the different mains
-TARGET_DEMO = demo
-TARGET_TEST = test
+# Define the target executables
+TEST_TARGET = TestingMain
+DEMO_TARGET = DemoMain
 
-# Find all .cpp files except the main files
-SRCS = $(filter-out DemoMain.cpp TestingMain.cpp, $(wildcard *.cpp))
+# Find all .cpp files except the mains and convert them to .o files
+SRCS = $(filter-out TestingMain.cpp DemoMain.cpp, $(wildcard *.cpp))
+OBJS = $(SRCS:.cpp=.o)
 
-# Object files for each target
-DEMO_OBJS = $(SRCS:.cpp=.o) DemoMain.o
-TEST_OBJS = $(SRCS:.cpp=.o) TestingMain.o
+# Targets to choose
+all: $(TEST_TARGET)
 
-# Default target (for 'make run')
-run: $(TARGET_TEST)
-	./$(TARGET_TEST)
+# Compile TestingMain target
+$(TEST_TARGET): $(OBJS) TestingMain.o
+	$(CXX) $(CXXFLAGS) -o $(TEST_TARGET) $(OBJS) TestingMain.o
 
-# Target for TestingMain (default run)
-$(TARGET_TEST): $(TEST_OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET_TEST) $(TEST_OBJS)
+# Compile DemoMain target
+$(DEMO_TARGET): $(OBJS) DemoMain.o
+	$(CXX) $(CXXFLAGS) -o $(DEMO_TARGET) $(OBJS) DemoMain.o
 
-# Target for DemoMain (for 'make run_demo')
-$(TARGET_DEMO): $(DEMO_OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET_DEMO) $(DEMO_OBJS)
-
-# Run the demo target
-run_demo: $(TARGET_DEMO)
-	./$(TARGET_DEMO)
-
-# Compile the source files into object files
+# Compile source files into object files
 %.o: %.cpp
 	@echo "Compiling $<..."
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Run TestingMain with valgrind
+run: $(TEST_TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(TEST_TARGET) 2> valgrind_log.txt
+
+# Run DemoMain with valgrind
+run-demo: $(DEMO_TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(DEMO_TARGET) 2> valgrind_log.txt
+
+# Run TestingMain with gdb
+debug: $(TEST_TARGET)
+	gdb -ex run --args ./$(TEST_TARGET) 2>&1 | tee gdb_log.txt
+
+# Run DemoMain with gdb
+debug-demo: $(DEMO_TARGET)
+	gdb -ex run --args ./$(DEMO_TARGET) 2>&1 | tee gdb_log.txt
+
 # Clean up the build files
 clean:
-	rm -f *.o $(TARGET_DEMO) $(TARGET_TEST)
+	rm -f $(OBJS) $(TEST_TARGET) $(DEMO_TARGET) TestingMain.o DemoMain.o valgrind_log.txt gdb_log.txt *.gcno *.gcda *.gcov
 
 # Phony targets
-.PHONY: all run run_demo clean
+.PHONY: all run run-demo debug debug-demo clean
