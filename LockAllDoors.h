@@ -5,15 +5,32 @@
 #include "LockedState.h"
 #include "DoorLock.h"
 
-// Concrete Command to lock all the doors in a room
-class LockAllDoors : public SmartDeviceCommand
-{
+/**
+ * @file LockAllDoors.h
+ * @brief Concrete command to lock all doors in a smart home automation system.
+ * 
+ * This class implements the Command interface and provides the execute method to lock all doors.
+ */
+class LockAllDoors : public SmartDeviceCommand {
 private:
-    DoorLock *doorLock;
+    DoorLock* doorLock; 
 
 public:
-    LockAllDoors(DoorLock *doorLock);
-    virtual~LockAllDoors();
+    /**
+     * @brief Constructs a LockAllDoors command with a specific DoorLock.
+     * 
+     * @param doorLock Pointer to the DoorLock object to be locked.
+     */
+    LockAllDoors(DoorLock* doorLock);
+
+    /**
+     * @brief Destructor for the LockAllDoors command.
+     */
+    virtual ~LockAllDoors();
+
+    /**
+     * @brief Executes the command to lock all doors.
+     */
     void execute() override;
 };
 

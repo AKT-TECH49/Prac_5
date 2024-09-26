@@ -5,15 +5,32 @@
 #include "OffState.h"
 #include "Light.h"
 
-// Concrete Command to turn off all the lights in a room
-class TurnOffAllLights : public SmartDeviceCommand
-{
+/**
+ * @file TurnOffAllLights.h
+ * @brief Concrete command to turn off all the lights in a room.
+ * 
+ * This class implements the Command interface and provides the execute method to turn off all lights.
+ */
+class TurnOffAllLights : public SmartDeviceCommand {
 private:
-    Light *light; // use the light object
+    Light* light; /**< Pointer to the Light object being controlled. */
 
 public:
-    TurnOffAllLights(Light *light);
-    virtual~TurnOffAllLights();
+    /**
+     * @brief Constructs a TurnOffAllLights command with a specific Light.
+     * 
+     * @param light Pointer to the Light object to be turned off.
+     */
+    TurnOffAllLights(Light* light);
+
+    /**
+     * @brief Destructor for the TurnOffAllLights command.
+     */
+    virtual ~TurnOffAllLights();
+
+    /**
+     * @brief Executes the command to turn off all lights.
+     */
     void execute() override;
 };
 
