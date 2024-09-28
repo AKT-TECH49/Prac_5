@@ -25,8 +25,6 @@ private:
     //
     std::string getStatus() const;
     void setState(ThermostatState* state) ;
-    // 
-    // void performAction();
      void performAction() override;
     //
     std::string getDeviceType() override;

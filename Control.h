@@ -16,6 +16,8 @@ class Control
     ~Control();
     void addSensor(Sensor* sensor);
     void addDevice(SmartDevice* device);
+    void removeSensor(Sensor* sensor);
+    void removeDevice(SmartDevice* device);
     void notifySpecificDevice(SmartDevice* device);
 
 };

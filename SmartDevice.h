@@ -12,22 +12,17 @@
 class SmartDevice
 {
     private: 
-    std::string name;
+    // std::string name;
     int id;
 
 
     public:
     virtual ~SmartDevice() = default;
-    SmartDevice(const std::string& name , int typeId); 
-    //       
+    SmartDevice( int typeId);       
     virtual std::string getDeviceType() = 0; 
     virtual void performAction()=0;
-    //
-    std::string getName() const ;
-    int getId() const ;
-
-    //
     virtual void update() = 0;
+    int getId();
  
 };
 

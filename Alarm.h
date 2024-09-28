@@ -7,28 +7,23 @@
 #include "AlarmState.h"
 #include "Deactivated.h"
 
-
 class Alarm : public SmartDevice
 {
-    private:
+private:
     std::string alarmType;
     int loudness;
     std::string security;
-    AlarmState*  state;
+    AlarmState *state;
 
-    public:
-    Alarm(std::string typeAlarm, int decibels , const std::string& grade);
+public:
+    Alarm(std::string typeAlarm, int decibels, const std::string &grade);
     ~Alarm();
-    //void performAction() ;
     void performAction() override;
     std::string getDeviceType() override;
     //
-std::string getStatus() const ;
-    void setStatus(AlarmState* status) ;
-    
-
+    std::string getStatus() const;
+    void setStatus(AlarmState *status);
     //
     void update() override;
-
 };
 #endif

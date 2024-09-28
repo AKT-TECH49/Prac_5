@@ -17,13 +17,10 @@ public:
     //
     std::string getDeviceType() override; 
     void performAction() override;
-
     std::string  displayRooms();
     std::string getRoomName() const;
-
-
     //
     void update() override;
 };
 
-#endif // ROOM_H
+#endif 

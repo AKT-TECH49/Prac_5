@@ -19,18 +19,11 @@ private:
     //Actions
     std::string getStatus() const ;
     void setState(LightState * light);
-
-    //will invoke the states
-   // void performAction();
      void performAction() override;
     //
     std::string getDeviceType() override;
-
-
-      //observer
-      void update() override;
-
-
+    //observer
+    void update() override;
 };
 
 #endif 

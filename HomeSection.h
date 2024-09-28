@@ -21,11 +21,8 @@ class HomeSection : public SmartDevice
     //
     std::string getDeviceType() override;
     void performAction() override;
-    
-
     //
     void update() override;
-
 
 };
 #endif

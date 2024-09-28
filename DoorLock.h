@@ -24,8 +24,6 @@ class DoorLock : public SmartDevice
     //
     std::string getStat() const ;
     void setStat(DoorLockState* state) ;
-    //
-    // void performAction();
      void performAction() override;
     //
     std::string getDeviceType() override;
@@ -33,6 +31,4 @@ class DoorLock : public SmartDevice
     void update() override;
 
 };
-
-
 #endif 
