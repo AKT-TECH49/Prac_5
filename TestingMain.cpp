@@ -41,9 +41,9 @@ void TestComponent4();
 
 int main()
 {
-    //TestComponent1();
-    //TestComponent2();
-     TestComponent4();
+    TestComponent1();
+    // TestComponent2();
+    //  TestComponent4();
 
     return 0;
 }
@@ -60,16 +60,16 @@ void TestComponent1()
     DoorLock *doorL1 = new DoorLock("DoorLock", 2, "Grade2");
     Thermostat *thermo1 = new Thermostat("ThermoStat");
     Alarm *alarm1 = new Alarm("Alarm1", 90, "grade1");
-    std::cout << "DeviceName is : " << light1->getDeviceType() << std::endl;
-    std::cout << "DeviceName is : " << doorL1->getDeviceType() << std::endl;
-    std::cout << "DeviceName is : " << thermo1->getDeviceType() << std::endl;
-    std::cout << "DeviceName is : " << alarm1->getDeviceType() << std::endl;
+    std::cout << "DeviceName is : " << light1->getDeviceType()<<" with ID: "<<light1->getId()<< std::endl;
+    std::cout << "DeviceName is : " << doorL1->getDeviceType()<<" with ID: "<<doorL1->getId() << std::endl;
+    std::cout << "DeviceName is : " << thermo1->getDeviceType()<<" with ID: "<<thermo1->getId() << std::endl;
+    std::cout << "DeviceName is : " << alarm1->getDeviceType()<<" with ID: "<<alarm1->getId() << std::endl;
 
     livingRoom->addDevice(light1);
     livingRoom->addDevice(doorL1);
     livingRoom->addDevice(thermo1);
     livingRoom->addDevice(alarm1);
-    std::cout << "Devices in the LivingRoom: " << std::endl;
+    std::cout << "Devices in the "<<livingRoom->getRoomName() <<" with ID: "<<livingRoom->getId()<< std::endl;
     std::cout << livingRoom->getDeviceType() << std::endl;
 
     std::cout << "LETS PLAY!!!!" << std::endl;
@@ -92,6 +92,7 @@ void TestComponent1()
     std::cout << alarm1->getStatus() << std::endl;
     // connection
     sec1->addRoom(livingRoom);
+    std::cout << "Devices in the "<<sec1->getSectionName() <<" with ID: "<<sec1->getId()<<std::endl;
     sec1->displayHomeSection();
     std::cout << sec1->getDeviceType() << std::endl;
 
