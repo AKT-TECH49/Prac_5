@@ -5,14 +5,11 @@
 #include <string>
 
 #include "LightState.h"
-#include "OffState.h"
 #include "Light.h"
-
 
 class OnState : public LightState
 {   
     public:
-    // ~OnState();
     void toggle(Light* light) override ;
     std::string toString() const override;
 

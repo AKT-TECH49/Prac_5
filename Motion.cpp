@@ -5,15 +5,14 @@ MotionSensor::MotionSensor(const std::string &name)
     this->name = name;
 }
 
-MotionSensor::~MotionSensor()
-{
-    // for(SmartDevice* device: devices)
-    // {
-    //     delete device;
-    //     device = NULL;
-    // }
-    devices.clear();
-}
+// MotionSensor::~MotionSensor()
+// {
+//     for(auto device: devices)
+//     {
+//         delete device;
+//         device = NULL;
+//     }
+// }
 
 void MotionSensor::addDevice(SmartDevice *device)
 {

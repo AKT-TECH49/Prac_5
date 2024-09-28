@@ -12,7 +12,7 @@ private:
 
 public:
     MotionSensor(const std::string& name);
-    ~MotionSensor();
+    // ~MotionSensor();
     void addDevice(SmartDevice* device) override;
     void removeDevice(SmartDevice* device) override;
     void notifyDevices() override;

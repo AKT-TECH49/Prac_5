@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-HomeSection::HomeSection(const std::string &name):SmartDevice( 00)
+HomeSection::HomeSection(const std::string &name):SmartDevice(name , 00)
 {
     this->secName = name;
 }
@@ -14,9 +14,7 @@ HomeSection::~HomeSection()
     for(Room* room : rooms)
     {
         delete room;
-        room = NULL;
     }
-    rooms.clear();
 }
 
 void HomeSection::addRoom(Room *room)

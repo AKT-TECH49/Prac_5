@@ -10,7 +10,6 @@ class notActive : public AlarmState
 {
     public:
     //implement suggested methods in AlarmState
-    ~notActive() = default;
     void activateAlarm(Alarm* alarm) override;
     void deactivateAlarm(Alarm* alarm) override;
     std::string toString() const override;

@@ -2,22 +2,17 @@
 #include "OffState.h"
 
 
-Light::Light(const std::string &lightType, int initBrightness, int wattz):SmartDevice( 11)
+Light::Light(const std::string &lightType, int initBrightness, int wattz):SmartDevice(lightType , 11)
 {
     this->brightness = initBrightness;
     this->power = wattz;
     this->name = lightType;
     state = new OffState();
-}
+} 
 
 Light::~Light()
 {
-    if(state)
-    {
     delete this->state;
-    state = NULL;
-    }
-
 }
 
 std::string Light::getStatus() const
@@ -28,11 +23,7 @@ std::string Light::getStatus() const
 
 void Light::setState(LightState *light)
 {
-   if(this->state)
-   {
     delete this->state;
-    state = NULL;
-   }
     this->state = light;
 }
 

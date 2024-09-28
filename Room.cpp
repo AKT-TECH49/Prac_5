@@ -2,7 +2,7 @@
 #include <iostream>
 #include <algorithm>
 
-Room::Room(const std::string &name) : SmartDevice(88)
+Room::Room(const std::string &name) : SmartDevice(name, 00)
 {
     this->roomName = name;
 }
@@ -12,9 +12,7 @@ Room::~Room()
     for (SmartDevice *device : devices)
     {
         delete device;
-        device = NULL;
     }
-    devices.clear();
 }
 
 void Room::addDevice(SmartDevice *device)
@@ -81,7 +79,7 @@ void Room::performAction()
 std::string Room::displayRooms()
 {
     std::string rooms;
-    std::cout << "The devices in the " << roomName << " are : " << std::endl;
+    std::cout << "The devices in the " << roomName << "are : " << std::endl;
     for (SmartDevice *device : devices)
     {
         rooms += device->getDeviceType() + " | ";

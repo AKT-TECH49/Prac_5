@@ -5,15 +5,7 @@ Temperature::Temperature(const std::string &name)
     this->name = name;
 }
 
-Temperature::~Temperature()
-{
-    // for(SmartDevice* device : devices)
-    // {
-    //     delete device;
-    //     device = NULL;
-    // }
-    devices.clear();
-}
+
 
 void Temperature::addDevice(SmartDevice *device)
 {

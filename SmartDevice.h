@@ -15,8 +15,8 @@
  */
 class SmartDevice
 {
-    private: 
-    // std::string name;
+private:
+    std::string name;
     int id;
 
 public:
@@ -70,12 +70,7 @@ public:
      * 
      * This method must be implemented by derived classes to define how the device reacts to state changes.
      */
-    SmartDevice( int typeId);       
-    virtual std::string getDeviceType() = 0; 
-    virtual void performAction()=0;
     virtual void update() = 0;
-    int getId();
- 
 };
 
 #endif // SMARTDEVICE_H

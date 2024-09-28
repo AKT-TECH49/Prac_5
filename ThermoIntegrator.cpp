@@ -3,10 +3,9 @@
 #include "MonitorState.h"
 
 
- SmartThermostatIntegrator:: SmartThermostatIntegrator(LegendThermo *thermo, const std::string &name):SmartDevice(100)
+ SmartThermostatIntegrator:: SmartThermostatIntegrator(LegendThermo *thermo, const std::string &name):SmartDevice(name , 99)
 {
     this->thermo = thermo;
-    this->name = name;
 
 }
 

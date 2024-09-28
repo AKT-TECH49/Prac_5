@@ -4,8 +4,7 @@
 
 void notActive::activateAlarm(Alarm *alarm)
 {
-    Active* newS = new Active();
-    alarm->setStatus(newS);
+    alarm->setStatus(new Active());
     std::cout << "Alarm is now Activated."<<alarm->getStatus()<<"SAFETY PRIORITISED -_- \n";
 }
 

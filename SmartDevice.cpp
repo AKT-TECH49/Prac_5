@@ -1,11 +1,12 @@
 #include "SmartDevice.h"
 
-SmartDevice::SmartDevice( int typeID)
+SmartDevice::SmartDevice(const std::string &name , int typeID)
 {
+    this->name = name;
     this->id = typeID;
 }
 
-int SmartDevice::getId()
+std::string SmartDevice::getName() const
 {
-    return id;
+    return std::string();
 }

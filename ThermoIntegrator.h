@@ -8,7 +8,6 @@ class  SmartThermostatIntegrator : public SmartDevice
 {
     private:
     LegendThermo* thermo;
-    std::string name;
 
     public:
     SmartThermostatIntegrator(LegendThermo* thermo , const std::string& name);
