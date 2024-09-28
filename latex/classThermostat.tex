@@ -1,0 +1,176 @@
+\hypertarget{classThermostat}{}\doxysection{Thermostat Class Reference}
+\label{classThermostat}\index{Thermostat@{Thermostat}}
+
+
+Inheritance diagram for Thermostat\+:
+% FIG 0
+
+
+Collaboration diagram for Thermostat\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classThermostat_a1c3673fe96a81a42accde0a491223e8a}{Thermostat}} (const std\+::string \&thermo\+Type)
+\begin{DoxyCompactList}\small\item\em Constructs \mbox{\hyperlink{classThermostat}{Thermostat}} object with a specified type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classThermostat_a287977ba29071ae8c927d68e556c3098}{$\sim$\+Thermostat}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classThermostat}{Thermostat}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classThermostat_a67cfc54f1cff43f4cd92c58e3be01919}\label{classThermostat_a67cfc54f1cff43f4cd92c58e3be01919}} 
+\mbox{\hyperlink{classThermostat_a67cfc54f1cff43f4cd92c58e3be01919}{Thermostat}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classThermostat}{Thermostat}} class. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classThermostat_a2ed9c0ffd871dc40d9a79d307e64746f}{get\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current status of the thermostat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThermostat_aa4c1b98ec361f736acbc55129b04d332}{set\+State}} (\mbox{\hyperlink{classThermostatState}{Thermostat\+State}} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Sets the state of the thermostat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThermostat_ab75c1c4b173fc02c019aa022015ad02f}{perform\+Action}} () override
+\begin{DoxyCompactList}\small\item\em Performs an action based on the current thermostat state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classThermostat_aa1b4ffd531015c3824ac690895454698}{get\+Device\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Returns type of smart device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThermostat_a484b0a6fcb71e2c986eae989ec3d2978}{set\+Temperature}} (int target\+Temperature)
+\begin{DoxyCompactList}\small\item\em Sets the target temp of the thermostat. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classThermostat_ad9cc8c4f8377a7c299041e1c82937f26}{get\+Temperature}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current temp of the thermostat. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThermostat_a2b8d24e0d2c26c71429ba8ff543efd25}{update}} () override
+\begin{DoxyCompactList}\small\item\em Observer update method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classThermostat_a1c3673fe96a81a42accde0a491223e8a}\label{classThermostat_a1c3673fe96a81a42accde0a491223e8a}} 
+\index{Thermostat@{Thermostat}!Thermostat@{Thermostat}}
+\index{Thermostat@{Thermostat}!Thermostat@{Thermostat}}
+\doxysubsubsection{\texorpdfstring{Thermostat()}{Thermostat()}}
+{\footnotesize\ttfamily Thermostat\+::\+Thermostat (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{thermo\+Type }\end{DoxyParamCaption})}
+
+
+
+Constructs \mbox{\hyperlink{classThermostat}{Thermostat}} object with a specified type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thermo\+Type} & The type of the thermostat. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classThermostat_a287977ba29071ae8c927d68e556c3098}\label{classThermostat_a287977ba29071ae8c927d68e556c3098}} 
+\index{Thermostat@{Thermostat}!````~Thermostat@{$\sim$Thermostat}}
+\index{````~Thermostat@{$\sim$Thermostat}!Thermostat@{Thermostat}}
+\doxysubsubsection{\texorpdfstring{$\sim$Thermostat()}{~Thermostat()}}
+{\footnotesize\ttfamily Thermostat\+::$\sim$\+Thermostat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classThermostat}{Thermostat}} class. 
+
+Responsible for cleaning up the \mbox{\hyperlink{classThermostatState}{Thermostat\+State}} pointer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classThermostat_aa1b4ffd531015c3824ac690895454698}\label{classThermostat_aa1b4ffd531015c3824ac690895454698}} 
+\index{Thermostat@{Thermostat}!getDeviceType@{getDeviceType}}
+\index{getDeviceType@{getDeviceType}!Thermostat@{Thermostat}}
+\doxysubsubsection{\texorpdfstring{getDeviceType()}{getDeviceType()}}
+{\footnotesize\ttfamily std\+::string Thermostat\+::get\+Device\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns type of smart device. 
+
+\begin{DoxyReturn}{Returns}
+A string representing device type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classSmartDevice_ad052e7da2b5f47462de1f07fb7c709f5}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classThermostat_a2ed9c0ffd871dc40d9a79d307e64746f}\label{classThermostat_a2ed9c0ffd871dc40d9a79d307e64746f}} 
+\index{Thermostat@{Thermostat}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Thermostat@{Thermostat}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily std\+::string Thermostat\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current status of the thermostat. 
+
+Returns a string representation of the thermostat\textquotesingle{}s current state and temperature.
+
+\begin{DoxyReturn}{Returns}
+A string describing the current status of the thermostat. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThermostat_ad9cc8c4f8377a7c299041e1c82937f26}\label{classThermostat_ad9cc8c4f8377a7c299041e1c82937f26}} 
+\index{Thermostat@{Thermostat}!getTemperature@{getTemperature}}
+\index{getTemperature@{getTemperature}!Thermostat@{Thermostat}}
+\doxysubsubsection{\texorpdfstring{getTemperature()}{getTemperature()}}
+{\footnotesize\ttfamily int Thermostat\+::get\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current temp of the thermostat. 
+
+\begin{DoxyReturn}{Returns}
+The current temp setting. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThermostat_ab75c1c4b173fc02c019aa022015ad02f}\label{classThermostat_ab75c1c4b173fc02c019aa022015ad02f}} 
+\index{Thermostat@{Thermostat}!performAction@{performAction}}
+\index{performAction@{performAction}!Thermostat@{Thermostat}}
+\doxysubsubsection{\texorpdfstring{performAction()}{performAction()}}
+{\footnotesize\ttfamily void Thermostat\+::perform\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Performs an action based on the current thermostat state. 
+
+Executes the current state\textquotesingle{}s action on the thermostat (e.\+g., heating or cooling). 
+
+Implements \mbox{\hyperlink{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classThermostat_aa4c1b98ec361f736acbc55129b04d332}\label{classThermostat_aa4c1b98ec361f736acbc55129b04d332}} 
+\index{Thermostat@{Thermostat}!setState@{setState}}
+\index{setState@{setState}!Thermostat@{Thermostat}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Thermostat\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classThermostatState}{Thermostat\+State}} $\ast$}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the thermostat. 
+
+This method allows changing the thermostat\textquotesingle{}s state by providing a new \mbox{\hyperlink{classThermostatState}{Thermostat\+State}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Pointer to a new \mbox{\hyperlink{classThermostatState}{Thermostat\+State}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classThermostat_a484b0a6fcb71e2c986eae989ec3d2978}\label{classThermostat_a484b0a6fcb71e2c986eae989ec3d2978}} 
+\index{Thermostat@{Thermostat}!setTemperature@{setTemperature}}
+\index{setTemperature@{setTemperature}!Thermostat@{Thermostat}}
+\doxysubsubsection{\texorpdfstring{setTemperature()}{setTemperature()}}
+{\footnotesize\ttfamily void Thermostat\+::set\+Temperature (\begin{DoxyParamCaption}\item[{int}]{target\+Temperature }\end{DoxyParamCaption})}
+
+
+
+Sets the target temp of the thermostat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Temperature} & The desired temp to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classThermostat_a2b8d24e0d2c26c71429ba8ff543efd25}\label{classThermostat_a2b8d24e0d2c26c71429ba8ff543efd25}} 
+\index{Thermostat@{Thermostat}!update@{update}}
+\index{update@{update}!Thermostat@{Thermostat}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Thermostat\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Observer update method. 
+
+This method allows thermostat to update its state when notified of changes. 
+
+Implements \mbox{\hyperlink{classSmartDevice_aa2d220574d20539603a0206a44d00a18}{Smart\+Device}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Thermostat_8h}{Thermostat.\+h}}\item 
+Thermostat.\+cpp\end{DoxyCompactItemize}

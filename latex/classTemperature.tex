@@ -1,0 +1,86 @@
+\hypertarget{classTemperature}{}\doxysection{Temperature Class Reference}
+\label{classTemperature}\index{Temperature@{Temperature}}
+
+
+Inheritance diagram for Temperature\+:
+% FIG 0
+
+
+Collaboration diagram for Temperature\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTemperature_a0a3791438d8655754a46acc1844fb2ed}\label{classTemperature_a0a3791438d8655754a46acc1844fb2ed}} 
+{\bfseries Temperature} (const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{classTemperature_a2fa7ee27e5dcefc816ec328736398cd2}{add\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device) override
+\begin{DoxyCompactList}\small\item\em Adds a smart device as an observer to the sensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTemperature_aa7efb25ae1213d0718a5bc69fede804c}{remove\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device) override
+\begin{DoxyCompactList}\small\item\em Removes a smart device from the sensor\textquotesingle{}s observer list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTemperature_aa03da087a6d2edfb91dd3319d8fb2006}{notify\+Devices}} () override
+\begin{DoxyCompactList}\small\item\em Notifies all registered smart devices (observers) of a change detected by the sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTemperature_a894bdb572e015170b000d40ab911f8ef}\label{classTemperature_a894bdb572e015170b000d40ab911f8ef}} 
+void {\bfseries detect\+Temp} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTemperature_a2fa7ee27e5dcefc816ec328736398cd2}\label{classTemperature_a2fa7ee27e5dcefc816ec328736398cd2}} 
+\index{Temperature@{Temperature}!addDevice@{addDevice}}
+\index{addDevice@{addDevice}!Temperature@{Temperature}}
+\doxysubsubsection{\texorpdfstring{addDevice()}{addDevice()}}
+{\footnotesize\ttfamily void Temperature\+::add\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds a smart device as an observer to the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} that will observe the sensor\textquotesingle{}s changes. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classSensor_a152ea8a75829d818b8c63a4012f21b5e}{Sensor}}.
+
+\mbox{\Hypertarget{classTemperature_aa03da087a6d2edfb91dd3319d8fb2006}\label{classTemperature_aa03da087a6d2edfb91dd3319d8fb2006}} 
+\index{Temperature@{Temperature}!notifyDevices@{notifyDevices}}
+\index{notifyDevices@{notifyDevices}!Temperature@{Temperature}}
+\doxysubsubsection{\texorpdfstring{notifyDevices()}{notifyDevices()}}
+{\footnotesize\ttfamily void Temperature\+::notify\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Notifies all registered smart devices (observers) of a change detected by the sensor. 
+
+This method triggers a notification to all smart devices that have been added as observers. 
+
+Implements \mbox{\hyperlink{classSensor_a129501bd5f35310e8a155d8758b16f80}{Sensor}}.
+
+\mbox{\Hypertarget{classTemperature_aa7efb25ae1213d0718a5bc69fede804c}\label{classTemperature_aa7efb25ae1213d0718a5bc69fede804c}} 
+\index{Temperature@{Temperature}!removeDevice@{removeDevice}}
+\index{removeDevice@{removeDevice}!Temperature@{Temperature}}
+\doxysubsubsection{\texorpdfstring{removeDevice()}{removeDevice()}}
+{\footnotesize\ttfamily void Temperature\+::remove\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes a smart device from the sensor\textquotesingle{}s observer list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} to be removed from the observer list. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classSensor_abfb73cf80436612a4eaa6b88422cae75}{Sensor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Temperature.\+h\item 
+Temperature.\+cpp\end{DoxyCompactItemize}
