@@ -4,7 +4,8 @@
 
 void LockedState::pressButton(DoorLock *locky)
 {
-    locky->setStat(new UnlockedState());
+    UnlockedState* newS = new UnlockedState();
+    locky->setStat(newS);
     std::cout<<"~@ Door is now unlocked. \n";
 
 }

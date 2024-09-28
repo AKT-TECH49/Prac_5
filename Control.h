@@ -25,6 +25,20 @@ public:
      * Cleans up the sensors and devices managed by the control system.
      */
     ~Control();
+    /**
+     * @brief Remove a smart device to the control system.
+     * 
+     * @param device Pointer to the SmartDevice to be added.
+     */
+    void removeSensor(Sensor* sensor);
+    /**
+     * @brief Notifies a specific smart device about an event.
+     * 
+     * This method triggers a notification or action for the provided device.
+     * 
+     * @param device Pointer to the SmartDevice that needs to be notified.
+     */
+    void removeDevice(SmartDevice* device);
 
     /**
      * @brief Adds a sensor to the control system.
@@ -39,14 +53,6 @@ public:
      * @param device Pointer to the SmartDevice to be added.
      */
     void addDevice(SmartDevice* device);
-
-    /**
-     * @brief Notifies a specific smart device about an event.
-     * 
-     * This method triggers a notification or action for the provided device.
-     * 
-     * @param device Pointer to the SmartDevice that needs to be notified.
-     */
     void notifySpecificDevice(SmartDevice* device);
 };
 

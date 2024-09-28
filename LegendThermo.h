@@ -8,6 +8,7 @@
 class LegendThermo {
 private:
     int currentTemp;
+    // Thermostat* thermo;
 public:
     LegendThermo();
     void adjustTemperature(int temp);

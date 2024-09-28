@@ -11,9 +11,4 @@ class UnlockedState : public DoorLockState
     void pressButton(DoorLock* lock) override;
     std::string toString() override;
 };
-
-
-
-
-
 #endif
