@@ -5,64 +5,20 @@
 #include <vector>
 #include <string>
 
-/**
- * @file Room.h
- * @brief Defines the Room class, which represents a collection of smart devices within a room.
- * 
- * The Room class acts as a container for various smart devices and provides methods to manage, control, and interact with those devices.
- */
 class Room : public SmartDevice {
 private:
-    std::vector<SmartDevice*> devices; /**< Vector containing pointers to smart devices within the room. */
-    std::string roomName; 
-
+    std::vector<SmartDevice*> devices;  
+    std::string roomName;
 public:
-    /**
-     * @brief Constructs a Room object with a specified name.
-     * 
-     * @param name The name of the room.
-     */
     Room(const std::string& name);
-
-    /**
-     * @brief Destructor for the Room class.
-     * 
-     * Cleans up the devices contained in the room.
-     */
     ~Room();
-
-    /**
-     * @brief Adds a smart device to the room.
-     * 
-     * @param device Pointer to the SmartDevice to be added to the room.
-     */
     void addDevice(SmartDevice* device);
-
-    /**
-     * @brief Removes a smart device from the room.
-     * 
-     * @param device Pointer to the SmartDevice to be removed from the room.
-     */
     void removeDevice(SmartDevice* device);
-
-    /**
-     * @brief Returns the type of device (Room).
-     * 
-     * @return A string representing the type of device.
-     */
-    std::string getDeviceType() override;
-
-    /**
-     * @brief Performs an action on all devices in the room.
-     * 
-     * Executes a generic action for all smart devices contained in the room.
-     */
+    //
+    std::string getDeviceType() override; 
     void performAction() override;
-
     std::string  displayRooms();
     std::string getRoomName() const;
-
-
     //
     void update() override;
 };
