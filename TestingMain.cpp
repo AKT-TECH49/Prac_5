@@ -46,23 +46,6 @@
 #include <iostream>
 #include <string>
 
-// Add color codes for terminal output
-#define RESET "\033[0m"
-#define RED "\033[31m"
-#define GREEN "\033[32m"
-#define BLUE "\033[34m"
-#define CYAN "\033[36m"
-#define YELLOW "\033[33m"
-#define BOLD "\033[1m"
-
-// Emojis for a friendly UX
-#define LIGHT_EMOJI "\U0001F4A1"
-#define LOCK_EMOJI "\U0001F512"
-#define THERMO_EMOJI "\U0001F321"
-#define ALARM_EMOJI "\U0001F6A8"
-#define SENSOR_EMOJI "\U0001F50C"
-#define EXIT_EMOJI "\U0000274C"
-
 // Test for component 1:
 void TestComponent1();
 // Test for component 2:
@@ -71,199 +54,152 @@ void TestComponent2();
 void TestComponent3();
 // Test for component 4:
 void TestComponent4();
-// Function to display the menu
-void displayMenu();
 
-int main() {
-    int choice = 0;
-
-    while (true) {
-        displayMenu();
-        std::cin >> choice;
-
-        switch (choice) {
-            case 1:
-                std::cout << YELLOW << "\nRunning " << LIGHT_EMOJI << " Test Component 1...\n" << RESET;
-                TestComponent1();
-                break;
-            case 2:
-                std::cout << YELLOW << "\nRunning " << LOCK_EMOJI << " Test Component 2...\n" << RESET;
-                TestComponent2();
-                break;
-            case 3:
-                std::cout << YELLOW << "\nRunning " << SENSOR_EMOJI << " Test Component 3...\n" << RESET;
-                TestComponent3();
-                break;
-            case 4:
-                std::cout << YELLOW << "\nRunning " << THERMO_EMOJI << " Test Component 4...\n" << RESET;
-                TestComponent4();
-                break;
-            case 5:
-                std::cout << RED << "Exiting..." << EXIT_EMOJI << "\n" << RESET;
-                return 0;
-            default:
-                std::cout << RED << "Invalid choice. Please select a valid option.\n" << RESET;
-        }
-    }
+int main()
+{
+    TestComponent1();
+    TestComponent2();
+    TestComponent3();
+    TestComponent4();
+    return 0;
 }
 
-void displayMenu() {
-    std::cout << BLUE << BOLD;
-    std::cout << "\n==================================================\n";
-    std::cout << "=== Smart Home Automation System Demo ===\n";
-    std::cout << "==================================================\n";
-    std::cout << RESET;
-    std::cout << GREEN << "1. " << LIGHT_EMOJI << " Test Component 1: Smart Devices and State Management\n";
-    std::cout << GREEN << "2. " << LOCK_EMOJI << " Test Component 2: Legacy Device Integration\n";
-    std::cout << GREEN << "3. " << SENSOR_EMOJI << " Test Component 3: Automation of Smart Device Control\n";
-    std::cout << GREEN << "4. " << THERMO_EMOJI << " Test Component 4: Sensor Observations and Notifications\n";
-    std::cout << RED << "5. " << EXIT_EMOJI << " Exit\n" << RESET;
-    std::cout << BLUE << "==================================================\n" << RESET;
-    std::cout << "Please select an option (1-5): ";
-}
-
-void TestComponent1() {
+void TestComponent1()
+{
     HomeSection *sec1 = new HomeSection("Ground_Floor");
+    std::cout << "HomeSectionName is : " << sec1->getSectionName() << std::endl;
+
     Room *livingRoom = new Room("LivingRoom");
+    std::cout << "RoomName is : " << livingRoom->getRoomName() << std::endl;
 
     Light *light1 = new Light("LedLight", 75, 10);
     DoorLock *doorL1 = new DoorLock("DoorLock", 2, "Grade2");
     Thermostat *thermo1 = new Thermostat("ThermoStat");
     Alarm *alarm1 = new Alarm("Alarm1", 90, "grade1");
+    std::cout << "DeviceName is : " << light1->getDeviceType() << std::endl;
+    std::cout << "DeviceName is : " << doorL1->getDeviceType() << std::endl;
+    std::cout << "DeviceName is : " << thermo1->getDeviceType() << std::endl;
+    std::cout << "DeviceName is : " << alarm1->getDeviceType() << std::endl;
 
-    std::cout << CYAN << "\n" << LIGHT_EMOJI << " Device: " << light1->getDeviceType() << " - " << light1->getStatus() << "\n";
-    std::cout << LOCK_EMOJI << " Device: " << doorL1->getDeviceType() << " - " << doorL1->getStat() << "\n";
-    std::cout << THERMO_EMOJI << " Device: " << thermo1->getDeviceType() << " - " << thermo1->getStatus() << "\n";
-    std::cout << ALARM_EMOJI << " Device: " << alarm1->getDeviceType() << " - " << alarm1->getStatus() << "\n";
+    livingRoom->addDevice(light1);
+    livingRoom->addDevice(doorL1);
+    livingRoom->addDevice(thermo1);
+    livingRoom->addDevice(alarm1);
 
-    std::cout << "\n" << BOLD << "LETS PLAY!!!!\n" << RESET;
+    std::cout << "Devices in the LivingRoom: " << std::endl;
+    std::cout << livingRoom->getDeviceType() << std::endl;
+
+    std::cout << "LETS PLAY!!!!" << std::endl;
+    // default states
+    std::cout << light1->getStatus() << std::endl;
+    std::cout << doorL1->getStat() << std::endl;
+    std::cout << thermo1->getStatus() << std::endl;
+    std::cout << alarm1->getStatus() << std::endl;
+    // actions
+    std::cout << "\t ======actions===== \n";
     light1->performAction();
     doorL1->performAction();
     thermo1->performAction();
     alarm1->performAction();
-
-    std::cout << CYAN << LIGHT_EMOJI << " Updated Light Status: " << light1->getStatus() << "\n";
-    std::cout << LOCK_EMOJI << " Updated Lock Status: " << doorL1->getStat() << "\n";
-    std::cout << THERMO_EMOJI << " Updated Thermo Status: " << thermo1->getStatus() << "\n";
-    std::cout << ALARM_EMOJI << " Updated Alarm Status: " << alarm1->getStatus() << "\n" << RESET;
+    // updated
+    std::cout << light1->getStatus() << std::endl;
+    std::cout << doorL1->getStat() << std::endl;
+    std::cout << thermo1->getStatus() << std::endl;
+    std::cout << alarm1->getStatus() << std::endl;
+    // connection
+    sec1->addRoom(livingRoom);
+    sec1->displayHomeSection();
+    std::cout << sec1->getDeviceType() << std::endl;
 }
 
 void TestComponent2()
 {
-    std::cout << "\n🛠️  =================== Testing Component 2: Legacy Device Integration =================== 🛠️\n";
-
     // =========== Testing the Lights Command =============
-    std::cout << "💡 Testing the Lights Command...\n";
     Light *livingRoomLight = new Light("Living Room Light", 100, 60); // Brightness = 100, Power = 60W
-    std::cout << "Initial state of the light: \033[32m" << livingRoomLight->getStatus() << "\033[0m\n";  // Green text
+    std::cout << "Initial state of the light: " << livingRoomLight->getStatus() << "\n";
 
     // Create the TurnOffAllLights command
     TurnOffAllLights *turnOffLightsCmd = new TurnOffAllLights(livingRoomLight);
 
-    // Create a macro routine for Goodnight
+    // Create a macro routine
     MacroRoutine goodnightRoutine;
     goodnightRoutine.addCommand(turnOffLightsCmd);
 
-    // Execute the Goodnight Routine
-    std::cout << "\n🌙 Executing Goodnight Routine:\n";
+    // Execute the macro routine
+    std::cout << "\nExecuting Goodnight Routine:\n";
     goodnightRoutine.execute();
 
     // Check the final state of the light
-    std::cout << "\nFinal state of the light: \033[31m" << livingRoomLight->getStatus() << "\033[0m\n";  // Red text
-
-    // Create a GoodMorningRoutine (reverses Goodnight actions)
-    MacroRoutine goodMorningRoutine;
-    //goodMorningRoutine.addCommand(new TurnOnAllLights(livingRoomLight)); // Revert lights to On
-
-    // Execute the GoodMorning Routine
-    std::cout << "\n☀️ Executing Good Morning Routine:\n";
-    goodMorningRoutine.execute();
-    std::cout << "State of the light after Good Morning routine: \033[32m" << livingRoomLight->getStatus() << "\033[0m\n";
+    std::cout << "\nFinal state of the light: " << livingRoomLight->getStatus() << "\n";
 
     // =========== Testing the Door Lock Command =============
-    std::cout << "\n🚪 Testing the Door Lock Command...\n";
     DoorLock *frontDoor = new DoorLock("Front Door", 1, "High");
     DoorLock *backDoor = new DoorLock("Back Door", 1, "Medium");
 
-    // Create commands to lock each door (Goodnight)
+    // Create specific commands to lock each door
     SmartDeviceCommand *lockFrontDoor = new LockAllDoors(frontDoor);
     SmartDeviceCommand *lockBackDoor = new LockAllDoors(backDoor);
 
-    // Add commands to the Goodnight routine
-    goodnightRoutine.addCommand(lockFrontDoor);
-    goodnightRoutine.addCommand(lockBackDoor);
+    // Create a MacroRoutine for the Goodnight routine
+    MacroRoutine goodnightRoutine2;
+
+    // Add the commands to lock all doors
+    goodnightRoutine2.addCommand(lockFrontDoor);
+    goodnightRoutine2.addCommand(lockBackDoor);
 
     // Execute the Goodnight routine
-    std::cout << "\n🌙 Executing Goodnight Routine:\n";
-    goodnightRoutine.execute();
+    std::cout << "Executing Goodnight Routine:\n";
+    goodnightRoutine2.execute();
 
     // Check the final state of the doors
-    std::cout << "Final state of front door: \033[31m" << frontDoor->getStat() << "\033[0m\n";  // Red text
-    std::cout << "Final state of back door: \033[31m" << backDoor->getStat() << "\033[0m\n";  // Red text
+    std::cout << "Final state of front door: " << frontDoor->getStat() << "\n";
+    std::cout << "Final state of back door: " << backDoor->getStat() << "\n";
 
-    // Execute the GoodMorning Routine
-    std::cout << "\n☀️ Executing Good Morning Routine:\n";
-    goodMorningRoutine.execute();
-    std::cout << "State of front door after Good Morning routine: \033[32m" << frontDoor->getStat() << "\033[0m\n";
-    std::cout << "State of back door after Good Morning routine: \033[32m" << backDoor->getStat() << "\033[0m\n";
+    // Re-executing the routine
+    std::cout << "\n-- Test 2: Re-executing Goodnight Routine --\n";
+    goodnightRoutine2.execute();
 
-    // =========== Testing the Defuse/Activate Alarm Command =============
-    std::cout << "\n🚨 Testing the Alarm Command...\n";
+    // =========== Testing the Defuse Alarm Command =============
     Alarm *livingRoomAlarm = new Alarm("Living Room Alarm", 80, "High");
     DefuseAlarm *defuseLivingRoomAlarm = new DefuseAlarm(livingRoomAlarm);
 
-    // Create a macro routine for Goodnight
+    // Create a macro routine and add commands
     MacroRoutine goodnightRoutine3;
     goodnightRoutine3.addCommand(defuseLivingRoomAlarm);
 
     // Execute the Goodnight Routine
-    std::cout << "🌙 Executing Goodnight Routine:\n";
+    std::cout << "Executing Goodnight Routine:\n";
     goodnightRoutine3.execute();
 
-    // Execute the Good Morning Routine
-    std::cout << "\n☀️ Executing Good Morning Routine:\n";
-    goodMorningRoutine.execute();
-    std::cout << "State of alarm after Good Morning routine: \033[32m" << livingRoomAlarm->getStatus() << "\033[0m\n";
-
     // =========== Testing the Switch Thermostat Command =============
-    std::cout << "\n🌡️  Testing the Thermostat Command...\n";
     Thermostat *livingRoomThermo = new Thermostat("Living Room Thermostat"); // Initial temp of 20°C
 
     SmartDeviceCommand *switchToHot = new SwitchThermo(livingRoomThermo, 28);  // Setting to 28°C
     SmartDeviceCommand *switchToCold = new SwitchThermo(livingRoomThermo, 15); // Setting to 15°C
 
-    // Add thermostat settings to Goodnight and GoodMorning routines
-    goodnightRoutine.addCommand(switchToCold);    // Set to Cold in Goodnight Routine
-    goodMorningRoutine.addCommand(switchToHot);   // Set to Hot in GoodMorning Routine
+    MacroRoutine goodMorningRoutine4;
+    goodMorningRoutine4.addCommand(switchToHot); // Switch thermostat to hot
+    goodMorningRoutine4.execute();               // Executes all added commands
 
-    // Execute the routines
-    std::cout << "\n🌙 Executing Goodnight Routine for Thermostat:\n";
-    goodnightRoutine.execute();
-    std::cout << "Thermostat temperature after Goodnight routine: \033[34m" << livingRoomThermo->getStatus() << "\033[0m\n";  // Blue text
-
-    std::cout << "\n☀️ Executing Good Morning Routine for Thermostat:\n";
-    goodMorningRoutine.execute();
-    std::cout << "Thermostat temperature after Good Morning routine: \033[31m" << livingRoomThermo->getStatus() << "\033[0m\n";  // Red text
+    switchToCold->execute(); // Direct test without MacroRoutine
 }
 
 void TestComponent3()
 {
-    std::cout << "\n📟  =================== Testing Component 3: Automation of Smart Device Control =================== 📟\n";
-    std::cout << "\n🛠️ Working with the Legacy Thermostat...\n";
-
+    std::cout << "~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~COMPONENT 2~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_ \n";
+    std::cout << "\t ======Legacy Thermostat===== \n";
     LegendThermo oldThermo;
     SmartThermostatIntegrator ThermoI(&oldThermo, "ThermoStat");
-    std::cout << "\nCurrent Temp: \033[34m" << ThermoI.getTemP() << "\033[0m\n";  // Blue text
-
+    std::cout << "Current Temp: " << ThermoI.getTemP() << std::endl;
     ThermoI.setTemp(25);
     ThermoI.performAction();
-    std::cout << ThermoI.getDeviceType() << "\n";
+    std::cout << ThermoI.getDeviceType() << std::endl;
     ThermoI.performAction();
 }
 
 void TestComponent4()
 {
-    std::cout << "\n🛠️  =================== Testing Component 4: Sensor Observations and Notifications =================== 🛠️\n";
+    std::cout << "*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/COMPONENT 4 /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/  \n";
 
     MotionSensor *sensor1 = new MotionSensor("MotionSensor");
     Temperature *sensor2 = new Temperature("TempSensor");
@@ -275,20 +211,20 @@ void TestComponent4()
 
     Control control;
 
-    std::cout << "\n🔍 \t ++++++++++++Details Before: ++++++++++++\n";
+    std::cout << "\n \t ++++++++++++Details Before: ++++++++++++\n";
     std::cout << "Light status: " << light1->getStatus() << std::endl;
     std::cout << "Doorlock status: " << lck1->getStat() << std::endl;
     std::cout << "Alarm status: " << alarm1->getStatus() << std::endl;
     std::cout << "Thermostat status: " << stat1->getStatus() << std::endl;
 
-    std::cout << "\n🌡️ \t ======WORKING WITH THE SENSORS:====== \n";
+    std::cout << "\n \t ======WORKING WITH THE SENSORS:====== \n";
     sensor1->addDevice(light1);
     sensor1->addDevice(lck1);
     sensor1->addDevice(alarm1);
     sensor2->addDevice(stat1);
 
     sensor1->detectMotion();
-    std::cout << "\n🔍 \t ++++++++++++Details After: ++++++++++++\n";
+    std::cout << "\n \t ++++++++++++Details After: ++++++++++++\n";
     std::cout << "Light status: " << light1->getStatus() << std::endl;
     std::cout << "Doorlock status: " << lck1->getStat() << std::endl;
     std::cout << "Alarm status: " << alarm1->getStatus() << std::endl;
@@ -313,3 +249,4 @@ void TestComponent4()
     control.notifySpecificDevice(stat1);
     control.notifySpecificDevice(alarm1);
 }
+

@@ -1,3 +1,7 @@
+// added features to be fancy
+#include <thread>
+#include <chrono>
+
 // base needed for all the patterns
 #include "SmartDevice.h"
 #include "Room.h"
@@ -73,41 +77,57 @@ void TestComponent3();
 void TestComponent4();
 // Function to display the menu
 void displayMenu();
+// This is for the loading bar
+void displayLoadingBar();
+// drawing the actual loading bar 
+void drawLoadingBar(int);
 
-int main() {
+int main()
+{
     int choice = 0;
 
-    while (true) {
+    while (true)
+    {
+        displayLoadingBar();
+        drawLoadingBar(30);
         displayMenu();
         std::cin >> choice;
 
-        switch (choice) {
-            case 1:
-                std::cout << YELLOW << "\nRunning " << LIGHT_EMOJI << " Test Component 1...\n" << RESET;
-                TestComponent1();
-                break;
-            case 2:
-                std::cout << YELLOW << "\nRunning " << LOCK_EMOJI << " Test Component 2...\n" << RESET;
-                TestComponent2();
-                break;
-            case 3:
-                std::cout << YELLOW << "\nRunning " << SENSOR_EMOJI << " Test Component 3...\n" << RESET;
-                TestComponent3();
-                break;
-            case 4:
-                std::cout << YELLOW << "\nRunning " << THERMO_EMOJI << " Test Component 4...\n" << RESET;
-                TestComponent4();
-                break;
-            case 5:
-                std::cout << RED << "Exiting..." << EXIT_EMOJI << "\n" << RESET;
-                return 0;
-            default:
-                std::cout << RED << "Invalid choice. Please select a valid option.\n" << RESET;
+        switch (choice)
+        {
+        case 1:
+            std::cout << YELLOW << "\nRunning " << LIGHT_EMOJI << " Test Component 1...\n"
+                      << RESET;
+            TestComponent1();
+            break;
+        case 2:
+            std::cout << YELLOW << "\nRunning " << LOCK_EMOJI << " Test Component 2...\n"
+                      << RESET;
+            TestComponent2();
+            break;
+        case 3:
+            std::cout << YELLOW << "\nRunning " << SENSOR_EMOJI << " Test Component 3...\n"
+                      << RESET;
+            TestComponent3();
+            break;
+        case 4:
+            std::cout << YELLOW << "\nRunning " << THERMO_EMOJI << " Test Component 4...\n"
+                      << RESET;
+            TestComponent4();
+            break;
+        case 5:
+            std::cout << RED << "Exiting..." << EXIT_EMOJI << "\n"
+                      << RESET;
+            return 0;
+        default:
+            std::cout << RED << "Invalid choice. Please select a valid option.\n"
+                      << RESET;
         }
     }
 }
 
-void displayMenu() {
+void displayMenu()
+{
     std::cout << BLUE << BOLD;
     std::cout << "\n==================================================\n";
     std::cout << "=== Smart Home Automation System Demo ===\n";
@@ -117,12 +137,37 @@ void displayMenu() {
     std::cout << GREEN << "2. " << LOCK_EMOJI << " Test Component 2: Legacy Device Integration\n";
     std::cout << GREEN << "3. " << SENSOR_EMOJI << " Test Component 3: Automation of Smart Device Control\n";
     std::cout << GREEN << "4. " << THERMO_EMOJI << " Test Component 4: Sensor Observations and Notifications\n";
-    std::cout << RED << "5. " << EXIT_EMOJI << " Exit\n" << RESET;
-    std::cout << BLUE << "==================================================\n" << RESET;
+    std::cout << RED << "5. " << EXIT_EMOJI << " Exit\n"
+              << RESET;
+    std::cout << BLUE << "==================================================\n"
+              << RESET;
     std::cout << "Please select an option (1-5): ";
 }
 
-void TestComponent1() {
+void displayLoadingBar()
+{
+    std::cout << "\033[1;33m";
+    std::cout << "========================\n";
+    std::cout << "\033[1;33m";
+    std::cout << "   🔒 Smart Home Automation System 🔒  \n";
+    std::cout << "========================\n";
+}
+
+
+void drawLoadingBar(int length)
+{
+    std::cout << "\nLoading: [";
+    for (int i = 0; i <= length; ++i)
+    {
+        std::cout << "=";
+        std::cout.flush();
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    }
+    std::cout << "] Done!\n" << std::endl;
+}
+
+void TestComponent1()
+{
     HomeSection *sec1 = new HomeSection("Ground_Floor");
     Room *livingRoom = new Room("LivingRoom");
 
@@ -131,12 +176,15 @@ void TestComponent1() {
     Thermostat *thermo1 = new Thermostat("ThermoStat");
     Alarm *alarm1 = new Alarm("Alarm1", 90, "grade1");
 
-    std::cout << CYAN << "\n" << LIGHT_EMOJI << " Device: " << light1->getDeviceType() << " - " << light1->getStatus() << "\n";
+    std::cout << CYAN << "\n"
+              << LIGHT_EMOJI << " Device: " << light1->getDeviceType() << " - " << light1->getStatus() << "\n";
     std::cout << LOCK_EMOJI << " Device: " << doorL1->getDeviceType() << " - " << doorL1->getStat() << "\n";
     std::cout << THERMO_EMOJI << " Device: " << thermo1->getDeviceType() << " - " << thermo1->getStatus() << "\n";
     std::cout << ALARM_EMOJI << " Device: " << alarm1->getDeviceType() << " - " << alarm1->getStatus() << "\n";
 
-    std::cout << "\n" << BOLD << "LETS PLAY!!!!\n" << RESET;
+    std::cout << "\n"
+              << BOLD << "LETS PLAY!!!!\n"
+              << RESET;
     light1->performAction();
     doorL1->performAction();
     thermo1->performAction();
@@ -145,7 +193,8 @@ void TestComponent1() {
     std::cout << CYAN << LIGHT_EMOJI << " Updated Light Status: " << light1->getStatus() << "\n";
     std::cout << LOCK_EMOJI << " Updated Lock Status: " << doorL1->getStat() << "\n";
     std::cout << THERMO_EMOJI << " Updated Thermo Status: " << thermo1->getStatus() << "\n";
-    std::cout << ALARM_EMOJI << " Updated Alarm Status: " << alarm1->getStatus() << "\n" << RESET;
+    std::cout << ALARM_EMOJI << " Updated Alarm Status: " << alarm1->getStatus() << "\n"
+              << RESET;
 }
 
 void TestComponent2()
@@ -154,8 +203,8 @@ void TestComponent2()
 
     // =========== Testing the Lights Command =============
     std::cout << "💡 Testing the Lights Command...\n";
-    Light *livingRoomLight = new Light("Living Room Light", 100, 60); // Brightness = 100, Power = 60W
-    std::cout << "Initial state of the light: \033[32m" << livingRoomLight->getStatus() << "\033[0m\n";  // Green text
+    Light *livingRoomLight = new Light("Living Room Light", 100, 60);                                   // Brightness = 100, Power = 60W
+    std::cout << "Initial state of the light: \033[32m" << livingRoomLight->getStatus() << "\033[0m\n"; // Green text
 
     // Create the TurnOffAllLights command
     TurnOffAllLights *turnOffLightsCmd = new TurnOffAllLights(livingRoomLight);
@@ -169,11 +218,11 @@ void TestComponent2()
     goodnightRoutine.execute();
 
     // Check the final state of the light
-    std::cout << "\nFinal state of the light: \033[31m" << livingRoomLight->getStatus() << "\033[0m\n";  // Red text
+    std::cout << "\nFinal state of the light: \033[31m" << livingRoomLight->getStatus() << "\033[0m\n"; // Red text
 
     // Create a GoodMorningRoutine (reverses Goodnight actions)
     MacroRoutine goodMorningRoutine;
-    //goodMorningRoutine.addCommand(new TurnOnAllLights(livingRoomLight)); // Revert lights to On
+    // goodMorningRoutine.addCommand(new TurnOnAllLights(livingRoomLight)); // Revert lights to On
 
     // Execute the GoodMorning Routine
     std::cout << "\n☀️ Executing Good Morning Routine:\n";
@@ -198,8 +247,8 @@ void TestComponent2()
     goodnightRoutine.execute();
 
     // Check the final state of the doors
-    std::cout << "Final state of front door: \033[31m" << frontDoor->getStat() << "\033[0m\n";  // Red text
-    std::cout << "Final state of back door: \033[31m" << backDoor->getStat() << "\033[0m\n";  // Red text
+    std::cout << "Final state of front door: \033[31m" << frontDoor->getStat() << "\033[0m\n"; // Red text
+    std::cout << "Final state of back door: \033[31m" << backDoor->getStat() << "\033[0m\n";   // Red text
 
     // Execute the GoodMorning Routine
     std::cout << "\n☀️ Executing Good Morning Routine:\n";
@@ -233,17 +282,17 @@ void TestComponent2()
     SmartDeviceCommand *switchToCold = new SwitchThermo(livingRoomThermo, 15); // Setting to 15°C
 
     // Add thermostat settings to Goodnight and GoodMorning routines
-    goodnightRoutine.addCommand(switchToCold);    // Set to Cold in Goodnight Routine
-    goodMorningRoutine.addCommand(switchToHot);   // Set to Hot in GoodMorning Routine
+    goodnightRoutine.addCommand(switchToCold);  // Set to Cold in Goodnight Routine
+    goodMorningRoutine.addCommand(switchToHot); // Set to Hot in GoodMorning Routine
 
     // Execute the routines
     std::cout << "\n🌙 Executing Goodnight Routine for Thermostat:\n";
     goodnightRoutine.execute();
-    std::cout << "Thermostat temperature after Goodnight routine: \033[34m" << livingRoomThermo->getStatus() << "\033[0m\n";  // Blue text
+    std::cout << "Thermostat temperature after Goodnight routine: \033[34m" << livingRoomThermo->getStatus() << "\033[0m\n"; // Blue text
 
     std::cout << "\n☀️ Executing Good Morning Routine for Thermostat:\n";
     goodMorningRoutine.execute();
-    std::cout << "Thermostat temperature after Good Morning routine: \033[31m" << livingRoomThermo->getStatus() << "\033[0m\n";  // Red text
+    std::cout << "Thermostat temperature after Good Morning routine: \033[31m" << livingRoomThermo->getStatus() << "\033[0m\n"; // Red text
 }
 
 void TestComponent3()
@@ -253,7 +302,7 @@ void TestComponent3()
 
     LegendThermo oldThermo;
     SmartThermostatIntegrator ThermoI(&oldThermo, "ThermoStat");
-    std::cout << "\nCurrent Temp: \033[34m" << ThermoI.getTemP() << "\033[0m\n";  // Blue text
+    std::cout << "\nCurrent Temp: \033[34m" << ThermoI.getTemP() << "\033[0m\n"; // Blue text
 
     ThermoI.setTemp(25);
     ThermoI.performAction();
