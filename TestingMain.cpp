@@ -1,17 +1,21 @@
+// base needed for all the patterns
 #include "SmartDevice.h"
 #include "Room.h"
 #include "HomeSection.h"
-//
+
+// base needed for all the patterns
 #include "Light.h"
 #include "Thermostat.h"
 #include "Alarm.h"
 #include "DoorLock.h"
-//
+
+// needed for the state design pattern
 #include "LightState.h"
 #include "ThermoState.h"
 #include "AlarmState.h"
 #include "DoorLState.h"
-//
+
+// needed for the state design pattern
 #include "OnState.h"
 #include "OffState.h"
 #include "IdleState.h"
@@ -35,8 +39,30 @@
 #include <iostream>
 #include <string>
 
+// Add color codes for terminal output
+#define RESET "\033[0m"
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define BLUE "\033[34m"
+#define CYAN "\033[36m"
+#define YELLOW "\033[33m"
+#define BOLD "\033[1m"
+
+// Emojis for a friendly UX
+#define LIGHT_EMOJI "\U0001F4A1"
+#define LOCK_EMOJI "\U0001F512"
+#define THERMO_EMOJI "\U0001F321"
+#define ALARM_EMOJI "\U0001F6A8"
+#define SENSOR_EMOJI "\U0001F50C"
+#define EXIT_EMOJI "\U0000274C"
+
+// Test for component 1:
 void TestComponent1();
+// Test for component 2:
 void TestComponent2();
+// Test for component 2:
+void TestComponent3();
+// Test for component 4:
 void TestComponent4();
 
 int main()
@@ -122,29 +148,19 @@ void TestComponent4()
     MotionSensor *sensor1 = new MotionSensor("MotionSensor");
     Temperature *sensor2 = new Temperature("TempSensor");
 
-    Light *light1 = new Light("Light1", 80, 10);
-    DoorLock *lck1 = new DoorLock("Lock1", 2, "grade 2");
-    Alarm *alarm1 = new Alarm("Alarm1", 92, "grade 3");
-    Thermostat *stat1 = new Thermostat("Thermostat1");
+    Light* light1 = new Light("Light1" ,80 ,10 );
+    DoorLock* lck1 = new DoorLock("Lock1" , 2 ,"grade 2");
+    Alarm* alarm1 = new Alarm("Alarm1" ,92,"grade 3");
+    Thermostat * stat1 = new Thermostat("Thermostat1" );
 
-    Room* room1 = new Room("livingRoom");
-    room1->addDevice(light1);
-    room1->addDevice(lck1);
-    room1->addDevice(alarm1);
-    room1->addDevice(stat1);
-    std::cout<<"DETAILS: "<<room1->displayRooms()<<std::endl;
+    Control control;
 
-    HomeSection* ground = new HomeSection("GroundFloor");
-    ground->addRoom(room1);
-    ground->displayHomeSection();
 
-    Control* control = new Control();
-
-    std::cout << "\n \t ++++++++++++Details Before: ++++++++++++\n";
-    std::cout << "Light status: " << light1->getStatus() << std::endl;
-    std::cout << "Doorlock status: " << lck1->getStat() << std::endl;
-    std::cout << "Alarm status: " << alarm1->getStatus() << std::endl;
-    std::cout << "Thermostat status: " << stat1->getStatus() << std::endl;
+     std::cout<<"\n \t ++++++++++++Details Before: ++++++++++++\n";
+      std::cout<<"Light status: "<<light1->getStatus()<<std::endl;
+      std::cout<<"Doorlock status: "<<lck1->getStat()<<std::endl;
+      std::cout<<"Alarm status: "<<alarm1->getStatus()<<std::endl;
+      std::cout<<"Thermostat status: "<<stat1->getStatus()<<std::endl;
 
     std::cout << "\n \t ======WORKING WITH THE SENSORS:====== \n";
     sensor1->addDevice(light1);
@@ -159,6 +175,9 @@ void TestComponent4()
     std::cout << "Alarm status: " << alarm1->getStatus() << std::endl;
     std::cout << "\n";
 
+    stat1->setTemperature(25);
+    sensor2->detectTemp();
+    std::cout << "\n Thermostat status: " << stat1->getStatus() << std::endl;
     stat1->setTemperature(25);
     sensor2->detectTemp();
     std::cout << "\n Thermostat status: " << stat1->getStatus() << std::endl;

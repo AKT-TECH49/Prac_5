@@ -1,13 +1,9 @@
 #include "OffState.h"
-
-
-
+#include "OnState.h"
 
 void OffState::toggle(Light *light)
 {
-    OnState* newState = new OnState();
-    light->setState(newState);
-    // delete light;
+    light->setState(new OnState());
     std::cout<<"~!LIGHT TURNED ON!~\n";
 }
 

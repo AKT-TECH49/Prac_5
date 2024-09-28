@@ -2,7 +2,7 @@
 #define LIGHTSTATE_H    
 
 #include <iostream>
-#include <string>
+#include <string> 
 
 class Light ;
 
