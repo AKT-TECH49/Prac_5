@@ -41,6 +41,20 @@ public:
     void addDevice(SmartDevice* device);
 
     /**
+     * @brief Removes a sensor to the control system.
+     * 
+     * @param sensor Pointer to the Sensor to be added.
+     */
+    void removeSensor(Sensor* sensor);
+
+    /**
+     * @brief Remove a smart device to the control system.
+     * 
+     * @param device Pointer to the SmartDevice to be added.
+     */
+    void removeDevice(SmartDevice* device);
+
+    /**
      * @brief Notifies a specific smart device about an event.
      * 
      * This method triggers a notification or action for the provided device.

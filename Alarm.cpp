@@ -1,6 +1,6 @@
 #include "Alarm.h"
 
-Alarm::Alarm(std::string typeAlarm, int decibels, const std::string &grade):SmartDevice(alarmType ,44 )
+Alarm::Alarm(std::string typeAlarm, int decibels, const std::string &grade):SmartDevice( 44 )
 {
     this->alarmType = typeAlarm;
     this->loudness = decibels;
@@ -10,7 +10,11 @@ Alarm::Alarm(std::string typeAlarm, int decibels, const std::string &grade):Smar
 
 Alarm::~Alarm()
 {
-    delete state;
+     if(state)
+    {
+    delete this->state;
+    state = NULL;
+    }
 }
 
 void Alarm::performAction()
@@ -32,6 +36,11 @@ std::string Alarm::getStatus() const
 
 void Alarm::setStatus(AlarmState *status)
 {
+    if(state)
+    {
+        delete state;
+        state = NULL;
+    }
     this->state = status;
 }
 

@@ -16,7 +16,7 @@
 class SmartDevice
 {
 private:
-    std::string name;
+    //std::string name;
     int id;
 
 public:
@@ -33,7 +33,7 @@ public:
      * @param name The name of the device.
      * @param typeId The unique type identifier for the device.
      */
-    SmartDevice(const std::string& name, int typeId);
+    SmartDevice(int typeId);
 
     /**
      * @brief Pure virtual function to get the device type.
@@ -56,14 +56,14 @@ public:
      * 
      * @return The name of the smart device as a string.
      */
-    std::string getName() const;
+    //std::string getName() const;
 
     /**
      * @brief Gets the unique ID of the smart device.
      * 
      * @return The device's unique ID as an integer.
      */
-    int getId() const;
+    int getId();
 
     /**
      * @brief Pure virtual function to update the state of the device.

@@ -1,23 +1,35 @@
 #include "DoorLock.h"
 #include "LockedState.h"
 
-DoorLock::DoorLock(std::string lockType, int grade, const std::string &secLevel):SmartDevice(name ,22)
+DoorLock::DoorLock(std::string lockType, int grade, const std::string &secLevel):SmartDevice(22)
 {
     this->name = lockType;
     this->lockStrength = grade;
     this->securityLevel =secLevel;
-    state = new UnlockedState();
+    this->state = new UnlockedState();
+
 }
 
 DoorLock::~DoorLock()
 {
-    delete state;
+     if(state)
+    {
+    delete this->state;
+    state = NULL;
+    }
 }
 
 std::string DoorLock::getStat() const
 {
-     std::string state_name = state->toString();
+   if(state)
+   {
+        std::string state_name = state->toString();
     return  state_name;
+   }
+   else
+    {
+        return "ERROR";
+    }
 }
 
 void DoorLock::setStat(DoorLockState *state)
@@ -30,14 +42,13 @@ void DoorLock::performAction()
     
     if(state->toString() == "Unlocked")
     {
-        state = new LockedState();
+        state->pressButton(this);
         std::cout<<"LOCKED THE DOOR \n";
     }
     else 
     {
 
-        state = new UnlockedState();
-        std::cout<<"UNLOCKED THE DOOR \n";
+        std::cout<<"Door is LOCKED already\n";
     }
 }
 

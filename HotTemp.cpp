@@ -1,28 +1,96 @@
-#include "HotTemp.h"
-#include "Thermostat.h"
+#include "HomeSection.h"
+#include <algorithm>
+#include <iostream>
 
-void HotState::read(Thermostat *thermostat)
+
+HomeSection::HomeSection(const std::string &name):SmartDevice( 00)
 {
-    std::cout<<"~#HOT, Maintaing high temperature settings.\n";
-    std::cout<<"State is: "<<thermostat->getStatus() <<std::endl;
+    this->secName = name;
 }
 
-std::string HotState::toString() const
+
+HomeSection::~HomeSection()
 {
-    return "Hot";
+    for(Room* room : rooms)
+    {
+        delete room;
+        room = NULL;
+    }
+    rooms.clear();
 }
 
-bool HotState::isHot() const
+void HomeSection::addRoom(Room *room)
 {
-    return true;
+    if(room)
+    {
+        rooms.push_back(room);
+    }
 }
 
-bool HotState::isCold() const
+void HomeSection::removeRoom(Room *room)
 {
-    return false;
+      if (room)
+    {
+        auto it = std::find(rooms.begin(), rooms.end(), room);
+        if (it != rooms.end())
+        {
+            rooms.erase(it); 
+            std::cout << "Room removed from: "<<secName<< std::endl;
+        }
+        else
+        {
+            std::cout << "room not found in the homeSection" << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "Invalid room." << std::endl;
+    }
 }
 
-bool HotState::isMild() const
+void HomeSection::displayHomeSection()
 {
-    return false;
+
+    for(Room* room : rooms)
+    {
+        std::cout<<"Rooms in the section: "<<secName<<std::endl;
+        std::cout<<room->getRoomName()<<"| \n";
+    }
+}
+
+std::string HomeSection::getSectionName()
+{
+    return secName;
+}
+
+std::string HomeSection::getDeviceType()
+{
+    std::string roomsDeTypes;
+   for(Room* room : rooms)
+   {
+     roomsDeTypes += room->getDeviceType();
+   } 
+   if(roomsDeTypes.empty())
+   {
+     return "No rooms or no rooms with devices";
+   }
+   return roomsDeTypes;
+   
+}
+
+void HomeSection::performAction()
+{
+    for(Room* room : rooms) 
+    {
+        room->performAction();
+    }
+}
+
+
+void HomeSection::update()
+{
+    for(Room* room : rooms)
+    {
+        room->update();
+    }
 }

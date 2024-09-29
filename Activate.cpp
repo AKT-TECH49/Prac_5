@@ -9,7 +9,9 @@ void Active::activateAlarm(Alarm *alarm)
 
 void Active::deactivateAlarm(Alarm *alarm)
 {
-    alarm->setStatus(new notActive());
+    notActive* newState  = new notActive();
+    alarm->setStatus(newState);
+    delete newState;
     std::cout<<"Alarm is deactivated!!.\n";
 }
 
