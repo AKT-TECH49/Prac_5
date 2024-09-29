@@ -1,0 +1,90 @@
+\hypertarget{classSensor}{}\doxysection{Sensor Class Reference}
+\label{classSensor}\index{Sensor@{Sensor}}
+
+
+Inheritance diagram for Sensor\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classSensor_a387919f060b66074dbd107ed1764f8f6}{$\sim$\+Sensor}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classSensor}{Sensor}} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSensor_a152ea8a75829d818b8c63a4012f21b5e}{add\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$observer)=0
+\begin{DoxyCompactList}\small\item\em Adds a smart device as an observer to the sensor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSensor_abfb73cf80436612a4eaa6b88422cae75}{remove\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$observer)=0
+\begin{DoxyCompactList}\small\item\em Removes a smart device from the sensor\textquotesingle{}s observer list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSensor_a129501bd5f35310e8a155d8758b16f80}{notify\+Devices}} ()=0
+\begin{DoxyCompactList}\small\item\em Notifies all registered smart devices (observers) of a change detected by the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSensor_a387919f060b66074dbd107ed1764f8f6}\label{classSensor_a387919f060b66074dbd107ed1764f8f6}} 
+\index{Sensor@{Sensor}!````~Sensor@{$\sim$Sensor}}
+\index{````~Sensor@{$\sim$Sensor}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{$\sim$Sensor()}{~Sensor()}}
+{\footnotesize\ttfamily virtual Sensor\+::$\sim$\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classSensor}{Sensor}} class. 
+
+Ensures proper cleanup of derived classes when a \mbox{\hyperlink{classSensor}{Sensor}} object is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSensor_a152ea8a75829d818b8c63a4012f21b5e}\label{classSensor_a152ea8a75829d818b8c63a4012f21b5e}} 
+\index{Sensor@{Sensor}!addDevice@{addDevice}}
+\index{addDevice@{addDevice}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{addDevice()}{addDevice()}}
+{\footnotesize\ttfamily virtual void Sensor\+::add\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds a smart device as an observer to the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} that will observe the sensor\textquotesingle{}s changes. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTemperature_a2fa7ee27e5dcefc816ec328736398cd2}{Temperature}}, and \mbox{\hyperlink{classMotionSensor_a413f74e2ae780ed82e43a05eeb05075c}{Motion\+Sensor}}.
+
+\mbox{\Hypertarget{classSensor_a129501bd5f35310e8a155d8758b16f80}\label{classSensor_a129501bd5f35310e8a155d8758b16f80}} 
+\index{Sensor@{Sensor}!notifyDevices@{notifyDevices}}
+\index{notifyDevices@{notifyDevices}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{notifyDevices()}{notifyDevices()}}
+{\footnotesize\ttfamily virtual void Sensor\+::notify\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies all registered smart devices (observers) of a change detected by the sensor. 
+
+This method triggers a notification to all smart devices that have been added as observers. 
+
+Implemented in \mbox{\hyperlink{classTemperature_aa03da087a6d2edfb91dd3319d8fb2006}{Temperature}}, and \mbox{\hyperlink{classMotionSensor_a1b3dcb9e0db1469b616d30780dd37941}{Motion\+Sensor}}.
+
+\mbox{\Hypertarget{classSensor_abfb73cf80436612a4eaa6b88422cae75}\label{classSensor_abfb73cf80436612a4eaa6b88422cae75}} 
+\index{Sensor@{Sensor}!removeDevice@{removeDevice}}
+\index{removeDevice@{removeDevice}!Sensor@{Sensor}}
+\doxysubsubsection{\texorpdfstring{removeDevice()}{removeDevice()}}
+{\footnotesize\ttfamily virtual void Sensor\+::remove\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes a smart device from the sensor\textquotesingle{}s observer list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} to be removed from the observer list. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTemperature_aa7efb25ae1213d0718a5bc69fede804c}{Temperature}}, and \mbox{\hyperlink{classMotionSensor_ae1982d8c926bcb0c206304f8d52b1f1c}{Motion\+Sensor}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Sensor_8h}{Sensor.\+h}}\end{DoxyCompactItemize}

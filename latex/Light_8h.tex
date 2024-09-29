@@ -1,0 +1,32 @@
+\hypertarget{Light_8h}{}\doxysection{Light.\+h File Reference}
+\label{Light_8h}\index{Light.h@{Light.h}}
+
+
+Defines the \mbox{\hyperlink{classLight}{Light}} class, which represents a smart light in the home automation system.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Smart\+Device.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Light\+State.\+h\char`\"{}}\newline
+Include dependency graph for Light.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLight}{Light}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \mbox{\hyperlink{classLight}{Light}} class, which represents a smart light in the home automation system. 
+
+This class controls a light, managing its brightness, power, and state through interaction with the \mbox{\hyperlink{classLightState}{Light\+State}} interface.
+
+\begin{DoxyWarning}{Warning}
+The class assumes ownership of the \mbox{\hyperlink{classLightState}{Light\+State}} pointer and is responsible for its deletion.
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Add functionality to handle dimming and color-\/changing lights. \end{DoxyRefDesc}

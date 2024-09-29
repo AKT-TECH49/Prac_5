@@ -1,0 +1,86 @@
+\hypertarget{classMotionSensor}{}\doxysection{Motion\+Sensor Class Reference}
+\label{classMotionSensor}\index{MotionSensor@{MotionSensor}}
+
+
+Inheritance diagram for Motion\+Sensor\+:
+% FIG 0
+
+
+Collaboration diagram for Motion\+Sensor\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMotionSensor_a43b963350fefc759815eb57009403224}\label{classMotionSensor_a43b963350fefc759815eb57009403224}} 
+{\bfseries Motion\+Sensor} (const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{classMotionSensor_a413f74e2ae780ed82e43a05eeb05075c}{add\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device) override
+\begin{DoxyCompactList}\small\item\em Adds a smart device as an observer to the sensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMotionSensor_ae1982d8c926bcb0c206304f8d52b1f1c}{remove\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device) override
+\begin{DoxyCompactList}\small\item\em Removes a smart device from the sensor\textquotesingle{}s observer list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMotionSensor_a1b3dcb9e0db1469b616d30780dd37941}{notify\+Devices}} () override
+\begin{DoxyCompactList}\small\item\em Notifies all registered smart devices (observers) of a change detected by the sensor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMotionSensor_a0ff9b9aaeaef899f021a40a534a6094b}\label{classMotionSensor_a0ff9b9aaeaef899f021a40a534a6094b}} 
+void {\bfseries detect\+Motion} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMotionSensor_a413f74e2ae780ed82e43a05eeb05075c}\label{classMotionSensor_a413f74e2ae780ed82e43a05eeb05075c}} 
+\index{MotionSensor@{MotionSensor}!addDevice@{addDevice}}
+\index{addDevice@{addDevice}!MotionSensor@{MotionSensor}}
+\doxysubsubsection{\texorpdfstring{addDevice()}{addDevice()}}
+{\footnotesize\ttfamily void Motion\+Sensor\+::add\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds a smart device as an observer to the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} that will observe the sensor\textquotesingle{}s changes. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classSensor_a152ea8a75829d818b8c63a4012f21b5e}{Sensor}}.
+
+\mbox{\Hypertarget{classMotionSensor_a1b3dcb9e0db1469b616d30780dd37941}\label{classMotionSensor_a1b3dcb9e0db1469b616d30780dd37941}} 
+\index{MotionSensor@{MotionSensor}!notifyDevices@{notifyDevices}}
+\index{notifyDevices@{notifyDevices}!MotionSensor@{MotionSensor}}
+\doxysubsubsection{\texorpdfstring{notifyDevices()}{notifyDevices()}}
+{\footnotesize\ttfamily void Motion\+Sensor\+::notify\+Devices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Notifies all registered smart devices (observers) of a change detected by the sensor. 
+
+This method triggers a notification to all smart devices that have been added as observers. 
+
+Implements \mbox{\hyperlink{classSensor_a129501bd5f35310e8a155d8758b16f80}{Sensor}}.
+
+\mbox{\Hypertarget{classMotionSensor_ae1982d8c926bcb0c206304f8d52b1f1c}\label{classMotionSensor_ae1982d8c926bcb0c206304f8d52b1f1c}} 
+\index{MotionSensor@{MotionSensor}!removeDevice@{removeDevice}}
+\index{removeDevice@{removeDevice}!MotionSensor@{MotionSensor}}
+\doxysubsubsection{\texorpdfstring{removeDevice()}{removeDevice()}}
+{\footnotesize\ttfamily void Motion\+Sensor\+::remove\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Removes a smart device from the sensor\textquotesingle{}s observer list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} to be removed from the observer list. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classSensor_abfb73cf80436612a4eaa6b88422cae75}{Sensor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Motion.\+h\item 
+Motion.\+cpp\end{DoxyCompactItemize}

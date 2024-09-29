@@ -1,0 +1,83 @@
+\hypertarget{classState}{}\doxysection{State Class Reference}
+\label{classState}\index{State@{State}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classState_a9ddc1df6f998184d6477b48fab90281c}{$\sim$\+State}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classState}{State}} class. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classState_a22fb4108add6445c3d84344ca215f3f8}{get\+Status}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the status of the current state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classState_a8ec3fb3bfcd3190b7c7471cc9762c05e}{toggle\+On}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to toggle the smart device to an \char`\"{}\+On\char`\"{} state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classState_a0fe2921c44344aff2a51ef6404d90088}{toggle\+Off}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to toggle the smart device to an \char`\"{}\+Off\char`\"{} state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classState_a9ddc1df6f998184d6477b48fab90281c}\label{classState_a9ddc1df6f998184d6477b48fab90281c}} 
+\index{State@{State}!````~State@{$\sim$State}}
+\index{````~State@{$\sim$State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{$\sim$State()}{~State()}}
+{\footnotesize\ttfamily virtual State\+::$\sim$\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classState}{State}} class. 
+
+Ensures proper cleanup of derived state classes when a \mbox{\hyperlink{classState}{State}} object is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classState_a22fb4108add6445c3d84344ca215f3f8}\label{classState_a22fb4108add6445c3d84344ca215f3f8}} 
+\index{State@{State}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!State@{State}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily virtual std\+::string State\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the status of the current state. 
+
+This method must be implemented by derived classes to return the current status of the device.
+
+\begin{DoxyReturn}{Returns}
+A string representing the status of the state (e.\+g., \char`\"{}\+On\char`\"{}, \char`\"{}\+Off\char`\"{}). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_a0fe2921c44344aff2a51ef6404d90088}\label{classState_a0fe2921c44344aff2a51ef6404d90088}} 
+\index{State@{State}!toggleOff@{toggleOff}}
+\index{toggleOff@{toggleOff}!State@{State}}
+\doxysubsubsection{\texorpdfstring{toggleOff()}{toggleOff()}}
+{\footnotesize\ttfamily virtual void State\+::toggle\+Off (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to toggle the smart device to an \char`\"{}\+Off\char`\"{} state. 
+
+This method must be implemented by derived state classes to define how a device switches to the \char`\"{}\+Off\char`\"{} state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & A pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} that is affected by this state change. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classState_a8ec3fb3bfcd3190b7c7471cc9762c05e}\label{classState_a8ec3fb3bfcd3190b7c7471cc9762c05e}} 
+\index{State@{State}!toggleOn@{toggleOn}}
+\index{toggleOn@{toggleOn}!State@{State}}
+\doxysubsubsection{\texorpdfstring{toggleOn()}{toggleOn()}}
+{\footnotesize\ttfamily virtual void State\+::toggle\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to toggle the smart device to an \char`\"{}\+On\char`\"{} state. 
+
+This method must be implemented by derived state classes to define how a device switches to the \char`\"{}\+On\char`\"{} state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & A pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} that is affected by this state change. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{State_8h}{State.\+h}}\end{DoxyCompactItemize}
