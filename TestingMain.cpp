@@ -60,25 +60,25 @@ void TestComponent1()
     DoorLock *doorL1 = new DoorLock("DoorLock", 2, "Grade2");
     Thermostat *thermo1 = new Thermostat("ThermoStat");
     Alarm *alarm1 = new Alarm("Alarm1", 90, "grade1");
-    std::cout << "DeviceName is : " << light1->getDeviceType()<<" with ID: "<<light1->getId()<< std::endl;
-    std::cout << "DeviceName is : " << doorL1->getDeviceType()<<" with ID: "<<doorL1->getId() << std::endl;
-    std::cout << "DeviceName is : " << thermo1->getDeviceType()<<" with ID: "<<thermo1->getId() << std::endl;
-    std::cout << "DeviceName is : " << alarm1->getDeviceType()<<" with ID: "<<alarm1->getId() << std::endl;
+    std::cout << "DeviceName is : " << light1->getDeviceType() << " with ID: " << light1->getId() << std::endl;
+    std::cout << "DeviceName is : " << doorL1->getDeviceType() << " with ID: " << doorL1->getId() << std::endl;
+    std::cout << "DeviceName is : " << thermo1->getDeviceType() << " with ID: " << thermo1->getId() << std::endl;
+    std::cout << "DeviceName is : " << alarm1->getDeviceType() << " with ID: " << alarm1->getId() << std::endl;
 
     livingRoom->addDevice(light1);
     livingRoom->addDevice(doorL1);
     livingRoom->addDevice(thermo1);
     livingRoom->addDevice(alarm1);
-    std::cout << "Devices in the "<<livingRoom->getRoomName() <<" with ID: "<<livingRoom->getId()<< std::endl;
+    std::cout << "Devices in the " << livingRoom->getRoomName() << " with ID: " << livingRoom->getId() << std::endl;
     std::cout << livingRoom->getDeviceType() << std::endl;
 
     std::cout << "LETS PLAY!!!!" << std::endl;
-    
+
     std::cout << light1->getStatus() << std::endl;
     std::cout << doorL1->getStat() << std::endl;
     std::cout << thermo1->getStatus() << std::endl;
     std::cout << alarm1->getStatus() << std::endl;
-    
+
     std::cout << "\t ======actions===== \n";
     light1->performAction();
     doorL1->performAction();
@@ -92,7 +92,7 @@ void TestComponent1()
     std::cout << alarm1->getStatus() << std::endl;
     // connection
     sec1->addRoom(livingRoom);
-    std::cout << "Devices in the "<<sec1->getSectionName() <<" with ID: "<<sec1->getId()<<std::endl;
+    std::cout << "Devices in the " << sec1->getSectionName() << " with ID: " << sec1->getId() << std::endl;
     sec1->displayHomeSection();
     std::cout << sec1->getDeviceType() << std::endl;
 
@@ -103,8 +103,8 @@ void TestComponent2()
 {
     std::cout << "~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~COMPONENT 2~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_ \n";
     std::cout << "\t ======Legacy Thermostat===== \n";
-    LegendThermo* oldThermo = new LegendThermo();
-    SmartThermostatIntegrator* ThermoI = new SmartThermostatIntegrator(oldThermo, "ThermoStat");
+    LegendThermo *oldThermo = new LegendThermo();
+    SmartThermostatIntegrator *ThermoI = new SmartThermostatIntegrator(oldThermo, "ThermoStat");
     std::cout << "Current Temp: " << ThermoI->getTemP() << std::endl;
     ThermoI->setTemp(25);
     ThermoI->performAction();
@@ -127,18 +127,18 @@ void TestComponent4()
     Alarm *alarm1 = new Alarm("Alarm1", 92, "grade 3");
     Thermostat *stat1 = new Thermostat("Thermostat1");
 
-    Room* room1 = new Room("livingRoom");
+    Room *room1 = new Room("livingRoom");
     room1->addDevice(light1);
     room1->addDevice(lck1);
     room1->addDevice(alarm1);
     room1->addDevice(stat1);
-    std::cout<<"DETAILS: "<<room1->displayRooms()<<std::endl;
+    std::cout << "DETAILS: " << room1->displayRooms() << std::endl;
 
-    HomeSection* ground = new HomeSection("GroundFloor");
+    HomeSection *ground = new HomeSection("GroundFloor");
     ground->addRoom(room1);
     ground->displayHomeSection();
 
-    Control* control = new Control();
+    Control *control = new Control();
 
     std::cout << "\n \t ++++++++++++Details Before: ++++++++++++\n";
     std::cout << "Light status: " << light1->getStatus() << std::endl;
@@ -178,10 +178,7 @@ void TestComponent4()
     control->notifySpecificDevice(stat1);
     control->notifySpecificDevice(alarm1);
 
-
-
-
-    //remove
+    // remove
     control->removeDevice(alarm1);
     control->removeDevice(stat1);
     control->removeDevice(lck1);
@@ -197,15 +194,14 @@ void TestComponent4()
     room1->removeDevice(lck1);
     room1->removeDevice(light1);
 
-
     delete control;
     delete ground;
     delete room1;
-     //
-     delete sensor1;
-     delete sensor2;
     //
-    delete alarm1;  
+    delete sensor1;
+    delete sensor2;
+    //
+    delete alarm1;
     delete lck1;
     delete light1;
     delete stat1;
