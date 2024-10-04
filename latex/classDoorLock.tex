@@ -1,0 +1,145 @@
+\hypertarget{classDoorLock}{}\doxysection{Door\+Lock Class Reference}
+\label{classDoorLock}\index{DoorLock@{DoorLock}}
+
+
+Inheritance diagram for Door\+Lock\+:
+% FIG 0
+
+
+Collaboration diagram for Door\+Lock\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDoorLock_a2d56726f6a1fc73ec0ec64872010e4a3}{Door\+Lock}} (std\+::string lock\+Type, int grade, const std\+::string \&sec\+Level)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classDoorLock}{Door\+Lock}} object with a specified lock type, grade, and security level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDoorLock_a9fbb0682161884069c0a3877f2c1e6e0}{$\sim$\+Door\+Lock}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classDoorLock}{Door\+Lock}} class. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDoorLock_ad9d8a394e4fd4fff905d61dba086dcc2}{get\+Stat}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current status of the door lock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDoorLock_a7bfddb4ee359980ca4196114667e2e0f}{set\+Stat}} (\mbox{\hyperlink{classDoorLockState}{Door\+Lock\+State}} $\ast$state)
+\begin{DoxyCompactList}\small\item\em Sets the state of the door lock (locked/unlocked). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDoorLock_aba06effb7ed65eb397996b4d9ca6e632}{perform\+Action}} () override
+\begin{DoxyCompactList}\small\item\em Performs an action based on the current lock state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDoorLock_a3b313802c31d45cb3466dc004aaf98ff}{get\+Device\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Returns the type of smart device (\mbox{\hyperlink{classDoorLock}{Door\+Lock}}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDoorLock_a272a1ef7df7148eab854c5b0ee173409}{update}} () override
+\begin{DoxyCompactList}\small\item\em Observer update method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDoorLock_a2d56726f6a1fc73ec0ec64872010e4a3}\label{classDoorLock_a2d56726f6a1fc73ec0ec64872010e4a3}} 
+\index{DoorLock@{DoorLock}!DoorLock@{DoorLock}}
+\index{DoorLock@{DoorLock}!DoorLock@{DoorLock}}
+\doxysubsubsection{\texorpdfstring{DoorLock()}{DoorLock()}}
+{\footnotesize\ttfamily Door\+Lock\+::\+Door\+Lock (\begin{DoxyParamCaption}\item[{std\+::string}]{lock\+Type,  }\item[{int}]{grade,  }\item[{const std\+::string \&}]{sec\+Level }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classDoorLock}{Door\+Lock}} object with a specified lock type, grade, and security level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lock\+Type} & The type or name of the lock (e.\+g., \char`\"{}\+Deadbolt\char`\"{}). \\
+\hline
+{\em grade} & The lock strength grade (1-\/5). \\
+\hline
+{\em sec\+Level} & The security level assigned to the lock. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDoorLock_a9fbb0682161884069c0a3877f2c1e6e0}\label{classDoorLock_a9fbb0682161884069c0a3877f2c1e6e0}} 
+\index{DoorLock@{DoorLock}!````~DoorLock@{$\sim$DoorLock}}
+\index{````~DoorLock@{$\sim$DoorLock}!DoorLock@{DoorLock}}
+\doxysubsubsection{\texorpdfstring{$\sim$DoorLock()}{~DoorLock()}}
+{\footnotesize\ttfamily Door\+Lock\+::$\sim$\+Door\+Lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classDoorLock}{Door\+Lock}} class. 
+
+Responsible for cleaning up the \mbox{\hyperlink{classDoorLockState}{Door\+Lock\+State}} pointer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDoorLock_a3b313802c31d45cb3466dc004aaf98ff}\label{classDoorLock_a3b313802c31d45cb3466dc004aaf98ff}} 
+\index{DoorLock@{DoorLock}!getDeviceType@{getDeviceType}}
+\index{getDeviceType@{getDeviceType}!DoorLock@{DoorLock}}
+\doxysubsubsection{\texorpdfstring{getDeviceType()}{getDeviceType()}}
+{\footnotesize\ttfamily std\+::string Door\+Lock\+::get\+Device\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of smart device (\mbox{\hyperlink{classDoorLock}{Door\+Lock}}). 
+
+\begin{DoxyReturn}{Returns}
+A string representing the device type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classSmartDevice_ad052e7da2b5f47462de1f07fb7c709f5}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classDoorLock_ad9d8a394e4fd4fff905d61dba086dcc2}\label{classDoorLock_ad9d8a394e4fd4fff905d61dba086dcc2}} 
+\index{DoorLock@{DoorLock}!getStat@{getStat}}
+\index{getStat@{getStat}!DoorLock@{DoorLock}}
+\doxysubsubsection{\texorpdfstring{getStat()}{getStat()}}
+{\footnotesize\ttfamily std\+::string Door\+Lock\+::get\+Stat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current status of the door lock. 
+
+Returns a string representing the current state and security level of the lock.
+
+\begin{DoxyReturn}{Returns}
+A string describing the current status of the door lock. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDoorLock_aba06effb7ed65eb397996b4d9ca6e632}\label{classDoorLock_aba06effb7ed65eb397996b4d9ca6e632}} 
+\index{DoorLock@{DoorLock}!performAction@{performAction}}
+\index{performAction@{performAction}!DoorLock@{DoorLock}}
+\doxysubsubsection{\texorpdfstring{performAction()}{performAction()}}
+{\footnotesize\ttfamily void Door\+Lock\+::perform\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Performs an action based on the current lock state. 
+
+Executes the current state’s action on the lock (e.\+g., locking or unlocking). 
+
+Implements \mbox{\hyperlink{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classDoorLock_a7bfddb4ee359980ca4196114667e2e0f}\label{classDoorLock_a7bfddb4ee359980ca4196114667e2e0f}} 
+\index{DoorLock@{DoorLock}!setStat@{setStat}}
+\index{setStat@{setStat}!DoorLock@{DoorLock}}
+\doxysubsubsection{\texorpdfstring{setStat()}{setStat()}}
+{\footnotesize\ttfamily void Door\+Lock\+::set\+Stat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDoorLockState}{Door\+Lock\+State}} $\ast$}]{state }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the door lock (locked/unlocked). 
+
+This method allows changing the lock\textquotesingle{}s state by providing a new \mbox{\hyperlink{classDoorLockState}{Door\+Lock\+State}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & A pointer to the new \mbox{\hyperlink{classDoorLockState}{Door\+Lock\+State}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDoorLock_a272a1ef7df7148eab854c5b0ee173409}\label{classDoorLock_a272a1ef7df7148eab854c5b0ee173409}} 
+\index{DoorLock@{DoorLock}!update@{update}}
+\index{update@{update}!DoorLock@{DoorLock}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Door\+Lock\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Observer update method. 
+
+This method allows the door lock to update its state when notified of changes. 
+
+Implements \mbox{\hyperlink{classSmartDevice_aa2d220574d20539603a0206a44d00a18}{Smart\+Device}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DoorLock_8h}{Door\+Lock.\+h}}\item 
+Door\+Lock.\+cpp\end{DoxyCompactItemize}

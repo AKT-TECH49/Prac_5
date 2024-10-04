@@ -1,0 +1,135 @@
+\hypertarget{classSmartDevice}{}\doxysection{Smart\+Device Class Reference}
+\label{classSmartDevice}\index{SmartDevice@{SmartDevice}}
+
+
+Inheritance diagram for Smart\+Device\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classSmartDevice_a1dc719fc9802d21ef8c10d17993f6adf}{$\sim$\+Smart\+Device}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSmartDevice_a24411f02d78fff0cd141a16d33772a8c}{Smart\+Device}} (const std\+::string \&name, int type\+Id)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} with a specified name and type ID. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classSmartDevice_ad052e7da2b5f47462de1f07fb7c709f5}{get\+Device\+Type}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the device type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}{perform\+Action}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to perform the device\textquotesingle{}s main action. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSmartDevice_a2b605f282f09103839751ad1d1bf667b}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the smart device. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSmartDevice_a49180566bd273df52ad861c41cf56abc}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Gets the unique ID of the smart device. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSmartDevice_aa2d220574d20539603a0206a44d00a18}{update}} ()=0
+\begin{DoxyCompactList}\small\item\em Pure virtual function to update the state of the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSmartDevice_a1dc719fc9802d21ef8c10d17993f6adf}\label{classSmartDevice_a1dc719fc9802d21ef8c10d17993f6adf}} 
+\index{SmartDevice@{SmartDevice}!````~SmartDevice@{$\sim$SmartDevice}}
+\index{````~SmartDevice@{$\sim$SmartDevice}!SmartDevice@{SmartDevice}}
+\doxysubsubsection{\texorpdfstring{$\sim$SmartDevice()}{~SmartDevice()}}
+{\footnotesize\ttfamily virtual Smart\+Device\+::$\sim$\+Smart\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} class. 
+
+Ensures proper cleanup of derived classes when a \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} object is destroyed. \mbox{\Hypertarget{classSmartDevice_a24411f02d78fff0cd141a16d33772a8c}\label{classSmartDevice_a24411f02d78fff0cd141a16d33772a8c}} 
+\index{SmartDevice@{SmartDevice}!SmartDevice@{SmartDevice}}
+\index{SmartDevice@{SmartDevice}!SmartDevice@{SmartDevice}}
+\doxysubsubsection{\texorpdfstring{SmartDevice()}{SmartDevice()}}
+{\footnotesize\ttfamily Smart\+Device\+::\+Smart\+Device (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{int}]{type\+Id }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} with a specified name and type ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the device. \\
+\hline
+{\em type\+Id} & The unique type identifier for the device. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSmartDevice_ad052e7da2b5f47462de1f07fb7c709f5}\label{classSmartDevice_ad052e7da2b5f47462de1f07fb7c709f5}} 
+\index{SmartDevice@{SmartDevice}!getDeviceType@{getDeviceType}}
+\index{getDeviceType@{getDeviceType}!SmartDevice@{SmartDevice}}
+\doxysubsubsection{\texorpdfstring{getDeviceType()}{getDeviceType()}}
+{\footnotesize\ttfamily virtual std\+::string Smart\+Device\+::get\+Device\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to get the device type. 
+
+Derived classes must implement this method to return the type of the device (e.\+g., light, door lock, thermostat).
+
+\begin{DoxyReturn}{Returns}
+A string representing the device type. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classThermostat_aa1b4ffd531015c3824ac690895454698}{Thermostat}}, \mbox{\hyperlink{classSmartThermostatIntegrator_ad91651a4e38491005d0d444f054364a2}{Smart\+Thermostat\+Integrator}}, \mbox{\hyperlink{classRoom_a0975163814bfdde9d137be83f356458e}{Room}}, \mbox{\hyperlink{classLight_a5b234c850599669a908f4c46395bf804}{Light}}, \mbox{\hyperlink{classHomeSection_a8e560ce1f78188f3e3de897f13e0321f}{Home\+Section}}, \mbox{\hyperlink{classDoorLock_a3b313802c31d45cb3466dc004aaf98ff}{Door\+Lock}}, and \mbox{\hyperlink{classAlarm_aec29824a96e54f583a64a966ef2dc774}{Alarm}}.
+
+\mbox{\Hypertarget{classSmartDevice_a49180566bd273df52ad861c41cf56abc}\label{classSmartDevice_a49180566bd273df52ad861c41cf56abc}} 
+\index{SmartDevice@{SmartDevice}!getId@{getId}}
+\index{getId@{getId}!SmartDevice@{SmartDevice}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Smart\+Device\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the unique ID of the smart device. 
+
+\begin{DoxyReturn}{Returns}
+The device\textquotesingle{}s unique ID as an integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSmartDevice_a2b605f282f09103839751ad1d1bf667b}\label{classSmartDevice_a2b605f282f09103839751ad1d1bf667b}} 
+\index{SmartDevice@{SmartDevice}!getName@{getName}}
+\index{getName@{getName}!SmartDevice@{SmartDevice}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Smart\+Device\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the smart device. 
+
+\begin{DoxyReturn}{Returns}
+The name of the smart device as a string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}\label{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}} 
+\index{SmartDevice@{SmartDevice}!performAction@{performAction}}
+\index{performAction@{performAction}!SmartDevice@{SmartDevice}}
+\doxysubsubsection{\texorpdfstring{performAction()}{performAction()}}
+{\footnotesize\ttfamily virtual void Smart\+Device\+::perform\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to perform the device\textquotesingle{}s main action. 
+
+This method must be implemented by derived classes to perform the specific action of the device. 
+
+Implemented in \mbox{\hyperlink{classThermostat_ab75c1c4b173fc02c019aa022015ad02f}{Thermostat}}, \mbox{\hyperlink{classSmartThermostatIntegrator_ad8457d68e9f49785e726c23467fa65d9}{Smart\+Thermostat\+Integrator}}, \mbox{\hyperlink{classRoom_a43716c1a6cd74ce2c5cb457c40a25838}{Room}}, \mbox{\hyperlink{classLight_ae1b45d5c26ff00cc862e7b722f5e1184}{Light}}, \mbox{\hyperlink{classHomeSection_a7c49bbdd7c561d3e40647c82b46a25cc}{Home\+Section}}, \mbox{\hyperlink{classDoorLock_aba06effb7ed65eb397996b4d9ca6e632}{Door\+Lock}}, and \mbox{\hyperlink{classAlarm_af9542d9332d3bc5220d2d82ed17b2b21}{Alarm}}.
+
+\mbox{\Hypertarget{classSmartDevice_aa2d220574d20539603a0206a44d00a18}\label{classSmartDevice_aa2d220574d20539603a0206a44d00a18}} 
+\index{SmartDevice@{SmartDevice}!update@{update}}
+\index{update@{update}!SmartDevice@{SmartDevice}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void Smart\+Device\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function to update the state of the device. 
+
+This method must be implemented by derived classes to define how the device reacts to state changes. 
+
+Implemented in \mbox{\hyperlink{classThermostat_a2b8d24e0d2c26c71429ba8ff543efd25}{Thermostat}}, \mbox{\hyperlink{classSmartThermostatIntegrator_abcc3b1763c931ec7afe57f996a842d97}{Smart\+Thermostat\+Integrator}}, \mbox{\hyperlink{classRoom_a251b211b68779b122ef8be6a81fae5e1}{Room}}, \mbox{\hyperlink{classLight_a923c5625ec556ce1413b31a6ba84c28f}{Light}}, \mbox{\hyperlink{classHomeSection_adb541dcff0f342e18750206eac96dad4}{Home\+Section}}, \mbox{\hyperlink{classDoorLock_a272a1ef7df7148eab854c5b0ee173409}{Door\+Lock}}, and \mbox{\hyperlink{classAlarm_ad2c3ff440e932d271399a70b99666021}{Alarm}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SmartDevice_8h}{Smart\+Device.\+h}}\item 
+Smart\+Device.\+cpp\end{DoxyCompactItemize}

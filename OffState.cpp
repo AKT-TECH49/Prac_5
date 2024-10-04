@@ -1,8 +1,5 @@
 #include "OffState.h"
 
-
-
-
 void OffState::toggle(Light *light)
 {
     OnState* newState = new OnState();

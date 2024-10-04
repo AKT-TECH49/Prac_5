@@ -1,17 +1,21 @@
+// base needed for all the patterns
 #include "SmartDevice.h"
 #include "Room.h"
 #include "HomeSection.h"
-//
+
+// base needed for all the patterns
 #include "Light.h"
 #include "Thermostat.h"
 #include "Alarm.h"
 #include "DoorLock.h"
-//
+
+// needed for the state design pattern
 #include "LightState.h"
 #include "ThermoState.h"
 #include "AlarmState.h"
 #include "DoorLState.h"
-//
+
+// needed for the state design pattern
 #include "OnState.h"
 #include "OffState.h"
 #include "IdleState.h"
@@ -32,19 +36,31 @@
 #include "Temperature.h"
 #include "Control.h"
 
+// needed for the command design pattern
+#include "TurnOffAllLights.h"
+#include "LockAllDoors.h"
+#include "MacroRoutine.h"
+#include "DefuseAlarm.h"
+#include "SwitchThermo.h"
+
 #include <iostream>
 #include <string>
 
+// Test for component 1:
 void TestComponent1();
+// Test for component 2:
 void TestComponent2();
+// Test for component 2:
+void TestComponent3();
+// Test for component 4:
 void TestComponent4();
 
 int main()
 {
-    // TestComponent1();
-    // TestComponent2();
-    //  TestComponent4();
-
+    TestComponent1();
+    TestComponent2();
+    TestComponent3();
+    TestComponent4();
     return 0;
 }
 
@@ -100,6 +116,78 @@ void TestComponent1()
 }
 
 void TestComponent2()
+{
+    // =========== Testing the Lights Command =============
+    Light *livingRoomLight = new Light("Living Room Light", 100, 60); // Brightness = 100, Power = 60W
+    std::cout << "Initial state of the light: " << livingRoomLight->getStatus() << "\n";
+
+    // Create the TurnOffAllLights command
+    TurnOffAllLights *turnOffLightsCmd = new TurnOffAllLights(livingRoomLight);
+
+    // Create a macro routine
+    MacroRoutine goodnightRoutine;
+    goodnightRoutine.addCommand(turnOffLightsCmd);
+
+    // Execute the macro routine
+    std::cout << "\nExecuting Goodnight Routine:\n";
+    goodnightRoutine.execute();
+
+    // Check the final state of the light
+    std::cout << "\nFinal state of the light: " << livingRoomLight->getStatus() << "\n";
+
+    // =========== Testing the Door Lock Command =============
+    DoorLock *frontDoor = new DoorLock("Front Door", 1, "High");
+    DoorLock *backDoor = new DoorLock("Back Door", 1, "Medium");
+
+    // Create specific commands to lock each door
+    SmartDeviceCommand *lockFrontDoor = new LockAllDoors(frontDoor);
+    SmartDeviceCommand *lockBackDoor = new LockAllDoors(backDoor);
+
+    // Create a MacroRoutine for the Goodnight routine
+    MacroRoutine goodnightRoutine2;
+
+    // Add the commands to lock all doors
+    goodnightRoutine2.addCommand(lockFrontDoor);
+    goodnightRoutine2.addCommand(lockBackDoor);
+
+    // Execute the Goodnight routine
+    std::cout << "Executing Goodnight Routine:\n";
+    goodnightRoutine2.execute();
+
+    // Check the final state of the doors
+    std::cout << "Final state of front door: " << frontDoor->getStat() << "\n";
+    std::cout << "Final state of back door: " << backDoor->getStat() << "\n";
+
+    // Re-executing the routine
+    std::cout << "\n-- Test 2: Re-executing Goodnight Routine --\n";
+    goodnightRoutine2.execute();
+
+    // =========== Testing the Defuse Alarm Command =============
+    Alarm *livingRoomAlarm = new Alarm("Living Room Alarm", 80, "High");
+    DefuseAlarm *defuseLivingRoomAlarm = new DefuseAlarm(livingRoomAlarm);
+
+    // Create a macro routine and add commands
+    MacroRoutine goodnightRoutine3;
+    goodnightRoutine3.addCommand(defuseLivingRoomAlarm);
+
+    // Execute the Goodnight Routine
+    std::cout << "Executing Goodnight Routine:\n";
+    goodnightRoutine3.execute();
+
+    // =========== Testing the Switch Thermostat Command =============
+    Thermostat *livingRoomThermo = new Thermostat("Living Room Thermostat"); // Initial temp of 20°C
+
+    SmartDeviceCommand *switchToHot = new SwitchThermo(livingRoomThermo, 28);  // Setting to 28°C
+    SmartDeviceCommand *switchToCold = new SwitchThermo(livingRoomThermo, 15); // Setting to 15°C
+
+    MacroRoutine goodMorningRoutine4;
+    goodMorningRoutine4.addCommand(switchToHot); // Switch thermostat to hot
+    goodMorningRoutine4.execute();               // Executes all added commands
+
+    switchToCold->execute(); // Direct test without MacroRoutine
+}
+
+void TestComponent3()
 {
     std::cout << "~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~COMPONENT 2~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_ \n";
     std::cout << "\t ======Legacy Thermostat===== \n";
@@ -178,7 +266,7 @@ void TestComponent4()
     control->notifySpecificDevice(stat1);
     control->notifySpecificDevice(alarm1);
 
-    // remove
+    //remove
     control->removeDevice(alarm1);
     control->removeDevice(stat1);
     control->removeDevice(lck1);

@@ -16,4 +16,3 @@ std::string UnlockedState::toString()
     return "Unlocked";
 }
 
-

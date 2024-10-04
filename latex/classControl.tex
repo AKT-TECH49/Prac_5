@@ -1,0 +1,82 @@
+\hypertarget{classControl}{}\doxysection{Control Class Reference}
+\label{classControl}\index{Control@{Control}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classControl_aedda1328c4f8b8d49bca8f0812d3bfd1}{$\sim$\+Control}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classControl}{Control}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classControl_a1fbf10b81e905a42730f1f13aa5f3840}{add\+Sensor}} (\mbox{\hyperlink{classSensor}{Sensor}} $\ast$sensor)
+\begin{DoxyCompactList}\small\item\em Adds a sensor to the control system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classControl_a94143e3c41a08568057a7aeb0f5b4e20}{add\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Adds a smart device to the control system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classControl_a22e8accf67175ca45729019456cbd3a6}{notify\+Specific\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Notifies a specific smart device about an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classControl_aedda1328c4f8b8d49bca8f0812d3bfd1}\label{classControl_aedda1328c4f8b8d49bca8f0812d3bfd1}} 
+\index{Control@{Control}!````~Control@{$\sim$Control}}
+\index{````~Control@{$\sim$Control}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{$\sim$Control()}{~Control()}}
+{\footnotesize\ttfamily Control\+::$\sim$\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classControl}{Control}} class. 
+
+Cleans up the sensors and devices managed by the control system. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classControl_a94143e3c41a08568057a7aeb0f5b4e20}\label{classControl_a94143e3c41a08568057a7aeb0f5b4e20}} 
+\index{Control@{Control}!addDevice@{addDevice}}
+\index{addDevice@{addDevice}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{addDevice()}{addDevice()}}
+{\footnotesize\ttfamily void Control\+::add\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Adds a smart device to the control system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a1fbf10b81e905a42730f1f13aa5f3840}\label{classControl_a1fbf10b81e905a42730f1f13aa5f3840}} 
+\index{Control@{Control}!addSensor@{addSensor}}
+\index{addSensor@{addSensor}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{addSensor()}{addSensor()}}
+{\footnotesize\ttfamily void Control\+::add\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSensor}{Sensor}} $\ast$}]{sensor }\end{DoxyParamCaption})}
+
+
+
+Adds a sensor to the control system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & Pointer to the \mbox{\hyperlink{classSensor}{Sensor}} to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a22e8accf67175ca45729019456cbd3a6}\label{classControl_a22e8accf67175ca45729019456cbd3a6}} 
+\index{Control@{Control}!notifySpecificDevice@{notifySpecificDevice}}
+\index{notifySpecificDevice@{notifySpecificDevice}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{notifySpecificDevice()}{notifySpecificDevice()}}
+{\footnotesize\ttfamily void Control\+::notify\+Specific\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Notifies a specific smart device about an event. 
+
+This method triggers a notification or action for the provided device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} that needs to be notified. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Control_8h}{Control.\+h}}\item 
+Control.\+cpp\end{DoxyCompactItemize}

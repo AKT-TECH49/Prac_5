@@ -1,0 +1,145 @@
+\hypertarget{classAlarm}{}\doxysection{Alarm Class Reference}
+\label{classAlarm}\index{Alarm@{Alarm}}
+
+
+Inheritance diagram for Alarm\+:
+% FIG 0
+
+
+Collaboration diagram for Alarm\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAlarm_af9a38b93579555fe219773b724e6b7b2}{Alarm}} (std\+::string type\+Alarm, int decibels, const std\+::string \&grade)
+\begin{DoxyCompactList}\small\item\em Constructs an \mbox{\hyperlink{classAlarm}{Alarm}} object with a specified type, loudness, and security level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAlarm_adb5fc73041badc6a082b78874559c002}{$\sim$\+Alarm}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classAlarm}{Alarm}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAlarm_af9542d9332d3bc5220d2d82ed17b2b21}{perform\+Action}} () override
+\begin{DoxyCompactList}\small\item\em Performs an action based on the current alarm state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAlarm_aec29824a96e54f583a64a966ef2dc774}{get\+Device\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Returns type of smart device. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAlarm_a878fe0b5c10943116518abdde5426638}{get\+Status}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current status of the alarm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAlarm_addb27d7c9d4751d77f9b89c965ece97e}{set\+Status}} (\mbox{\hyperlink{classAlarmState}{Alarm\+State}} $\ast$status)
+\begin{DoxyCompactList}\small\item\em Sets the state of the alarm (e.\+g., activated/deactivated). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAlarm_ad2c3ff440e932d271399a70b99666021}{update}} () override
+\begin{DoxyCompactList}\small\item\em Observer update method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAlarm_af9a38b93579555fe219773b724e6b7b2}\label{classAlarm_af9a38b93579555fe219773b724e6b7b2}} 
+\index{Alarm@{Alarm}!Alarm@{Alarm}}
+\index{Alarm@{Alarm}!Alarm@{Alarm}}
+\doxysubsubsection{\texorpdfstring{Alarm()}{Alarm()}}
+{\footnotesize\ttfamily Alarm\+::\+Alarm (\begin{DoxyParamCaption}\item[{std\+::string}]{type\+Alarm,  }\item[{int}]{decibels,  }\item[{const std\+::string \&}]{grade }\end{DoxyParamCaption})}
+
+
+
+Constructs an \mbox{\hyperlink{classAlarm}{Alarm}} object with a specified type, loudness, and security level. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+Alarm} & The type or model of the alarm. \\
+\hline
+{\em decibels} & The loudness level in decibels. \\
+\hline
+{\em grade} & The security level or category of the alarm. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAlarm_adb5fc73041badc6a082b78874559c002}\label{classAlarm_adb5fc73041badc6a082b78874559c002}} 
+\index{Alarm@{Alarm}!````~Alarm@{$\sim$Alarm}}
+\index{````~Alarm@{$\sim$Alarm}!Alarm@{Alarm}}
+\doxysubsubsection{\texorpdfstring{$\sim$Alarm()}{~Alarm()}}
+{\footnotesize\ttfamily Alarm\+::$\sim$\+Alarm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classAlarm}{Alarm}} class. 
+
+Responsible for cleaning up the \mbox{\hyperlink{classAlarmState}{Alarm\+State}} pointer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAlarm_aec29824a96e54f583a64a966ef2dc774}\label{classAlarm_aec29824a96e54f583a64a966ef2dc774}} 
+\index{Alarm@{Alarm}!getDeviceType@{getDeviceType}}
+\index{getDeviceType@{getDeviceType}!Alarm@{Alarm}}
+\doxysubsubsection{\texorpdfstring{getDeviceType()}{getDeviceType()}}
+{\footnotesize\ttfamily std\+::string Alarm\+::get\+Device\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns type of smart device. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the device type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classSmartDevice_ad052e7da2b5f47462de1f07fb7c709f5}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classAlarm_a878fe0b5c10943116518abdde5426638}\label{classAlarm_a878fe0b5c10943116518abdde5426638}} 
+\index{Alarm@{Alarm}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Alarm@{Alarm}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily std\+::string Alarm\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the current status of the alarm. 
+
+Returns a string representation of the alarm\textquotesingle{}s current state, loudness, and security level.
+
+\begin{DoxyReturn}{Returns}
+A string describing the current status of the alarm. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAlarm_af9542d9332d3bc5220d2d82ed17b2b21}\label{classAlarm_af9542d9332d3bc5220d2d82ed17b2b21}} 
+\index{Alarm@{Alarm}!performAction@{performAction}}
+\index{performAction@{performAction}!Alarm@{Alarm}}
+\doxysubsubsection{\texorpdfstring{performAction()}{performAction()}}
+{\footnotesize\ttfamily void Alarm\+::perform\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Performs an action based on the current alarm state. 
+
+Executes the current state\textquotesingle{}s action on the alarm. 
+
+Implements \mbox{\hyperlink{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classAlarm_addb27d7c9d4751d77f9b89c965ece97e}\label{classAlarm_addb27d7c9d4751d77f9b89c965ece97e}} 
+\index{Alarm@{Alarm}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!Alarm@{Alarm}}
+\doxysubsubsection{\texorpdfstring{setStatus()}{setStatus()}}
+{\footnotesize\ttfamily void Alarm\+::set\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAlarmState}{Alarm\+State}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+
+Sets the state of the alarm (e.\+g., activated/deactivated). 
+
+Allows changing the alarm\textquotesingle{}s state by providing a new \mbox{\hyperlink{classAlarmState}{Alarm\+State}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & Pointer to a new \mbox{\hyperlink{classAlarmState}{Alarm\+State}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAlarm_ad2c3ff440e932d271399a70b99666021}\label{classAlarm_ad2c3ff440e932d271399a70b99666021}} 
+\index{Alarm@{Alarm}!update@{update}}
+\index{update@{update}!Alarm@{Alarm}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Alarm\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Observer update method. 
+
+This method to notify the alarm of changes, allowing it to update its state. 
+
+Implements \mbox{\hyperlink{classSmartDevice_aa2d220574d20539603a0206a44d00a18}{Smart\+Device}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Alarm_8h}{Alarm.\+h}}\item 
+Alarm.\+cpp\end{DoxyCompactItemize}

@@ -1,59 +1,31 @@
-#include "Light.h"
-#include "OffState.h"
+#include "IdleState.h"
+#include "MonitorState.h"
 
-
-Light::Light(const std::string &lightType, int initBrightness, int wattz):SmartDevice( 11)
+void IdleState::read(Thermostat *thermo)
 {
-    this->brightness = initBrightness;
-    this->power = wattz;
-    this->name = lightType;
-    state = new OffState();
+    thermo->setState(new MonitorState());
+     MonitorState* state = new MonitorState();
+     state->read(thermo);
+     delete state;
+    std::cout<<"ThermoStat is now monitoring temperature. \n";
 }
 
-Light::~Light()
+std::string IdleState::toString() const
 {
-    if(state)
-    {
-    delete this->state;
-    state = NULL;
-    }
-
+    return "Idle";
 }
 
-std::string Light::getStatus() const
+bool IdleState::isCold() const
 {
-    std::string state_name = state->toString();
-    return  state_name;
+    return false;
 }
 
-void Light::setState(LightState *light)
+bool IdleState::isHot() const
 {
-   if(this->state)
-   {
-    delete this->state;
-    state = NULL;
-   }
-    this->state = light;
+    return false;
 }
 
-void Light::performAction()
+bool IdleState::isMild() const
 {
-    state->toggle(this);
-}
-
-std::string Light::getDeviceType()
-{
-    return this->name;
-}
-
-void Light::update()
-{
-     if(state->toString() == "Off")
-     {
-        state->toggle(this);
-     }
-     else
-     {
-        std::cout<<"!Light is turned on already!"<<std::endl;
-     }
+    return false;
 }

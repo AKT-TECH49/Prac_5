@@ -1,0 +1,84 @@
+\hypertarget{classSmartThermostatIntegrator}{}\doxysection{Smart\+Thermostat\+Integrator Class Reference}
+\label{classSmartThermostatIntegrator}\index{SmartThermostatIntegrator@{SmartThermostatIntegrator}}
+
+
+Inheritance diagram for Smart\+Thermostat\+Integrator\+:
+% FIG 0
+
+
+Collaboration diagram for Smart\+Thermostat\+Integrator\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSmartThermostatIntegrator_a0d95abd9e04a5670dfb4f19f3fe78cbe}\label{classSmartThermostatIntegrator_a0d95abd9e04a5670dfb4f19f3fe78cbe}} 
+{\bfseries Smart\+Thermostat\+Integrator} (\mbox{\hyperlink{classLegendThermo}{Legend\+Thermo}} $\ast$thermo, const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classSmartThermostatIntegrator_ad9cec64c62a720cf1af2db9e16b33856}\label{classSmartThermostatIntegrator_ad9cec64c62a720cf1af2db9e16b33856}} 
+void {\bfseries set\+Temp} (int t)
+\item 
+\mbox{\Hypertarget{classSmartThermostatIntegrator_a77eeb283714ee9118abda7fc4aee5bcd}\label{classSmartThermostatIntegrator_a77eeb283714ee9118abda7fc4aee5bcd}} 
+int {\bfseries get\+TemP} () const
+\item 
+void \mbox{\hyperlink{classSmartThermostatIntegrator_ad8457d68e9f49785e726c23467fa65d9}{perform\+Action}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual function to perform the device\textquotesingle{}s main action. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSmartThermostatIntegrator_ad91651a4e38491005d0d444f054364a2}{get\+Device\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual function to get the device type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSmartThermostatIntegrator_abcc3b1763c931ec7afe57f996a842d97}{update}} () override
+\begin{DoxyCompactList}\small\item\em Pure virtual function to update the state of the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSmartThermostatIntegrator_ad91651a4e38491005d0d444f054364a2}\label{classSmartThermostatIntegrator_ad91651a4e38491005d0d444f054364a2}} 
+\index{SmartThermostatIntegrator@{SmartThermostatIntegrator}!getDeviceType@{getDeviceType}}
+\index{getDeviceType@{getDeviceType}!SmartThermostatIntegrator@{SmartThermostatIntegrator}}
+\doxysubsubsection{\texorpdfstring{getDeviceType()}{getDeviceType()}}
+{\footnotesize\ttfamily std\+::string Smart\+Thermostat\+Integrator\+::get\+Device\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function to get the device type. 
+
+Derived classes must implement this method to return the type of the device (e.\+g., light, door lock, thermostat).
+
+\begin{DoxyReturn}{Returns}
+A string representing the device type. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classSmartDevice_ad052e7da2b5f47462de1f07fb7c709f5}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classSmartThermostatIntegrator_ad8457d68e9f49785e726c23467fa65d9}\label{classSmartThermostatIntegrator_ad8457d68e9f49785e726c23467fa65d9}} 
+\index{SmartThermostatIntegrator@{SmartThermostatIntegrator}!performAction@{performAction}}
+\index{performAction@{performAction}!SmartThermostatIntegrator@{SmartThermostatIntegrator}}
+\doxysubsubsection{\texorpdfstring{performAction()}{performAction()}}
+{\footnotesize\ttfamily void Smart\+Thermostat\+Integrator\+::perform\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function to perform the device\textquotesingle{}s main action. 
+
+This method must be implemented by derived classes to perform the specific action of the device. 
+
+Implements \mbox{\hyperlink{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classSmartThermostatIntegrator_abcc3b1763c931ec7afe57f996a842d97}\label{classSmartThermostatIntegrator_abcc3b1763c931ec7afe57f996a842d97}} 
+\index{SmartThermostatIntegrator@{SmartThermostatIntegrator}!update@{update}}
+\index{update@{update}!SmartThermostatIntegrator@{SmartThermostatIntegrator}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Smart\+Thermostat\+Integrator\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure virtual function to update the state of the device. 
+
+This method must be implemented by derived classes to define how the device reacts to state changes. 
+
+Implements \mbox{\hyperlink{classSmartDevice_aa2d220574d20539603a0206a44d00a18}{Smart\+Device}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Thermo\+Integrator.\+h\item 
+Thermo\+Integrator.\+cpp\end{DoxyCompactItemize}

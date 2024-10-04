@@ -1,0 +1,45 @@
+digraph "SmartDevice.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="SmartDevice.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Defines the abstract base class SmartDevice for all smart devices in the home automation system."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Alarm.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Alarm_8h.html",tooltip="Defines the Alarm class for managing smart home alarm systems."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Deactivated.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Deactivated_8h_source.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DefuseAlarm.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DefuseAlarm_8h.html",tooltip="Concrete command to defuse the alarm in a smart home automation system."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Control.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Control_8h.html",tooltip="Defines the class that manages sensors and devices in a smart home system."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="DoorLock.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$DoorLock_8h.html",tooltip="Defines the DoorLock class for managing smart home door locks."];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="LockAllDoors.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$LockAllDoors_8h.html",tooltip="Concrete command to lock all doors in a smart home automation system."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Light.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Light_8h.html",tooltip="Defines the Light class, which represents a smart light in the home automation system."];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="OnState.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$OnState_8h_source.html",tooltip=" "];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="TurnOffAllLights.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$TurnOffAllLights_8h.html",tooltip="Concrete command to turn off all the lights in a room."];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Room.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Room_8h.html",tooltip="Defines the Room class, which represents a collection of smart devices within a room."];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="HomeSection.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$HomeSection_8h.html",tooltip="Defines the HomeSection class, which represents a collection of rooms in a specific section of the ho..."];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Sensor.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Sensor_8h.html",tooltip="Defines the Sensor class interface for managing observers in a smart home system."];
+  Node13 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Motion.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Motion_8h_source.html",tooltip=" "];
+  Node13 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Temperature.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Temperature_8h_source.html",tooltip=" "];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="ThermoIntegrator.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ThermoIntegrator_8h_source.html",tooltip=" "];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="Thermostat.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Thermostat_8h.html",tooltip="Thermostat class for managing smart home thermostats."];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="MonitorState.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$MonitorState_8h_source.html",tooltip=" "];
+  Node17 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="SwitchThermo.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$SwitchThermo_8h.html",tooltip="Concrete command to switch the thermostat to a new temperature."];
+}

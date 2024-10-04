@@ -1,0 +1,157 @@
+\hypertarget{classHomeSection}{}\doxysection{Home\+Section Class Reference}
+\label{classHomeSection}\index{HomeSection@{HomeSection}}
+
+
+Inheritance diagram for Home\+Section\+:
+% FIG 0
+
+
+Collaboration diagram for Home\+Section\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHomeSection_aa99f1a2c3fd03bfe5fce8398a5e016b6}{Home\+Section}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classHomeSection}{Home\+Section}} object with a specified name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHomeSection_a3e889b0540b4b15678ae90c4cab7365b}{$\sim$\+Home\+Section}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classHomeSection}{Home\+Section}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHomeSection_a5ba0d4a79d93908cb1d8669622945a8b}{add\+Room}} (\mbox{\hyperlink{classRoom}{Room}} $\ast$room)
+\begin{DoxyCompactList}\small\item\em Adds a room to the home section. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHomeSection_af61cf7f851d272e1414db15cc0c2becc}{remove\+Room}} (\mbox{\hyperlink{classRoom}{Room}} $\ast$room)
+\begin{DoxyCompactList}\small\item\em Removes a room from the home section. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHomeSection_a4723fbf8802fb81ff0b67b7cda852a98}\label{classHomeSection_a4723fbf8802fb81ff0b67b7cda852a98}} 
+void \mbox{\hyperlink{classHomeSection_a4723fbf8802fb81ff0b67b7cda852a98}{display\+Home\+Section}} ()
+\begin{DoxyCompactList}\small\item\em Displays the rooms in the home section. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHomeSection_a3b7898e2024a6827a83a5c049a059c21}{get\+Section\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the home section. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classHomeSection_a8e560ce1f78188f3e3de897f13e0321f}{get\+Device\+Type}} () override
+\begin{DoxyCompactList}\small\item\em Returns the type of device (\mbox{\hyperlink{classHomeSection}{Home\+Section}}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHomeSection_a7c49bbdd7c561d3e40647c82b46a25cc}{perform\+Action}} () override
+\begin{DoxyCompactList}\small\item\em Performs an action on all rooms in the section. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHomeSection_adb541dcff0f342e18750206eac96dad4}{update}} () override
+\begin{DoxyCompactList}\small\item\em Observer update method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHomeSection_aa99f1a2c3fd03bfe5fce8398a5e016b6}\label{classHomeSection_aa99f1a2c3fd03bfe5fce8398a5e016b6}} 
+\index{HomeSection@{HomeSection}!HomeSection@{HomeSection}}
+\index{HomeSection@{HomeSection}!HomeSection@{HomeSection}}
+\doxysubsubsection{\texorpdfstring{HomeSection()}{HomeSection()}}
+{\footnotesize\ttfamily Home\+Section\+::\+Home\+Section (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classHomeSection}{Home\+Section}} object with a specified name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the home section. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHomeSection_a3e889b0540b4b15678ae90c4cab7365b}\label{classHomeSection_a3e889b0540b4b15678ae90c4cab7365b}} 
+\index{HomeSection@{HomeSection}!````~HomeSection@{$\sim$HomeSection}}
+\index{````~HomeSection@{$\sim$HomeSection}!HomeSection@{HomeSection}}
+\doxysubsubsection{\texorpdfstring{$\sim$HomeSection()}{~HomeSection()}}
+{\footnotesize\ttfamily Home\+Section\+::$\sim$\+Home\+Section (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classHomeSection}{Home\+Section}} class. 
+
+Cleans up the rooms contained in the section. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHomeSection_a5ba0d4a79d93908cb1d8669622945a8b}\label{classHomeSection_a5ba0d4a79d93908cb1d8669622945a8b}} 
+\index{HomeSection@{HomeSection}!addRoom@{addRoom}}
+\index{addRoom@{addRoom}!HomeSection@{HomeSection}}
+\doxysubsubsection{\texorpdfstring{addRoom()}{addRoom()}}
+{\footnotesize\ttfamily void Home\+Section\+::add\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoom}{Room}} $\ast$}]{room }\end{DoxyParamCaption})}
+
+
+
+Adds a room to the home section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Pointer to the \mbox{\hyperlink{classRoom}{Room}} object to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHomeSection_a8e560ce1f78188f3e3de897f13e0321f}\label{classHomeSection_a8e560ce1f78188f3e3de897f13e0321f}} 
+\index{HomeSection@{HomeSection}!getDeviceType@{getDeviceType}}
+\index{getDeviceType@{getDeviceType}!HomeSection@{HomeSection}}
+\doxysubsubsection{\texorpdfstring{getDeviceType()}{getDeviceType()}}
+{\footnotesize\ttfamily std\+::string Home\+Section\+::get\+Device\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the type of device (\mbox{\hyperlink{classHomeSection}{Home\+Section}}). 
+
+\begin{DoxyReturn}{Returns}
+A string representing the type of device. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classSmartDevice_ad052e7da2b5f47462de1f07fb7c709f5}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classHomeSection_a3b7898e2024a6827a83a5c049a059c21}\label{classHomeSection_a3b7898e2024a6827a83a5c049a059c21}} 
+\index{HomeSection@{HomeSection}!getSectionName@{getSectionName}}
+\index{getSectionName@{getSectionName}!HomeSection@{HomeSection}}
+\doxysubsubsection{\texorpdfstring{getSectionName()}{getSectionName()}}
+{\footnotesize\ttfamily std\+::string Home\+Section\+::get\+Section\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the name of the home section. 
+
+\begin{DoxyReturn}{Returns}
+The name of the home section. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHomeSection_a7c49bbdd7c561d3e40647c82b46a25cc}\label{classHomeSection_a7c49bbdd7c561d3e40647c82b46a25cc}} 
+\index{HomeSection@{HomeSection}!performAction@{performAction}}
+\index{performAction@{performAction}!HomeSection@{HomeSection}}
+\doxysubsubsection{\texorpdfstring{performAction()}{performAction()}}
+{\footnotesize\ttfamily void Home\+Section\+::perform\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Performs an action on all rooms in the section. 
+
+Executes a generic action for all rooms contained in the home section. 
+
+Implements \mbox{\hyperlink{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}{Smart\+Device}}.
+
+\mbox{\Hypertarget{classHomeSection_af61cf7f851d272e1414db15cc0c2becc}\label{classHomeSection_af61cf7f851d272e1414db15cc0c2becc}} 
+\index{HomeSection@{HomeSection}!removeRoom@{removeRoom}}
+\index{removeRoom@{removeRoom}!HomeSection@{HomeSection}}
+\doxysubsubsection{\texorpdfstring{removeRoom()}{removeRoom()}}
+{\footnotesize\ttfamily void Home\+Section\+::remove\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoom}{Room}} $\ast$}]{room }\end{DoxyParamCaption})}
+
+
+
+Removes a room from the home section. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em room} & Pointer to the \mbox{\hyperlink{classRoom}{Room}} object to be removed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHomeSection_adb541dcff0f342e18750206eac96dad4}\label{classHomeSection_adb541dcff0f342e18750206eac96dad4}} 
+\index{HomeSection@{HomeSection}!update@{update}}
+\index{update@{update}!HomeSection@{HomeSection}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Home\+Section\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Observer update method. 
+
+Updates the home section and notifies all contained rooms of changes. 
+
+Implements \mbox{\hyperlink{classSmartDevice_aa2d220574d20539603a0206a44d00a18}{Smart\+Device}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{HomeSection_8h}{Home\+Section.\+h}}\item 
+Home\+Section.\+cpp\end{DoxyCompactItemize}
