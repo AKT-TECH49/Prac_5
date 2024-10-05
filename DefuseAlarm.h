@@ -25,7 +25,7 @@ public:
     /**
      * @brief Destructor for the DefuseAlarm command.
      */
-    virtual ~DefuseAlarm();
+      ~DefuseAlarm();
 
     /**
      * @brief Executes the command to defuse the alarm.

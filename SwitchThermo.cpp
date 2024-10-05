@@ -5,12 +5,17 @@
 SwitchThermo::SwitchThermo(Thermostat *thermo, int temp)
     : thermostat(thermo), newTemperature(temp) {}
 
-SwitchThermo::~SwitchThermo() {
-    // Optional: Destructor implementation
+SwitchThermo::~SwitchThermo()
+{
+    if (thermostat)
+    {
+        delete thermostat;
+        thermostat = NULL;
+    }
 }
 
 void SwitchThermo::execute()
 {
     thermostat->setTemperature(newTemperature);
-    thermostat->performAction(); // This will trigger the thermostat state change
+    thermostat->performAction(); 
 }

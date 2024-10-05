@@ -26,7 +26,7 @@ public:
     /**
      * @brief Destructor for the TurnOffAllLights command.
      */
-    virtual ~TurnOffAllLights();
+    ~TurnOffAllLights();
 
     /**
      * @brief Executes the command to turn off all lights.

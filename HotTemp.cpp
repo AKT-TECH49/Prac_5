@@ -1,96 +1,28 @@
-#include "HomeSection.h"
-#include <algorithm>
-#include <iostream>
+#include "HotTemp.h"
+#include "Thermostat.h"
 
-
-HomeSection::HomeSection(const std::string &name):SmartDevice( 00)
+void HotState::read(Thermostat *thermostat)
 {
-    this->secName = name;
+    std::cout<<"~#HOT, Maintaing high temperature settings.\n";
+    std::cout<<"State is: "<<thermostat->getStatus() <<std::endl;
 }
 
-
-HomeSection::~HomeSection()
+std::string HotState::toString() const
 {
-    for(Room* room : rooms)
-    {
-        delete room;
-        room = NULL;
-    }
-    rooms.clear();
+    return "Hot";
 }
 
-void HomeSection::addRoom(Room *room)
+bool HotState::isHot() const
 {
-    if(room)
-    {
-        rooms.push_back(room);
-    }
+    return true;
 }
 
-void HomeSection::removeRoom(Room *room)
+bool HotState::isCold() const
 {
-      if (room)
-    {
-        auto it = std::find(rooms.begin(), rooms.end(), room);
-        if (it != rooms.end())
-        {
-            rooms.erase(it); 
-            std::cout << "Room removed from: "<<secName<< std::endl;
-        }
-        else
-        {
-            std::cout << "room not found in the homeSection" << std::endl;
-        }
-    }
-    else
-    {
-        std::cout << "Invalid room." << std::endl;
-    }
+    return false;
 }
 
-void HomeSection::displayHomeSection()
+bool HotState::isMild() const
 {
-
-    for(Room* room : rooms)
-    {
-        std::cout<<"Rooms in the section: "<<secName<<std::endl;
-        std::cout<<room->getRoomName()<<"| \n";
-    }
-}
-
-std::string HomeSection::getSectionName()
-{
-    return secName;
-}
-
-std::string HomeSection::getDeviceType()
-{
-    std::string roomsDeTypes;
-   for(Room* room : rooms)
-   {
-     roomsDeTypes += room->getDeviceType();
-   } 
-   if(roomsDeTypes.empty())
-   {
-     return "No rooms or no rooms with devices";
-   }
-   return roomsDeTypes;
-   
-}
-
-void HomeSection::performAction()
-{
-    for(Room* room : rooms) 
-    {
-        room->performAction();
-    }
-}
-
-
-void HomeSection::update()
-{
-    for(Room* room : rooms)
-    {
-        room->update();
-    }
+    return false;
 }

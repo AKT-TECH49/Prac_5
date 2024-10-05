@@ -3,21 +3,28 @@
 #include "LockedState.h"
 #include "DoorLock.h"
 
-LockAllDoors::LockAllDoors(DoorLock *doorLock) 
+LockAllDoors::LockAllDoors(DoorLock *doorLock)
     : doorLock(doorLock) {}
 
-
-LockAllDoors::~LockAllDoors() {
-    // Optional: Destructor implementation
+LockAllDoors::~LockAllDoors()
+{
+    // if (doorLock != NULL )
+    // {
+    //     delete doorLock;
+        doorLock = NULL;
+    // }
 }
 
 void LockAllDoors::execute()
 {
     // Check if the door is already locked
-    if (doorLock->getStat() == "Unlocked") {
-        doorLock->performAction();  // This will lock the door if it's unlocked
+    if (doorLock->getStat() == "Unlocked")
+    {
+        doorLock->performAction(); // This will lock the door if it's unlocked
         std::cout << doorLock->getDeviceType() << " is now locked." << std::endl;
-    } else {
+    }
+    else
+    {
         std::cout << doorLock->getDeviceType() << " is already locked." << std::endl;
     }
 }

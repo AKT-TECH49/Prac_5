@@ -26,7 +26,7 @@ public:
     /**
      * @brief Destructor for the LockAllDoors command.
      */
-    virtual ~LockAllDoors();
+     ~LockAllDoors();
 
     /**
      * @brief Executes the command to lock all doors.

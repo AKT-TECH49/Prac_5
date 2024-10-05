@@ -24,6 +24,8 @@ public:
      */
     void addCommand(SmartDeviceCommand* command);
 
+    void removeCommand(SmartDeviceCommand* cmd);
+
     /**
      * @brief Executes all commands in the macro routine.
      */
