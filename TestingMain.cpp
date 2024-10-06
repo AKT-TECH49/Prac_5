@@ -41,7 +41,6 @@
 #include "LockAllDoors.h"
 #include "MacroRoutine.h"
 #include "DefuseAlarm.h"
-#include "SwitchThermo.h"
 
 #include <iostream>
 #include <string>
@@ -198,19 +197,39 @@ void TestComponent1()
     thermo1->setState(mild);
     std::cout << thermo1->getStatus() << std::endl;
 
-    
-
-
-
-
 
     // connection
     sec1->addRoom(livingRoom);
     std::cout << "Devices in the " << sec1->getSectionName() << " with ID: " << sec1->getId() << std::endl;
     sec1->displayHomeSection();
     std::cout << sec1->getDeviceType() << std::endl;
+    std::cout<<"\t _+_+_+_+Action performed in Home Section+_+_+_+_+_+ \n";
+    sec1->performAction();
+    std::cout<<"\n Performing Updates for safety: \n";
+    sec1->update();
+    sec1->removeRoom(livingRoom);
 
-    delete sec1;  
+
+    //
+    std::cout<<"\t _+_+_+_+_+Action performed in LivingRoom+_+_+_+_+_+ \n";
+    livingRoom->performAction();
+    std::cout<<"\n Performing Updates for safety: \n";
+    livingRoom->update();
+    //
+    livingRoom->removeDevice(light1);
+    livingRoom->removeDevice(doorL1);
+    livingRoom->removeDevice(thermo1);
+    livingRoom->removeDevice(alarm1);
+
+
+    delete sec1;
+    delete livingRoom;
+
+    delete alarm1;
+    delete thermo1;
+    delete doorL1;
+    delete light1;
+
 }
 
 void TestComponent2()
@@ -218,15 +237,15 @@ void TestComponent2()
     std::cout << "~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~COMPONENT 2~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_ \n";
     std::cout << "\t ======Legacy Thermostat===== \n";
     LegendThermo *oldThermo = new LegendThermo();
-    SmartThermostatIntegrator *ThermoI = new SmartThermostatIntegrator(oldThermo, "ThermoStat");
-    std::cout << "Current Temp: " << ThermoI->getTemP() << std::endl;
-    ThermoI->setTemp(25);
-    ThermoI->performAction();
-    std::cout << ThermoI->getDeviceType() << std::endl;
-    ThermoI->performAction();
+    SmartThermostatIntegrator *thermoAdapter = new SmartThermostatIntegrator(oldThermo, "ThermoStat");
+    std::cout << "Current Temp: " << thermoAdapter->getTemP() << std::endl;
+    thermoAdapter->setTemp(25);
+    thermoAdapter->performAction();
+    std::cout <<"Device Type: "<<thermoAdapter->getDeviceType() << std::endl;
+    thermoAdapter->update();
+    thermoAdapter->performAction();
 
-    delete ThermoI;
-    delete oldThermo;
+    delete thermoAdapter;
 }
 
 void TestComponent3()
@@ -245,7 +264,6 @@ void TestComponent3()
     MacroRoutine* goodnightRoutine = new MacroRoutine();
     MacroRoutine* goodnightRoutine2 = new MacroRoutine();
     MacroRoutine* goodMorningR3 = new MacroRoutine();
-
 
     //test
     std::cout<<"=========== Testing the Lights Command ============= \n";

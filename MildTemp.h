@@ -15,6 +15,4 @@ class MildState : public ThermostatState
     bool isHot() const override;
 
 };
-
-
 #endif
