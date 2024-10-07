@@ -12,7 +12,6 @@ private:
 
 public:
     Temperature(const std::string& name);
-    // added missing destructor
     ~Temperature();
     void addDevice(SmartDevice* device) override;
     void removeDevice(SmartDevice* device) override;

@@ -12,13 +12,12 @@ class  SmartThermostatIntegrator : public SmartDevice
 
     public:
     SmartThermostatIntegrator(LegendThermo* thermo , const std::string& name);
+    ~SmartThermostatIntegrator();
     void setTemp(int t);
     int getTemP() const;
     //
     void performAction() override;
     std::string getDeviceType() override;
-
-    //
     void update() override;
 };
 #endif

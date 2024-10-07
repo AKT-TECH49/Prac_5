@@ -1,3 +1,5 @@
+
+
 #include "SmartDeviceCommand.h"
 #include "MacroRoutine.h"
 #include <vector>
@@ -16,6 +18,8 @@ MacroRoutine::~MacroRoutine()
     commands.clear();
 }
 
+
+
 void MacroRoutine::removeCommand(SmartDeviceCommand *cmd)
 {
     for (auto it = commands.begin(); it != commands.end(); ++it)
@@ -28,6 +32,7 @@ void MacroRoutine::removeCommand(SmartDeviceCommand *cmd)
         }
     }
 }
+
 
 void MacroRoutine::execute()
 {

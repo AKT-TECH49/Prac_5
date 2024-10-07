@@ -2,14 +2,24 @@
 #include "IdleState.h"
 #include "MonitorState.h"
 
-
+// parametrizedd constructor
  SmartThermostatIntegrator:: SmartThermostatIntegrator(LegendThermo *thermo, const std::string &name):SmartDevice(100)
 {
     this->thermo = thermo;
     this->name = name;
 }
 
+// desructor 
+SmartThermostatIntegrator::~SmartThermostatIntegrator()
+{
+    if(thermo)
+    {
+        delete thermo;
+        thermo = NULL;
+    }
+}
 
+// set temp of the actual file 
 void  SmartThermostatIntegrator::setTemp(int t ) 
 {
     thermo->adjustTemperature(t);
@@ -20,21 +30,31 @@ int  SmartThermostatIntegrator::getTemP() const
     return thermo->readTemperature();
 }
 
+
+
 void  SmartThermostatIntegrator::performAction() 
 {
     std::cout<< " Action being performed on ThermoStat Adapter: "<<std::endl;
-    int inctemp = getTemP();
-    if(inctemp > 25 )
+    int readTemp = getTemP();
+
+    if(readTemp >= 25 )
     {
-      inctemp -= 5;   
+      readTemp -= 5 ;
+      setTemp(readTemp);
+      std::cout<<"Reducing the temperature...\n";
+    }
+    else if( readTemp < 18)
+    {
+        readTemp += 3 ;
+        setTemp(readTemp);
+        std::cout<<"Increasing the temperature...\n";
     }
     else
     {
-        inctemp += 4;
+        std::cout<<"Optimal Temperature...\n";
     }
-    setTemp(inctemp);
+    std::cout<<"Adjusted Temp(°C) is: "<<getTemP()<<std::endl;
 
-    std::cout<<"Current Temp(°C) is: "<<getTemP()<<std::endl;
 }
 
 std::string  SmartThermostatIntegrator::getDeviceType()
@@ -44,5 +64,5 @@ std::string  SmartThermostatIntegrator::getDeviceType()
 
 void SmartThermostatIntegrator::update()
 {
-    // do nothing
+   std::cout<<"~Integration~ \n";
 }

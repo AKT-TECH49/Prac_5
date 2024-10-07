@@ -272,6 +272,27 @@ void TestComponent2()
     std::cout << "\n☀️ Executing Good Morning Routine:\n";
     goodMorningRoutine.execute();
     std::cout << "State of alarm after Good Morning routine: \033[32m" << livingRoomAlarm->getStatus() << "\033[0m\n";
+
+    // // =========== Testing the Switch Thermostat Command =============
+    // std::cout << "\n🌡️  Testing the Thermostat Command...\n";
+    // Thermostat *livingRoomThermo = new Thermostat("Living Room Thermostat"); // Initial temp of 20°C
+
+    // SmartDeviceCommand *switchToHot = new SwitchThermo(livingRoomThermo, 28);  // Setting to 28°C
+    // SmartDeviceCommand *switchToCold = new SwitchThermo(livingRoomThermo, 15); // Setting to 15°C
+
+    // // Add thermostat settings to Goodnight and GoodMorning routines
+    // goodnightRoutine.addCommand(switchToCold);  // Set to Cold in Goodnight Routine
+    // goodMorningRoutine.addCommand(switchToHot); // Set to Hot in GoodMorning Routine
+
+    // // Execute the routines
+    // std::cout << "\n🌙 Executing Goodnight Routine for Thermostat:\n";
+    // goodnightRoutine.execute();
+    // std::cout << "Thermostat temperature after Goodnight routine: \033[34m" << livingRoomThermo->getStatus() << "\033[0m\n"; // Blue text
+
+    // Morning routine execution 
+    // std::cout << "\n☀️ Executing Good Morning Routine for Thermostat:\n";
+    // goodMorningRoutine.execute();
+    // std::cout << "Thermostat temperature after Good Morning routine: \033[31m" << livingRoomThermo->getStatus() << "\033[0m\n"; // Red text
 }
 
 void TestComponent3()
