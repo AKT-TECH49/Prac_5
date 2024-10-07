@@ -222,7 +222,7 @@ void TestComponent1()
     livingRoom->removeDevice(alarm1);
 
 
-    delete sec1;
+    delete sec1; 
     delete livingRoom;
 
     delete alarm1;
@@ -247,7 +247,7 @@ void TestComponent2()
 
     delete thermoAdapter;
 }
-
+ 
 void TestComponent3()
 {
     std::cout << "~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~COMPONENT 3~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_ \n";

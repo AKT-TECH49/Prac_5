@@ -107,6 +107,15 @@
     "ratio": "cpp",
     "semaphore": "cpp",
     "stop_token": "cpp",
-    "thread": "cpp"
+    "thread": "cpp",
+    "condition_variable": "cpp",
+    "csignal": "cpp",
+    "cstring": "cpp",
+    "set": "cpp",
+    "unordered_set": "cpp",
+    "fstream": "cpp",
+    "iomanip": "cpp",
+    "mutex": "cpp",
+    "sstream": "cpp"
   }
 }
