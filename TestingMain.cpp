@@ -1,4 +1,4 @@
-// 
+//
 #include "SmartDevice.h"
 #include "Room.h"
 #include "HomeSection.h"
@@ -9,7 +9,7 @@
 #include "Alarm.h"
 #include "DoorLock.h"
 
-// 
+//
 #include "LightState.h"
 #include "ThermoState.h"
 #include "AlarmState.h"
@@ -36,7 +36,7 @@
 #include "Temperature.h"
 #include "Control.h"
 
-// 
+//
 #include "TurnOffAllLights.h"
 #include "LockAllDoors.h"
 #include "MacroRoutine.h"
@@ -45,13 +45,10 @@
 #include <iostream>
 #include <string>
 
-
 void TestComponent1();
 void TestComponent2();
 void TestComponent3();
 void TestComponent4();
-
-
 
 int main()
 {
@@ -111,43 +108,41 @@ void TestComponent1()
     std::cout << thermo1->getStatus() << std::endl;
     std::cout << alarm1->getStatus() << std::endl;
 
-
-    //direct set of states
-
-    //light
+    // direct set of states
+    // light
     std::cout << "\t ======MANUAL SET OF STATES===== \n";
 
     std::cout << "\t \t -*-*-*-*-*-*-*-* light *-*-*-*-*-*-*-*-*-* \n";
-    OnState* on = new OnState();
-    OffState* off = new OffState();
+    OnState *on = new OnState();
+    OffState *off = new OffState();
 
-    std::cout<< "Created state is: " <<on->toString()<<std::endl;
-    std::cout<< "Created state is: " <<off->toString()<<std::endl;
+    std::cout << "Created state is: " << on->toString() << std::endl;
+    std::cout << "Created state is: " << off->toString() << std::endl;
 
     light1->setState(on);
     std::cout << light1->getStatus() << std::endl;
-    
+
     light1->setState(off);
     std::cout << light1->getStatus() << std::endl;
     //
     std::cout << "\t \t -*-*-*-*-*-*-*-* Alarm *-*-*-*-*-*-*-*-*-* \n";
-    notActive* deactive = new notActive();
-    Active* active = new Active();
+    notActive *deactive = new notActive();
+    Active *active = new Active();
 
-    std::cout<< "Created state is: " <<active->toString()<<std::endl;
-    std::cout<< "Created state is: " <<deactive->toString()<<std::endl;
-    
+    std::cout << "Created state is: " << active->toString() << std::endl;
+    std::cout << "Created state is: " << deactive->toString() << std::endl;
+
     alarm1->setStatus(active);
     std::cout << alarm1->getStatus() << std::endl;
     alarm1->setStatus(deactive);
     std::cout << alarm1->getStatus() << std::endl;
 
     std::cout << "\t \t -*-*-*-*-*-*-*-* DoorLock *-*-*-*-*-*-*-*-*-* \n";
-    UnlockedState* unlock = new UnlockedState();
-    LockedState* lock = new LockedState();
+    UnlockedState *unlock = new UnlockedState();
+    LockedState *lock = new LockedState();
 
-    std::cout<< "Created state is: " <<unlock->toString()<<std::endl;
-    std::cout<< "Created state is: " <<lock->toString()<<std::endl;
+    std::cout << "Created state is: " << unlock->toString() << std::endl;
+    std::cout << "Created state is: " << lock->toString() << std::endl;
 
     doorL1->setStat(unlock);
     std::cout << doorL1->getStat() << std::endl;
@@ -155,65 +150,63 @@ void TestComponent1()
     std::cout << doorL1->getStat() << std::endl;
 
     std::cout << "\t \t -*-*-*-*-*-*-*-* Thermostat *-*-*-*-*-*-*-*-*-* \n";
-    IdleState* idle = new IdleState();
-    MonitorState* monitor = new MonitorState();
-    ColdState* cold = new ColdState();
-    HotState* hot = new HotState();
-    MildState* mild = new MildState();
+    IdleState *idle = new IdleState();
+    MonitorState *monitor = new MonitorState();
+    ColdState *cold = new ColdState();
+    HotState *hot = new HotState();
+    MildState *mild = new MildState();
 
-    std::cout<< "Created state is: " <<idle->toString()<<std::endl;
-    std::cout<< "Is it Cold? : " <<idle->isCold()<<std::endl;
-    std::cout<< "Is it Hot? : " <<idle->isHot()<<std::endl;
-    std::cout<< "Is it Mild? : "<<idle->isMild()<<std::endl;
+    std::cout << "Created state is: " << idle->toString() << std::endl;
+    std::cout << "Is it Cold? : " << idle->isCold() << std::endl;
+    std::cout << "Is it Hot? : " << idle->isHot() << std::endl;
+    std::cout << "Is it Mild? : " << idle->isMild() << std::endl;
 
-    std::cout<< "Created state is: " <<monitor->toString()<<std::endl;
-    std::cout<< "Is it Cold? : " <<monitor->isCold()<<std::endl;
-    std::cout<< "Is it Hot? : " <<monitor->isHot()<<std::endl;
-    std::cout<< "Is it Mild? : "<<monitor->isMild()<<std::endl;
+    std::cout << "Created state is: " << monitor->toString() << std::endl;
+    std::cout << "Is it Cold? : " << monitor->isCold() << std::endl;
+    std::cout << "Is it Hot? : " << monitor->isHot() << std::endl;
+    std::cout << "Is it Mild? : " << monitor->isMild() << std::endl;
 
-    std::cout<< "Created state is: " <<cold->toString()<<std::endl;
-    std::cout<< "Is it Cold? : " <<cold->isCold()<<std::endl;
-    std::cout<< "Is it Hot? : " <<cold->isHot()<<std::endl;
-    std::cout<< "Is it Mild? : "<<cold->isMild()<<std::endl;
+    std::cout << "Created state is: " << cold->toString() << std::endl;
+    std::cout << "Is it Cold? : " << cold->isCold() << std::endl;
+    std::cout << "Is it Hot? : " << cold->isHot() << std::endl;
+    std::cout << "Is it Mild? : " << cold->isMild() << std::endl;
 
-    std::cout<< "Created state is: " <<hot->toString()<<std::endl;
-    std::cout<< "Is it Cold? : " <<hot->isCold()<<std::endl;
-    std::cout<< "Is it Hot? : " <<hot->isHot()<<std::endl;
-    std::cout<< "Is it Mild? : "<<hot->isMild()<<std::endl;
+    std::cout << "Created state is: " << hot->toString() << std::endl;
+    std::cout << "Is it Cold? : " << hot->isCold() << std::endl;
+    std::cout << "Is it Hot? : " << hot->isHot() << std::endl;
+    std::cout << "Is it Mild? : " << hot->isMild() << std::endl;
 
-    std::cout<< "Created state is: " <<mild->toString()<<std::endl;
-    std::cout<< "Is it Cold? : " <<mild->isCold()<<std::endl;
-    std::cout<< "Is it Hot? : " <<mild->isHot()<<std::endl;
-    std::cout<< "Is it Mild? : "<<mild->isMild()<<std::endl;
- 
+    std::cout << "Created state is: " << mild->toString() << std::endl;
+    std::cout << "Is it Cold? : " << mild->isCold() << std::endl;
+    std::cout << "Is it Hot? : " << mild->isHot() << std::endl;
+    std::cout << "Is it Mild? : " << mild->isMild() << std::endl;
+
     thermo1->setState(idle);
     std::cout << thermo1->getStatus() << std::endl;
     thermo1->setState(monitor);
     std::cout << thermo1->getStatus() << std::endl;
     thermo1->setState(cold);
-    std::cout << thermo1->getStatus()<< std::endl;
+    std::cout << thermo1->getStatus() << std::endl;
     thermo1->setState(hot);
     std::cout << thermo1->getStatus() << std::endl;
     thermo1->setState(mild);
     std::cout << thermo1->getStatus() << std::endl;
-
 
     // connection
     sec1->addRoom(livingRoom);
     std::cout << "Devices in the " << sec1->getSectionName() << " with ID: " << sec1->getId() << std::endl;
     sec1->displayHomeSection();
     std::cout << sec1->getDeviceType() << std::endl;
-    std::cout<<"\t _+_+_+_+Action performed in Home Section+_+_+_+_+_+ \n";
+    std::cout << "\t _+_+_+_+Action performed in Home Section+_+_+_+_+_+ \n";
     sec1->performAction();
-    std::cout<<"\n Performing Updates for safety: \n";
+    std::cout << "\n Performing Updates for safety: \n";
     sec1->update();
     sec1->removeRoom(livingRoom);
 
-
-    //
-    std::cout<<"\t _+_+_+_+_+Action performed in LivingRoom+_+_+_+_+_+ \n";
+    // safety update
+    std::cout << "\t _+_+_+_+_+Action performed in LivingRoom+_+_+_+_+_+ \n";
     livingRoom->performAction();
-    std::cout<<"\n Performing Updates for safety: \n";
+    std::cout << "\n Performing Updates for safety: \n";
     livingRoom->update();
     //
     livingRoom->removeDevice(light1);
@@ -221,15 +214,13 @@ void TestComponent1()
     livingRoom->removeDevice(thermo1);
     livingRoom->removeDevice(alarm1);
 
-
-    delete sec1; 
+    delete sec1;
     delete livingRoom;
 
     delete alarm1;
     delete thermo1;
     delete doorL1;
     delete light1;
-
 }
 
 void TestComponent2()
@@ -241,32 +232,32 @@ void TestComponent2()
     std::cout << "Current Temp: " << thermoAdapter->getTemP() << std::endl;
     thermoAdapter->setTemp(25);
     thermoAdapter->performAction();
-    std::cout <<"Device Type: "<<thermoAdapter->getDeviceType() << std::endl;
+    std::cout << "Device Type: " << thermoAdapter->getDeviceType() << std::endl;
     thermoAdapter->update();
     thermoAdapter->performAction();
 
     delete thermoAdapter;
 }
- 
+
 void TestComponent3()
 {
     std::cout << "~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~COMPONENT 3~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_~_ \n";
 
-    //devices
-    Light* livingRoomLight = new Light("Living Room Light", 100, 60); 
-    DoorLock* frontDoor = new DoorLock("Front Door", 1, "High");
-    Alarm* livingRoomAlarm = new Alarm("Living Room Alarm", 80, "High");
-    //commands
-    TurnOffAllLights* turnOffLightsCmd = new TurnOffAllLights(livingRoomLight);
-    LockAllDoors* lockFrontDoor = new LockAllDoors(frontDoor);
-    DefuseAlarm* defuseAlarmCmd = new DefuseAlarm(livingRoomAlarm);
-    //routines
-    MacroRoutine* goodnightRoutine = new MacroRoutine();
-    MacroRoutine* goodnightRoutine2 = new MacroRoutine();
-    MacroRoutine* goodMorningR3 = new MacroRoutine();
+    // devices
+    Light *livingRoomLight = new Light("Living Room Light", 100, 60);
+    DoorLock *frontDoor = new DoorLock("Front Door", 1, "High");
+    Alarm *livingRoomAlarm = new Alarm("Living Room Alarm", 80, "High");
+    // commands
+    TurnOffAllLights *turnOffLightsCmd = new TurnOffAllLights(livingRoomLight);
+    LockAllDoors *lockFrontDoor = new LockAllDoors(frontDoor);
+    DefuseAlarm *defuseAlarmCmd = new DefuseAlarm(livingRoomAlarm);
+    // routines
+    MacroRoutine *goodnightRoutine = new MacroRoutine();
+    MacroRoutine *goodnightRoutine2 = new MacroRoutine();
+    MacroRoutine *goodMorningR3 = new MacroRoutine();
 
-    //test
-    std::cout<<"=========== Testing the Lights Command ============= \n";
+    // test
+    std::cout << "=========== Testing the Lights Command ============= \n";
 
     goodnightRoutine->addCommand(turnOffLightsCmd);
 
@@ -275,19 +266,17 @@ void TestComponent3()
     goodnightRoutine->execute();
     std::cout << "Final state of the light: " << livingRoomLight->getStatus() << "\n";
     //
-    std::cout<<std::endl;
+    std::cout << std::endl;
     //
     std::cout << "When light is on: \n";
-    OnState* on = new OnState();
+    OnState *on = new OnState();
     livingRoomLight->setState(on);
     goodnightRoutine->execute();
-    std::cout << "Final state of the light: " << livingRoomLight->getStatus()<<"\n";
-    
+    std::cout << "Final state of the light: " << livingRoomLight->getStatus() << "\n";
+
     goodnightRoutine->removeCommand(turnOffLightsCmd);
 
-
-
-    std::cout<<" =========== Testing the Door Lock Command ============= \n";
+    std::cout << " =========== Testing the Door Lock Command ============= \n";
     goodnightRoutine2->addCommand(lockFrontDoor);
     //
     std::cout << "\n Executing Goodnight Routine for Doorlock:\n";
@@ -295,44 +284,39 @@ void TestComponent3()
     std::cout << "Final state of front door: " << frontDoor->getStat() << "\n";
     //
     std::cout << "When locked: \n";
-    LockedState* locked = new LockedState();
+    LockedState *locked = new LockedState();
     frontDoor->setStat(locked);
-    
+
     std::cout << "Manual state: " << frontDoor->getStat() << "\n";
     goodnightRoutine2->execute();
     goodnightRoutine2->removeCommand(lockFrontDoor);
 
-
-
-
-    std::cout<<" =========== Testing the Alarm Command ============= \n";
+    std::cout << " =========== Testing the Alarm Command ============= \n";
     goodMorningR3->addCommand(defuseAlarmCmd);
 
     std::cout << "\nExecuting Goodmorning Routine for Alarm:\n";
     goodMorningR3->execute();
-    std::cout << "Final state of alarm: " <<livingRoomAlarm->getStatus() << "\n";
+    std::cout << "Final state of alarm: " << livingRoomAlarm->getStatus() << "\n";
     //
-    Active* activate =  new Active();
+    Active *activate = new Active();
     livingRoomAlarm->setStatus(activate);
     std::cout << "\nManual state: " << livingRoomAlarm->getStatus() << "\n";
     goodMorningR3->execute();
-    std::cout << "Final state of alarm: " << livingRoomAlarm->getStatus() <<std::endl;
+    std::cout << "Final state of alarm: " << livingRoomAlarm->getStatus() << std::endl;
     goodMorningR3->removeCommand(defuseAlarmCmd);
 
-    
-   
-   //
-   delete turnOffLightsCmd;
-   delete lockFrontDoor;
-   delete defuseAlarmCmd;
+    //
+    delete turnOffLightsCmd;
+    delete lockFrontDoor;
+    delete defuseAlarmCmd;
 
-   delete goodnightRoutine;
-   delete goodnightRoutine2;
-   delete goodMorningR3;
+    delete goodnightRoutine;
+    delete goodnightRoutine2;
+    delete goodMorningR3;
 
-   delete livingRoomLight;
-   delete frontDoor;
-   delete livingRoomAlarm;
+    delete livingRoomLight;
+    delete frontDoor;
+    delete livingRoomAlarm;
 }
 
 void TestComponent4()
