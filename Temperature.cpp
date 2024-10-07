@@ -15,11 +15,13 @@ Temperature::~Temperature()
     devices.clear();
 }
 
+// add a thermostat
 void Temperature::addDevice(SmartDevice *device)
 {
     devices.push_back(device);
 }
 
+// remove the thermostat 
 void Temperature::removeDevice(SmartDevice *device)
 {
     for (auto it = devices.begin(); it != devices.end(); ++it)

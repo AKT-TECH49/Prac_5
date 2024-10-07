@@ -2,14 +2,14 @@
 #include "IdleState.h"
 #include "MonitorState.h"
 
-
+// parametrizedd constructor
  SmartThermostatIntegrator:: SmartThermostatIntegrator(LegendThermo *thermo, const std::string &name):SmartDevice(100)
 {
     this->thermo = thermo;
     this->name = name;
-
 }
 
+// desructor 
 SmartThermostatIntegrator::~SmartThermostatIntegrator()
 {
     if(thermo)
@@ -19,6 +19,7 @@ SmartThermostatIntegrator::~SmartThermostatIntegrator()
     }
 }
 
+// set temp of the actual file 
 void  SmartThermostatIntegrator::setTemp(int t ) 
 {
     thermo->adjustTemperature(t);
