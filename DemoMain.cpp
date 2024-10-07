@@ -96,22 +96,22 @@ int main()
         switch (choice)
         {
         case 1:
-            std::cout << YELLOW << "\nRunning " << LIGHT_EMOJI << " Test Component 1...\n"
+            std::cout << YELLOW << "\nRunning " << LIGHT_EMOJI << " Test: Component 1...\n"
                       << RESET;
             TestComponent1();
             break;
         case 2:
-            std::cout << YELLOW << "\nRunning " << LOCK_EMOJI << " Test Component 2...\n"
+            std::cout << YELLOW << "\nRunning " << LOCK_EMOJI << " Test: Component 2...\n"
                       << RESET;
             TestComponent2();
             break;
         case 3:
-            std::cout << YELLOW << "\nRunning " << SENSOR_EMOJI << " Test Component 3...\n"
+            std::cout << YELLOW << "\nRunning " << SENSOR_EMOJI << " Test: Component 3...\n"
                       << RESET;
             TestComponent3();
             break;
         case 4:
-            std::cout << YELLOW << "\nRunning " << THERMO_EMOJI << " Test Component 4...\n"
+            std::cout << YELLOW << "\nRunning " << THERMO_EMOJI << " Test: Component 4...\n"
                       << RESET;
             TestComponent4();
             break;
@@ -152,7 +152,6 @@ void displayLoadingBar()
     std::cout << "   🔒 Smart Home Automation System 🔒  \n";
     std::cout << "========================\n";
 }
-
 
 void drawLoadingBar(int length)
 {
@@ -290,6 +289,7 @@ void TestComponent2()
     // goodnightRoutine.execute();
     // std::cout << "Thermostat temperature after Goodnight routine: \033[34m" << livingRoomThermo->getStatus() << "\033[0m\n"; // Blue text
 
+    // Morning routine execution 
     // std::cout << "\n☀️ Executing Good Morning Routine for Thermostat:\n";
     // goodMorningRoutine.execute();
     // std::cout << "Thermostat temperature after Good Morning routine: \033[31m" << livingRoomThermo->getStatus() << "\033[0m\n"; // Red text
