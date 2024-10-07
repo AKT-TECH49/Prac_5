@@ -7,7 +7,6 @@
 {
     this->thermo = thermo;
     this->name = name;
-
 }
 
 
@@ -20,8 +19,6 @@ int  SmartThermostatIntegrator::getTemP() const
 {
     return thermo->readTemperature();
 }
-
-
 
 void  SmartThermostatIntegrator::performAction() 
 {
@@ -38,11 +35,6 @@ void  SmartThermostatIntegrator::performAction()
     setTemp(inctemp);
 
     std::cout<<"Current Temp(°C) is: "<<getTemP()<<std::endl;
-
-    // MonitorState* state = new MonitorState();
-    // state->read(this);
-    // delete state;
-
 }
 
 std::string  SmartThermostatIntegrator::getDeviceType()

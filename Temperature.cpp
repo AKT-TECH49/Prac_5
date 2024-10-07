@@ -7,19 +7,16 @@ Temperature::Temperature(const std::string &name)
 
 Temperature::~Temperature()
 {
-    // for(SmartDevice* device : devices)
-    // {
-    //     delete device;
-    //     device = NULL;
-    // }
     devices.clear();
 }
 
+// add a thermostat
 void Temperature::addDevice(SmartDevice *device)
 {
     devices.push_back(device);
 }
 
+// remove the thermostat 
 void Temperature::removeDevice(SmartDevice *device)
 {
     for (auto it = devices.begin(); it != devices.end(); ++it)
