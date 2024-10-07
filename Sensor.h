@@ -10,6 +10,9 @@
  * 
  * The Sensor class serves as an interface for sensors that monitor changes in the environment 
  * and notify associated smart devices.
+ * 
+ *  @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
  */
 class Sensor {
 public:

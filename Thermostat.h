@@ -17,6 +17,9 @@
  * 
  * @warning Ensure that the ThermostatState pointer is managed to avoid memory leaks.
  * 
+ *  @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
+ * 
  */
 class Thermostat : public SmartDevice {
 private:

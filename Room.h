@@ -10,6 +10,9 @@
  * @brief Defines the Room class, which represents a collection of smart devices within a room.
  * 
  * The Room class acts as a container for various smart devices and provides methods to manage, control, and interact with those devices.
+ * 
+ *  @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
  */
 class Room : public SmartDevice {
 private:

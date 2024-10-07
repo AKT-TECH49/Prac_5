@@ -74,37 +74,36 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;DoorLState.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;ThermoState.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classSmartDevice.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSmartDevice.html">SmartDevice</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::string name;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> id;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classSmartDevice.html#a1dc719fc9802d21ef8c10d17993f6adf">   28</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classSmartDevice.html#a1dc719fc9802d21ef8c10d17993f6adf">~SmartDevice</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classSmartDevice.html#a24411f02d78fff0cd141a16d33772a8c">SmartDevice</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">int</span> typeId);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classSmartDevice.html#ad052e7da2b5f47462de1f07fb7c709f5">   45</a></span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="classSmartDevice.html#ad052e7da2b5f47462de1f07fb7c709f5">getDeviceType</a>() = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classSmartDevice.html#a40f6a7cf197a57582dd765ce896c28f6">   52</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSmartDevice.html#a40f6a7cf197a57582dd765ce896c28f6">performAction</a>() = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::string <a class="code" href="classSmartDevice.html#a2b605f282f09103839751ad1d1bf667b">getName</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classSmartDevice.html#a49180566bd273df52ad861c41cf56abc">   66</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSmartDevice.html#a49180566bd273df52ad861c41cf56abc">getId</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classSmartDevice.html#aa2d220574d20539603a0206a44d00a18">   73</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSmartDevice.html#aa2d220574d20539603a0206a44d00a18">update</a>() = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SMARTDEVICE_H</span></div>
-<div class="ttc" id="aclassSmartDevice_html"><div class="ttname"><a href="classSmartDevice.html">SmartDevice</a></div><div class="ttdef"><b>Definition:</b> SmartDevice.h:17</div></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classSmartDevice.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSmartDevice.html">SmartDevice</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">//std::string name;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> id;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classSmartDevice.html#a1dc719fc9802d21ef8c10d17993f6adf">   31</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classSmartDevice.html#a1dc719fc9802d21ef8c10d17993f6adf">~SmartDevice</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classSmartDevice.html#ad0cfd96ff8fdd88a24866d42a87c88f6">SmartDevice</a>(<span class="keywordtype">int</span> typeId);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classSmartDevice.html#ad052e7da2b5f47462de1f07fb7c709f5">   48</a></span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="classSmartDevice.html#ad052e7da2b5f47462de1f07fb7c709f5">getDeviceType</a>() = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classSmartDevice.html#a40f6a7cf197a57582dd765ce896c28f6">   55</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSmartDevice.html#a40f6a7cf197a57582dd765ce896c28f6">performAction</a>() = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">//std::string getName() const;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classSmartDevice.html#a5fae2772e63a8cf6b80757373a820cc8">getId</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classSmartDevice.html#aa2d220574d20539603a0206a44d00a18">   76</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classSmartDevice.html#aa2d220574d20539603a0206a44d00a18">update</a>() = 0;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// SMARTDEVICE_H</span></div>
+<div class="ttc" id="aclassSmartDevice_html"><div class="ttname"><a href="classSmartDevice.html">SmartDevice</a></div><div class="ttdef"><b>Definition:</b> SmartDevice.h:20</div></div>
 <div class="ttc" id="aclassSmartDevice_html_a1dc719fc9802d21ef8c10d17993f6adf"><div class="ttname"><a href="classSmartDevice.html#a1dc719fc9802d21ef8c10d17993f6adf">SmartDevice::~SmartDevice</a></div><div class="ttdeci">virtual ~SmartDevice()=default</div><div class="ttdoc">Virtual destructor for the SmartDevice class.</div></div>
-<div class="ttc" id="aclassSmartDevice_html_a24411f02d78fff0cd141a16d33772a8c"><div class="ttname"><a href="classSmartDevice.html#a24411f02d78fff0cd141a16d33772a8c">SmartDevice::SmartDevice</a></div><div class="ttdeci">SmartDevice(const std::string &amp;name, int typeId)</div><div class="ttdoc">Constructs a SmartDevice with a specified name and type ID.</div><div class="ttdef"><b>Definition:</b> SmartDevice.cpp:3</div></div>
-<div class="ttc" id="aclassSmartDevice_html_a2b605f282f09103839751ad1d1bf667b"><div class="ttname"><a href="classSmartDevice.html#a2b605f282f09103839751ad1d1bf667b">SmartDevice::getName</a></div><div class="ttdeci">std::string getName() const</div><div class="ttdoc">Gets the name of the smart device.</div><div class="ttdef"><b>Definition:</b> SmartDevice.cpp:9</div></div>
 <div class="ttc" id="aclassSmartDevice_html_a40f6a7cf197a57582dd765ce896c28f6"><div class="ttname"><a href="classSmartDevice.html#a40f6a7cf197a57582dd765ce896c28f6">SmartDevice::performAction</a></div><div class="ttdeci">virtual void performAction()=0</div><div class="ttdoc">Pure virtual function to perform the device's main action.</div></div>
-<div class="ttc" id="aclassSmartDevice_html_a49180566bd273df52ad861c41cf56abc"><div class="ttname"><a href="classSmartDevice.html#a49180566bd273df52ad861c41cf56abc">SmartDevice::getId</a></div><div class="ttdeci">int getId() const</div><div class="ttdoc">Gets the unique ID of the smart device.</div></div>
+<div class="ttc" id="aclassSmartDevice_html_a5fae2772e63a8cf6b80757373a820cc8"><div class="ttname"><a href="classSmartDevice.html#a5fae2772e63a8cf6b80757373a820cc8">SmartDevice::getId</a></div><div class="ttdeci">int getId()</div><div class="ttdoc">Gets the name of the smart device.</div><div class="ttdef"><b>Definition:</b> SmartDevice.cpp:8</div></div>
 <div class="ttc" id="aclassSmartDevice_html_aa2d220574d20539603a0206a44d00a18"><div class="ttname"><a href="classSmartDevice.html#aa2d220574d20539603a0206a44d00a18">SmartDevice::update</a></div><div class="ttdeci">virtual void update()=0</div><div class="ttdoc">Pure virtual function to update the state of the device.</div></div>
 <div class="ttc" id="aclassSmartDevice_html_ad052e7da2b5f47462de1f07fb7c709f5"><div class="ttname"><a href="classSmartDevice.html#ad052e7da2b5f47462de1f07fb7c709f5">SmartDevice::getDeviceType</a></div><div class="ttdeci">virtual std::string getDeviceType()=0</div><div class="ttdoc">Pure virtual function to get the device type.</div></div>
+<div class="ttc" id="aclassSmartDevice_html_ad0cfd96ff8fdd88a24866d42a87c88f6"><div class="ttname"><a href="classSmartDevice.html#ad0cfd96ff8fdd88a24866d42a87c88f6">SmartDevice::SmartDevice</a></div><div class="ttdeci">SmartDevice(int typeId)</div><div class="ttdoc">Constructs a SmartDevice with a specified name and type ID.</div><div class="ttdef"><b>Definition:</b> SmartDevice.cpp:3</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

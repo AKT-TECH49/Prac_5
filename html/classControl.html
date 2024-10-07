@@ -80,6 +80,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a94143e3c41a08568057a7aeb0f5b4e20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControl.html#a94143e3c41a08568057a7aeb0f5b4e20">addDevice</a> (<a class="el" href="classSmartDevice.html">SmartDevice</a> *device)</td></tr>
 <tr class="memdesc:a94143e3c41a08568057a7aeb0f5b4e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a smart device to the control system.  <a href="classControl.html#a94143e3c41a08568057a7aeb0f5b4e20">More...</a><br /></td></tr>
 <tr class="separator:a94143e3c41a08568057a7aeb0f5b4e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68143c183bb6f02a0fd454f5965c9776"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControl.html#a68143c183bb6f02a0fd454f5965c9776">removeSensor</a> (<a class="el" href="classSensor.html">Sensor</a> *sensor)</td></tr>
+<tr class="memdesc:a68143c183bb6f02a0fd454f5965c9776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a sensor to the control system.  <a href="classControl.html#a68143c183bb6f02a0fd454f5965c9776">More...</a><br /></td></tr>
+<tr class="separator:a68143c183bb6f02a0fd454f5965c9776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd7269e877079f152bd00a18fa189e5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControl.html#abd7269e877079f152bd00a18fa189e5f">removeDevice</a> (<a class="el" href="classSmartDevice.html">SmartDevice</a> *device)</td></tr>
+<tr class="memdesc:abd7269e877079f152bd00a18fa189e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a smart device to the control system.  <a href="classControl.html#abd7269e877079f152bd00a18fa189e5f">More...</a><br /></td></tr>
+<tr class="separator:abd7269e877079f152bd00a18fa189e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22e8accf67175ca45729019456cbd3a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControl.html#a22e8accf67175ca45729019456cbd3a6">notifySpecificDevice</a> (<a class="el" href="classSmartDevice.html">SmartDevice</a> *device)</td></tr>
 <tr class="memdesc:a22e8accf67175ca45729019456cbd3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies a specific smart device about an event.  <a href="classControl.html#a22e8accf67175ca45729019456cbd3a6">More...</a><br /></td></tr>
 <tr class="separator:a22e8accf67175ca45729019456cbd3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,6 +185,58 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">device</td><td>Pointer to the <a class="el" href="classSmartDevice.html">SmartDevice</a> that needs to be notified. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abd7269e877079f152bd00a18fa189e5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd7269e877079f152bd00a18fa189e5f">&#9670;&nbsp;</a></span>removeDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Control::removeDevice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSmartDevice.html">SmartDevice</a> *&#160;</td>
+          <td class="paramname"><em>device</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove a smart device to the control system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device</td><td>Pointer to the <a class="el" href="classSmartDevice.html">SmartDevice</a> to be added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a68143c183bb6f02a0fd454f5965c9776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68143c183bb6f02a0fd454f5965c9776">&#9670;&nbsp;</a></span>removeSensor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Control::removeSensor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSensor.html">Sensor</a> *&#160;</td>
+          <td class="paramname"><em>sensor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a sensor to the control system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensor</td><td>Pointer to the <a class="el" href="classSensor.html">Sensor</a> to be added. </td></tr>
   </table>
   </dd>
 </dl>

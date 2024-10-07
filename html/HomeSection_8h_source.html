@@ -72,45 +72,45 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classHomeSection.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHomeSection.html">HomeSection</a> : <span class="keyword">public</span> <a class="code" href="classSmartDevice.html">SmartDevice</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::vector&lt;Room*&gt; rooms; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::string secName; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classHomeSection.html#aa99f1a2c3fd03bfe5fce8398a5e016b6">HomeSection</a>(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classHomeSection.html#a3e889b0540b4b15678ae90c4cab7365b">~HomeSection</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#a5ba0d4a79d93908cb1d8669622945a8b">addRoom</a>(<a class="code" href="classRoom.html">Room</a>* room);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#af61cf7f851d272e1414db15cc0c2becc">removeRoom</a>(<a class="code" href="classRoom.html">Room</a>* room);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#a4723fbf8802fb81ff0b67b7cda852a98">displayHomeSection</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::string <a class="code" href="classHomeSection.html#a3b7898e2024a6827a83a5c049a059c21">getSectionName</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::string <a class="code" href="classHomeSection.html#a8e560ce1f78188f3e3de897f13e0321f">getDeviceType</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#a7c49bbdd7c561d3e40647c82b46a25cc">performAction</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#adb541dcff0f342e18750206eac96dad4">update</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// HOMESECTION_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classHomeSection.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHomeSection.html">HomeSection</a> : <span class="keyword">public</span> <a class="code" href="classSmartDevice.html">SmartDevice</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::vector&lt;Room*&gt; rooms; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string secName; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classHomeSection.html#aa99f1a2c3fd03bfe5fce8398a5e016b6">HomeSection</a>(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classHomeSection.html#a3e889b0540b4b15678ae90c4cab7365b">~HomeSection</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#a5ba0d4a79d93908cb1d8669622945a8b">addRoom</a>(<a class="code" href="classRoom.html">Room</a>* room);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#af61cf7f851d272e1414db15cc0c2becc">removeRoom</a>(<a class="code" href="classRoom.html">Room</a>* room);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#a4723fbf8802fb81ff0b67b7cda852a98">displayHomeSection</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::string <a class="code" href="classHomeSection.html#a3b7898e2024a6827a83a5c049a059c21">getSectionName</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::string <a class="code" href="classHomeSection.html#a8e560ce1f78188f3e3de897f13e0321f">getDeviceType</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#a7c49bbdd7c561d3e40647c82b46a25cc">performAction</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classHomeSection.html#adb541dcff0f342e18750206eac96dad4">update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// HOMESECTION_H</span></div>
 <div class="ttc" id="aRoom_8h_html"><div class="ttname"><a href="Room_8h.html">Room.h</a></div><div class="ttdoc">Defines the Room class, which represents a collection of smart devices within a room.</div></div>
-<div class="ttc" id="aclassHomeSection_html"><div class="ttname"><a href="classHomeSection.html">HomeSection</a></div><div class="ttdef"><b>Definition:</b> HomeSection.h:14</div></div>
-<div class="ttc" id="aclassHomeSection_html_a3b7898e2024a6827a83a5c049a059c21"><div class="ttname"><a href="classHomeSection.html#a3b7898e2024a6827a83a5c049a059c21">HomeSection::getSectionName</a></div><div class="ttdeci">std::string getSectionName()</div><div class="ttdoc">Gets the name of the home section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:59</div></div>
+<div class="ttc" id="aclassHomeSection_html"><div class="ttname"><a href="classHomeSection.html">HomeSection</a></div><div class="ttdef"><b>Definition:</b> HomeSection.h:17</div></div>
+<div class="ttc" id="aclassHomeSection_html_a3b7898e2024a6827a83a5c049a059c21"><div class="ttname"><a href="classHomeSection.html#a3b7898e2024a6827a83a5c049a059c21">HomeSection::getSectionName</a></div><div class="ttdeci">std::string getSectionName()</div><div class="ttdoc">Gets the name of the home section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:61</div></div>
 <div class="ttc" id="aclassHomeSection_html_a3e889b0540b4b15678ae90c4cab7365b"><div class="ttname"><a href="classHomeSection.html#a3e889b0540b4b15678ae90c4cab7365b">HomeSection::~HomeSection</a></div><div class="ttdeci">~HomeSection()</div><div class="ttdoc">Destructor for the HomeSection class.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:12</div></div>
-<div class="ttc" id="aclassHomeSection_html_a4723fbf8802fb81ff0b67b7cda852a98"><div class="ttname"><a href="classHomeSection.html#a4723fbf8802fb81ff0b67b7cda852a98">HomeSection::displayHomeSection</a></div><div class="ttdeci">void displayHomeSection()</div><div class="ttdoc">Displays the rooms in the home section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:49</div></div>
-<div class="ttc" id="aclassHomeSection_html_a5ba0d4a79d93908cb1d8669622945a8b"><div class="ttname"><a href="classHomeSection.html#a5ba0d4a79d93908cb1d8669622945a8b">HomeSection::addRoom</a></div><div class="ttdeci">void addRoom(Room *room)</div><div class="ttdoc">Adds a room to the home section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:20</div></div>
-<div class="ttc" id="aclassHomeSection_html_a7c49bbdd7c561d3e40647c82b46a25cc"><div class="ttname"><a href="classHomeSection.html#a7c49bbdd7c561d3e40647c82b46a25cc">HomeSection::performAction</a></div><div class="ttdeci">void performAction() override</div><div class="ttdoc">Performs an action on all rooms in the section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:79</div></div>
-<div class="ttc" id="aclassHomeSection_html_a8e560ce1f78188f3e3de897f13e0321f"><div class="ttname"><a href="classHomeSection.html#a8e560ce1f78188f3e3de897f13e0321f">HomeSection::getDeviceType</a></div><div class="ttdeci">std::string getDeviceType() override</div><div class="ttdoc">Returns the type of device (HomeSection).</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:64</div></div>
+<div class="ttc" id="aclassHomeSection_html_a4723fbf8802fb81ff0b67b7cda852a98"><div class="ttname"><a href="classHomeSection.html#a4723fbf8802fb81ff0b67b7cda852a98">HomeSection::displayHomeSection</a></div><div class="ttdeci">void displayHomeSection()</div><div class="ttdoc">Displays the rooms in the home section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:51</div></div>
+<div class="ttc" id="aclassHomeSection_html_a5ba0d4a79d93908cb1d8669622945a8b"><div class="ttname"><a href="classHomeSection.html#a5ba0d4a79d93908cb1d8669622945a8b">HomeSection::addRoom</a></div><div class="ttdeci">void addRoom(Room *room)</div><div class="ttdoc">Adds a room to the home section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:22</div></div>
+<div class="ttc" id="aclassHomeSection_html_a7c49bbdd7c561d3e40647c82b46a25cc"><div class="ttname"><a href="classHomeSection.html#a7c49bbdd7c561d3e40647c82b46a25cc">HomeSection::performAction</a></div><div class="ttdeci">void performAction() override</div><div class="ttdoc">Performs an action on all rooms in the section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:81</div></div>
+<div class="ttc" id="aclassHomeSection_html_a8e560ce1f78188f3e3de897f13e0321f"><div class="ttname"><a href="classHomeSection.html#a8e560ce1f78188f3e3de897f13e0321f">HomeSection::getDeviceType</a></div><div class="ttdeci">std::string getDeviceType() override</div><div class="ttdoc">Returns the type of device (HomeSection).</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:66</div></div>
 <div class="ttc" id="aclassHomeSection_html_aa99f1a2c3fd03bfe5fce8398a5e016b6"><div class="ttname"><a href="classHomeSection.html#aa99f1a2c3fd03bfe5fce8398a5e016b6">HomeSection::HomeSection</a></div><div class="ttdeci">HomeSection(const std::string &amp;name)</div><div class="ttdoc">Constructs a HomeSection object with a specified name.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:6</div></div>
-<div class="ttc" id="aclassHomeSection_html_adb541dcff0f342e18750206eac96dad4"><div class="ttname"><a href="classHomeSection.html#adb541dcff0f342e18750206eac96dad4">HomeSection::update</a></div><div class="ttdeci">void update() override</div><div class="ttdoc">Observer update method.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:88</div></div>
-<div class="ttc" id="aclassHomeSection_html_af61cf7f851d272e1414db15cc0c2becc"><div class="ttname"><a href="classHomeSection.html#af61cf7f851d272e1414db15cc0c2becc">HomeSection::removeRoom</a></div><div class="ttdeci">void removeRoom(Room *room)</div><div class="ttdoc">Removes a room from the home section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:28</div></div>
-<div class="ttc" id="aclassRoom_html"><div class="ttname"><a href="classRoom.html">Room</a></div><div class="ttdef"><b>Definition:</b> Room.h:14</div></div>
-<div class="ttc" id="aclassSmartDevice_html"><div class="ttname"><a href="classSmartDevice.html">SmartDevice</a></div><div class="ttdef"><b>Definition:</b> SmartDevice.h:17</div></div>
+<div class="ttc" id="aclassHomeSection_html_adb541dcff0f342e18750206eac96dad4"><div class="ttname"><a href="classHomeSection.html#adb541dcff0f342e18750206eac96dad4">HomeSection::update</a></div><div class="ttdeci">void update() override</div><div class="ttdoc">Observer update method.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:90</div></div>
+<div class="ttc" id="aclassHomeSection_html_af61cf7f851d272e1414db15cc0c2becc"><div class="ttname"><a href="classHomeSection.html#af61cf7f851d272e1414db15cc0c2becc">HomeSection::removeRoom</a></div><div class="ttdeci">void removeRoom(Room *room)</div><div class="ttdoc">Removes a room from the home section.</div><div class="ttdef"><b>Definition:</b> HomeSection.cpp:30</div></div>
+<div class="ttc" id="aclassRoom_html"><div class="ttname"><a href="classRoom.html">Room</a></div><div class="ttdef"><b>Definition:</b> Room.h:17</div></div>
+<div class="ttc" id="aclassSmartDevice_html"><div class="ttname"><a href="classSmartDevice.html">SmartDevice</a></div><div class="ttdef"><b>Definition:</b> SmartDevice.h:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

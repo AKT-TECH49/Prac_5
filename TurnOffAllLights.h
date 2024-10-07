@@ -10,6 +10,10 @@
  * @brief Concrete command to turn off all the lights in a room.
  * 
  * This class implements the Command interface and provides the execute method to turn off all lights.
+ * 
+ * 
+ *  @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
  */
 class TurnOffAllLights : public SmartDeviceCommand {
 private:

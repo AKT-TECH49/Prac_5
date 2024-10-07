@@ -11,6 +11,9 @@
  * This class allows the user to queue multiple commands and execute them sequentially.
  * 
  * @warning Ensure proper memory management of the SmartDeviceCommand pointers in the vector.
+ * 
+ *  @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
  */
 class MacroRoutine {
 private:
