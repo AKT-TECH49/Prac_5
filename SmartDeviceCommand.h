@@ -6,6 +6,9 @@
  * @brief Command interface for controlling smart devices in a smart home automation system.
  * 
  * The SmartDeviceCommand class defines the common interface for all concrete commands that control smart devices.
+ * 
+ *  @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
  */
 class SmartDeviceCommand {
 public:

@@ -16,7 +16,9 @@
  * controlling the lock's state, security level, and lock strength.
  * 
  * @warning Ensure the state object is correctly handled to avoid memory leaks.
- * 
+ *
+ *  @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
  * @todo Implement auto-lock functionality after a set period of inactivity.
  */
 class DoorLock : public SmartDevice {

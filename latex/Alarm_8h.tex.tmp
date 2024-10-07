@@ -29,3 +29,9 @@ Defines the \mbox{\hyperlink{classAlarm}{Alarm}} class for managing smart home a
 \begin{DoxyWarning}{Warning}
 Ensure proper cleanup of the \mbox{\hyperlink{classAlarmState}{Alarm\+State}} pointer to avoid memory issues. 
 \end{DoxyWarning}
+\begin{DoxyAuthor}{Author}
+Mpho\+\_\+\+Siminya\+\_\+u21824241 and Amantle\+\_\+\+Temo\+\_\+u23539764 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}

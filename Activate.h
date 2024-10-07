@@ -8,7 +8,6 @@
 class Active : public AlarmState
 {
     public:
-    //implement suggested methods in AlarmState
     ~Active() = default;
     void activateAlarm(Alarm* alarm) override;
     void deactivateAlarm(Alarm* alarm) override;

@@ -10,6 +10,9 @@
  * @brief Defines the HomeSection class, which represents a collection of rooms in a specific section of the home.
  * 
  * The HomeSection class acts as a container for multiple rooms and provides methods to manage and control those rooms.
+ * 
+ * @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
  */
 class HomeSection : public SmartDevice {
 private:

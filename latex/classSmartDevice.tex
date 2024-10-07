@@ -9,16 +9,14 @@ Inheritance diagram for Smart\+Device\+:
 \item 
 virtual \mbox{\hyperlink{classSmartDevice_a1dc719fc9802d21ef8c10d17993f6adf}{$\sim$\+Smart\+Device}} ()=default
 \begin{DoxyCompactList}\small\item\em Virtual destructor for the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} class. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classSmartDevice_a24411f02d78fff0cd141a16d33772a8c}{Smart\+Device}} (const std\+::string \&name, int type\+Id)
+\mbox{\hyperlink{classSmartDevice_ad0cfd96ff8fdd88a24866d42a87c88f6}{Smart\+Device}} (int type\+Id)
 \begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} with a specified name and type ID. \end{DoxyCompactList}\item 
 virtual std\+::string \mbox{\hyperlink{classSmartDevice_ad052e7da2b5f47462de1f07fb7c709f5}{get\+Device\+Type}} ()=0
 \begin{DoxyCompactList}\small\item\em Pure virtual function to get the device type. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}{perform\+Action}} ()=0
 \begin{DoxyCompactList}\small\item\em Pure virtual function to perform the device\textquotesingle{}s main action. \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{classSmartDevice_a2b605f282f09103839751ad1d1bf667b}{get\+Name}} () const
+int \mbox{\hyperlink{classSmartDevice_a5fae2772e63a8cf6b80757373a820cc8}{get\+Id}} ()
 \begin{DoxyCompactList}\small\item\em Gets the name of the smart device. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classSmartDevice_a49180566bd273df52ad861c41cf56abc}{get\+Id}} () const
-\begin{DoxyCompactList}\small\item\em Gets the unique ID of the smart device. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classSmartDevice_aa2d220574d20539603a0206a44d00a18}{update}} ()=0
 \begin{DoxyCompactList}\small\item\em Pure virtual function to update the state of the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -34,11 +32,11 @@ virtual void \mbox{\hyperlink{classSmartDevice_aa2d220574d20539603a0206a44d00a18
 
 Virtual destructor for the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} class. 
 
-Ensures proper cleanup of derived classes when a \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} object is destroyed. \mbox{\Hypertarget{classSmartDevice_a24411f02d78fff0cd141a16d33772a8c}\label{classSmartDevice_a24411f02d78fff0cd141a16d33772a8c}} 
+Ensures proper cleanup of derived classes when a \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} object is destroyed. \mbox{\Hypertarget{classSmartDevice_ad0cfd96ff8fdd88a24866d42a87c88f6}\label{classSmartDevice_ad0cfd96ff8fdd88a24866d42a87c88f6}} 
 \index{SmartDevice@{SmartDevice}!SmartDevice@{SmartDevice}}
 \index{SmartDevice@{SmartDevice}!SmartDevice@{SmartDevice}}
 \doxysubsubsection{\texorpdfstring{SmartDevice()}{SmartDevice()}}
-{\footnotesize\ttfamily Smart\+Device\+::\+Smart\+Device (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{int}]{type\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Smart\+Device\+::\+Smart\+Device (\begin{DoxyParamCaption}\item[{int}]{type\+Id }\end{DoxyParamCaption})}
 
 
 
@@ -73,31 +71,23 @@ A string representing the device type.
 
 Implemented in \mbox{\hyperlink{classThermostat_aa1b4ffd531015c3824ac690895454698}{Thermostat}}, \mbox{\hyperlink{classSmartThermostatIntegrator_ad91651a4e38491005d0d444f054364a2}{Smart\+Thermostat\+Integrator}}, \mbox{\hyperlink{classRoom_a0975163814bfdde9d137be83f356458e}{Room}}, \mbox{\hyperlink{classLight_a5b234c850599669a908f4c46395bf804}{Light}}, \mbox{\hyperlink{classHomeSection_a8e560ce1f78188f3e3de897f13e0321f}{Home\+Section}}, \mbox{\hyperlink{classDoorLock_a3b313802c31d45cb3466dc004aaf98ff}{Door\+Lock}}, and \mbox{\hyperlink{classAlarm_aec29824a96e54f583a64a966ef2dc774}{Alarm}}.
 
-\mbox{\Hypertarget{classSmartDevice_a49180566bd273df52ad861c41cf56abc}\label{classSmartDevice_a49180566bd273df52ad861c41cf56abc}} 
+\mbox{\Hypertarget{classSmartDevice_a5fae2772e63a8cf6b80757373a820cc8}\label{classSmartDevice_a5fae2772e63a8cf6b80757373a820cc8}} 
 \index{SmartDevice@{SmartDevice}!getId@{getId}}
 \index{getId@{getId}!SmartDevice@{SmartDevice}}
 \doxysubsubsection{\texorpdfstring{getId()}{getId()}}
-{\footnotesize\ttfamily int Smart\+Device\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Gets the unique ID of the smart device. 
-
-\begin{DoxyReturn}{Returns}
-The device\textquotesingle{}s unique ID as an integer. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classSmartDevice_a2b605f282f09103839751ad1d1bf667b}\label{classSmartDevice_a2b605f282f09103839751ad1d1bf667b}} 
-\index{SmartDevice@{SmartDevice}!getName@{getName}}
-\index{getName@{getName}!SmartDevice@{SmartDevice}}
-\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
-{\footnotesize\ttfamily std\+::string Smart\+Device\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily int Smart\+Device\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Gets the name of the smart device. 
 
 \begin{DoxyReturn}{Returns}
-The name of the smart device as a string. 
+The name of the smart device as a string.
+\end{DoxyReturn}
+Gets the unique ID of the smart device.
+
+\begin{DoxyReturn}{Returns}
+The device\textquotesingle{}s unique ID as an integer. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}\label{classSmartDevice_a40f6a7cf197a57582dd765ce896c28f6}} 
 \index{SmartDevice@{SmartDevice}!performAction@{performAction}}

@@ -71,24 +71,26 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SmartDeviceCommand_8h.html">SmartDeviceCommand.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classMacroRoutine.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMacroRoutine.html">MacroRoutine</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::vector&lt;SmartDeviceCommand*&gt; commands; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroRoutine.html#a08d4a7cb90430e95327d705d3af31ccc">addCommand</a>(<a class="code" href="classSmartDeviceCommand.html">SmartDeviceCommand</a>* command);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroRoutine.html#a9be008e6776157d943f2c637c8003129">execute</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classMacroRoutine.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMacroRoutine.html">MacroRoutine</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::vector&lt;SmartDeviceCommand*&gt; commands; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroRoutine.html#a08d4a7cb90430e95327d705d3af31ccc">addCommand</a>(<a class="code" href="classSmartDeviceCommand.html">SmartDeviceCommand</a>* command);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> removeCommand(<a class="code" href="classSmartDeviceCommand.html">SmartDeviceCommand</a>* cmd);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classMacroRoutine.html#a9abe17342df7ffc586308427c863793e">~MacroRoutine</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MACROROUTINE_H</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMacroRoutine.html#a9be008e6776157d943f2c637c8003129">execute</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classMacroRoutine.html#a9abe17342df7ffc586308427c863793e">~MacroRoutine</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MACROROUTINE_H</span></div>
 <div class="ttc" id="aSmartDeviceCommand_8h_html"><div class="ttname"><a href="SmartDeviceCommand_8h.html">SmartDeviceCommand.h</a></div><div class="ttdoc">Command interface for controlling smart devices in a smart home automation system.</div></div>
-<div class="ttc" id="aclassMacroRoutine_html"><div class="ttname"><a href="classMacroRoutine.html">MacroRoutine</a></div><div class="ttdef"><b>Definition:</b> MacroRoutine.h:15</div></div>
+<div class="ttc" id="aclassMacroRoutine_html"><div class="ttname"><a href="classMacroRoutine.html">MacroRoutine</a></div><div class="ttdef"><b>Definition:</b> MacroRoutine.h:18</div></div>
 <div class="ttc" id="aclassMacroRoutine_html_a08d4a7cb90430e95327d705d3af31ccc"><div class="ttname"><a href="classMacroRoutine.html#a08d4a7cb90430e95327d705d3af31ccc">MacroRoutine::addCommand</a></div><div class="ttdeci">void addCommand(SmartDeviceCommand *command)</div><div class="ttdoc">Adds a command to the macro routine.</div><div class="ttdef"><b>Definition:</b> MacroRoutine.cpp:7</div></div>
-<div class="ttc" id="aclassMacroRoutine_html_a9abe17342df7ffc586308427c863793e"><div class="ttname"><a href="classMacroRoutine.html#a9abe17342df7ffc586308427c863793e">MacroRoutine::~MacroRoutine</a></div><div class="ttdeci">~MacroRoutine()</div><div class="ttdoc">Destructor for the MacroRoutine class.</div><div class="ttdef"><b>Definition:</b> MacroRoutine.cpp:20</div></div>
-<div class="ttc" id="aclassMacroRoutine_html_a9be008e6776157d943f2c637c8003129"><div class="ttname"><a href="classMacroRoutine.html#a9be008e6776157d943f2c637c8003129">MacroRoutine::execute</a></div><div class="ttdeci">void execute()</div><div class="ttdoc">Executes all commands in the macro routine.</div><div class="ttdef"><b>Definition:</b> MacroRoutine.cpp:12</div></div>
-<div class="ttc" id="aclassSmartDeviceCommand_html"><div class="ttname"><a href="classSmartDeviceCommand.html">SmartDeviceCommand</a></div><div class="ttdef"><b>Definition:</b> SmartDeviceCommand.h:10</div></div>
+<div class="ttc" id="aclassMacroRoutine_html_a9abe17342df7ffc586308427c863793e"><div class="ttname"><a href="classMacroRoutine.html#a9abe17342df7ffc586308427c863793e">MacroRoutine::~MacroRoutine</a></div><div class="ttdeci">~MacroRoutine()</div><div class="ttdoc">Destructor for the MacroRoutine class.</div><div class="ttdef"><b>Definition:</b> MacroRoutine.cpp:12</div></div>
+<div class="ttc" id="aclassMacroRoutine_html_a9be008e6776157d943f2c637c8003129"><div class="ttname"><a href="classMacroRoutine.html#a9be008e6776157d943f2c637c8003129">MacroRoutine::execute</a></div><div class="ttdeci">void execute()</div><div class="ttdoc">Executes all commands in the macro routine.</div><div class="ttdef"><b>Definition:</b> MacroRoutine.cpp:37</div></div>
+<div class="ttc" id="aclassSmartDeviceCommand_html"><div class="ttname"><a href="classSmartDeviceCommand.html">SmartDeviceCommand</a></div><div class="ttdef"><b>Definition:</b> SmartDeviceCommand.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
