@@ -2,13 +2,13 @@
 #include <algorithm>
 #include <iostream>
 
-
+// default constructor 
 HomeSection::HomeSection(const std::string &name):SmartDevice( 00)
 {
     this->secName = name;
 }
 
-
+// destructor 
 HomeSection::~HomeSection()
 {
     for(Room* room : rooms)
@@ -19,6 +19,7 @@ HomeSection::~HomeSection()
     rooms.clear();
 }
 
+// add the room to the home(house)
 void HomeSection::addRoom(Room *room)
 {
     if(room)
@@ -27,6 +28,7 @@ void HomeSection::addRoom(Room *room)
     }
 }
 
+// take a room out the home section
 void HomeSection::removeRoom(Room *room)
 {
       if (room)
