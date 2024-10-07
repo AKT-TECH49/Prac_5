@@ -9,6 +9,10 @@
  * @brief Concrete command to defuse the alarm in a smart home automation system.
  * 
  * This class implements the Command interface and provides the execute method to defuse an alarm.
+ * 
+ *  
+ * @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
  */
 class DefuseAlarm : public SmartDeviceCommand {
 private:
@@ -25,7 +29,7 @@ public:
     /**
      * @brief Destructor for the DefuseAlarm command.
      */
-    virtual ~DefuseAlarm();
+      ~DefuseAlarm();
 
     /**
      * @brief Executes the command to defuse the alarm.

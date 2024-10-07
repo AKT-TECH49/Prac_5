@@ -6,17 +6,18 @@ DoorLock::DoorLock(std::string lockType, int grade, const std::string &secLevel)
     this->name = lockType;
     this->lockStrength = grade;
     this->securityLevel =secLevel;
-    this->state = new UnlockedState();
 
+    state = new UnlockedState();
 }
+
 
 DoorLock::~DoorLock()
 {
-     if(state)
-    {
+    //  if(state)
+    // {
     delete this->state;
     state = NULL;
-    }
+    //}
 }
 
 std::string DoorLock::getStat() const
@@ -32,9 +33,14 @@ std::string DoorLock::getStat() const
     }
 }
 
-void DoorLock::setStat(DoorLockState *state)
+void DoorLock::setStat(DoorLockState *newState)
 {
-    this->state = state;
+    if(state != NULL)
+    {
+        delete state;
+    }
+
+    this->state = newState;
 }
 
 void DoorLock::performAction()

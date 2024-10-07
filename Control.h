@@ -11,6 +11,9 @@
  * @brief Defines the class that manages sensors and devices in a smart home system.
  * 
  * The Control class provides functionality to add sensors, add devices, and notify specific devices.
+ * 
+ * @author Mpho_Siminya_u21824241 and Amantle_Temo_u23539764
+ *  @version 1.0
  */
 class Control
 {
@@ -25,7 +28,6 @@ public:
      * Cleans up the sensors and devices managed by the control system.
      */
     ~Control();
-
     /**
      * @brief Adds a sensor to the control system.
      * 

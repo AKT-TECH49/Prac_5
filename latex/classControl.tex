@@ -9,6 +9,10 @@ void \mbox{\hyperlink{classControl_a1fbf10b81e905a42730f1f13aa5f3840}{add\+Senso
 \begin{DoxyCompactList}\small\item\em Adds a sensor to the control system. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classControl_a94143e3c41a08568057a7aeb0f5b4e20}{add\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device)
 \begin{DoxyCompactList}\small\item\em Adds a smart device to the control system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classControl_a68143c183bb6f02a0fd454f5965c9776}{remove\+Sensor}} (\mbox{\hyperlink{classSensor}{Sensor}} $\ast$sensor)
+\begin{DoxyCompactList}\small\item\em Removes a sensor to the control system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classControl_abd7269e877079f152bd00a18fa189e5f}{remove\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device)
+\begin{DoxyCompactList}\small\item\em Remove a smart device to the control system. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classControl_a22e8accf67175ca45729019456cbd3a6}{notify\+Specific\+Device}} (\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$device)
 \begin{DoxyCompactList}\small\item\em Notifies a specific smart device about an event. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -72,6 +76,36 @@ This method triggers a notification or action for the provided device.
 
 \begin{DoxyParams}{Parameters}
 {\em device} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} that needs to be notified. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_abd7269e877079f152bd00a18fa189e5f}\label{classControl_abd7269e877079f152bd00a18fa189e5f}} 
+\index{Control@{Control}!removeDevice@{removeDevice}}
+\index{removeDevice@{removeDevice}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{removeDevice()}{removeDevice()}}
+{\footnotesize\ttfamily void Control\+::remove\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSmartDevice}{Smart\+Device}} $\ast$}]{device }\end{DoxyParamCaption})}
+
+
+
+Remove a smart device to the control system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Pointer to the \mbox{\hyperlink{classSmartDevice}{Smart\+Device}} to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControl_a68143c183bb6f02a0fd454f5965c9776}\label{classControl_a68143c183bb6f02a0fd454f5965c9776}} 
+\index{Control@{Control}!removeSensor@{removeSensor}}
+\index{removeSensor@{removeSensor}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{removeSensor()}{removeSensor()}}
+{\footnotesize\ttfamily void Control\+::remove\+Sensor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSensor}{Sensor}} $\ast$}]{sensor }\end{DoxyParamCaption})}
+
+
+
+Removes a sensor to the control system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensor} & Pointer to the \mbox{\hyperlink{classSensor}{Sensor}} to be added. \\
 \hline
 \end{DoxyParams}
 

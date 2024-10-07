@@ -4,6 +4,7 @@
 #include <string>
 
 
+
 void UnlockedState::pressButton(DoorLock *lock)
 {
     LockedState* newS = new LockedState();

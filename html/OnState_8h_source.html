@@ -72,22 +72,25 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;LightState.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Light_8h.html">Light.h</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classOnState.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOnState.html">OnState</a> : <span class="keyword">public</span> <a class="code" href="classLightState.html">LightState</a></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{   </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> toggle(<a class="code" href="classLight.html">Light</a>* light) <span class="keyword">override</span> ;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::string toString() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;};</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;OffState.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Light_8h.html">Light.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classOnState.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOnState.html">OnState</a> : <span class="keyword">public</span> <a class="code" href="classLightState.html">LightState</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{   </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// ~OnState();</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> toggle(<a class="code" href="classLight.html">Light</a>* light) <span class="keyword">override</span> ;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::string toString() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aLight_8h_html"><div class="ttname"><a href="Light_8h.html">Light.h</a></div><div class="ttdoc">Defines the Light class, which represents a smart light in the home automation system.</div></div>
 <div class="ttc" id="aclassLightState_html"><div class="ttname"><a href="classLightState.html">LightState</a></div><div class="ttdef"><b>Definition:</b> LightState.h:10</div></div>
-<div class="ttc" id="aclassLight_html"><div class="ttname"><a href="classLight.html">Light</a></div><div class="ttdef"><b>Definition:</b> Light.h:20</div></div>
-<div class="ttc" id="aclassOnState_html"><div class="ttname"><a href="classOnState.html">OnState</a></div><div class="ttdef"><b>Definition:</b> OnState.h:11</div></div>
+<div class="ttc" id="aclassLight_html"><div class="ttname"><a href="classLight.html">Light</a></div><div class="ttdef"><b>Definition:</b> Light.h:22</div></div>
+<div class="ttc" id="aclassOnState_html"><div class="ttname"><a href="classOnState.html">OnState</a></div><div class="ttdef"><b>Definition:</b> OnState.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

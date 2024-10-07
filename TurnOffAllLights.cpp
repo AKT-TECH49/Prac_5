@@ -3,23 +3,34 @@
 #include "OffState.h"
 #include "Light.h"
 
-TurnOffAllLights::TurnOffAllLights(Light *light) 
+TurnOffAllLights::TurnOffAllLights(Light *light)
     : light(light) {}
 
-TurnOffAllLights::~TurnOffAllLights() {
-    // Optional: Destructor implementation
-}
+
+TurnOffAllLights::~TurnOffAllLights()
+ {
+//     if(light)
+//     {
+//         delete light;
+         light = NULL;
+//     }
+ }
+
 
 void TurnOffAllLights::execute()
 {
     // Set the light state to OffState
-    if (light->getStatus() != "Off")
+    std::string currState = light->getStatus();
+
+    if (currState == "Off")
     {
-        light->setState(new OffState()); // Change light to OffState
-        std::cout << light->getDeviceType() << " is now turned off.\n";
+       std::cout<<light->getDeviceType()<<" is already off. "<<std::endl;
     }
     else
     {
-        std::cout << light->getDeviceType() << " is already off.\n";
+         OffState* newS = new OffState();
+        light->setState(newS); // Change light to OffState
+        std::cout << light->getDeviceType() << " is now turned off.\n";
     }
+
 }
